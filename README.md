@@ -2,12 +2,20 @@
 
 通过 AI agent 创建、部署、更新和回退 React/Vue 静态前端，默认使用私有 OBS＋CDN，并连接已有华为云 RDS Supabase。新项目未指定框架时采用 React＋Vite＋TypeScript，也支持普通静态网站和已能静态导出的项目。
 
-```text
-用户 → https://app.example.com → CDN（HTTPS、缓存）→ 私有 OBS 前端产物
-浏览器中的前端代码 → 已有 Supabase HTTPS API（认证与数据）
-```
+## 部署选择与接入流程
 
-用户使用自己的域名访问，无需登录华为云；应用登录由 Supabase Auth 处理。SSR、服务端 API 和运行时秘密密钥需要另行明确后端依赖。
+![前端托管选择与 Supabase 接入流程：已有平台可保留；华为云有域名走 OBS/CDN，准备域名时先本地预览，明确选择 IP 访问时可用 ECS；也可选择其他平台默认域名。最终由浏览器调用已有 Supabase。](docs/deployment-flow.svg)
+
+[查看完整流程图与可编辑 SVG](docs/deployment-flow.svg)
+
+图例：**蓝色实线**表示当前 skill 已覆盖的 OBS/CDN 流程；**灰色虚线**表示可选路线，ECS 与其他平台尚未实现完整任务流程；**绿色**表示共同的浏览器访问与 Supabase 接入链路。
+
+- 前端已在其他平台托管时，可以保留现有部署；尚未托管时，也可以选择提供默认访问域名的平台。
+- 选择华为云且已有可用域名时，使用私有 OBS＋CDN；准备办理域名时，先完成本地构建与预览，待证书及适用备案条件齐备后上线。
+- 不准备域名且明确需要公网 IP 访问时，可另行选择 ECS＋EIP＋Nginx，需要承担服务器维护、带宽费用并处理 HTTPS。**缺少域名不会自动购买 ECS，OBS 桶也不能直接绑定 EIP。**
+- 所有路线均由用户浏览器调用已有 Supabase 的 HTTPS API；公开 Key、CORS、登录回调与 RLS 需配置并验收。流程图用于选型，不表示这些路线都已由当前 skill 实现。
+
+采用默认 OBS＋CDN 方案时，用户使用自己的域名访问，无需登录华为云；应用登录由 Supabase Auth 处理。SSR、服务端 API 和运行时秘密密钥需要另行明确后端依赖。
 
 ## 安装与使用
 
@@ -26,7 +34,7 @@ $huawei-supabase-frontend 回退到指定的已验证版本，刷新页面缓存
 
 ## 首次上线条件
 
-目前尚未准备域名，首次正式上线需先选择并注册域名。OBS 默认域名可能强制下载网页，不能作为可靠的网页入口，见 [OBS 访问说明](https://support.huaweicloud.com/usermanual-obs/obs_03_0342.html)。缺少域名时交付本地预览、构建产物和上线清单。
+若采用 OBS＋CDN 路线且尚未准备可用域名，首次正式上线需先准备域名。OBS 默认域名可能强制下载网页，不能作为可靠的网页入口，见 [OBS 访问说明](https://support.huaweicloud.com/usermanual-obs/obs_03_0342.html)。缺少域名时交付本地预览、构建产物和上线清单。
 
 中国大陆及全球 CDN 加速要求备案；首次通过华为云备案还有可备案资源条件，见 [备案条件](https://support.huaweicloud.com/icprb-icp/icp_01_0008.html)。注册域名不等于所有条件齐备；skill 不会因缺项自动购买服务器或切换地区。
 
