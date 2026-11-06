@@ -12,37 +12,29 @@
 6. “华东二”是 cn-east-4，“上海二”是 cn-east-2；“华北三”是 cn-north-12。地区名称中的序号不一定等于 ID 后缀，必须查表，不能拼接推算。
 7. 未命中、官方信息冲突、区域更名或服务报告区域不存在时，查询官方区域/终端节点资料或本地 KooCLI 支持的区域查询能力。查到唯一对应后继续，无法确定才询问；不得以网络或认证错误为理由换区域。
 
-## 中国站 FunctionGraph 服务筛选
+## 中国站与国际站
 
-2026-11-06 实际读取 [中国站 API Explorer：FunctionGraph 地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/FunctionGraph) 全部三页，共 27 条。下面是其中中国境内的 12 条（内地 11 条、香港 1 条）。中国站是账号/交易站点，不等于仅有中国境内区域；该页面还列有海外及联盟区域，不能由页面站点推断当前账号全部可购买。
+两站共用下面的区域名称映射，不把中国站等同于中国境内，也不把国际站等同于海外区域。保留当前凭证对应的账号上下文；不能从 AK 字符串、region ID 或本机语言猜测站点，不能为消除错误自动切换账号/站点。
 
-### 未带汽车或友好环境限定的境内条目
+2026-11-06 已分别读取以下页面全部三页，两边均展示相同的 27 条 FunctionGraph 终端节点：
 
-| 区域 | region ID | 官方 Endpoint |
-| --- | --- | --- |
-| 华北-北京一 | cn-north-1 | functiongraph.cn-north-1.myhuaweicloud.com |
-| 华北-北京四 | cn-north-4 | functiongraph.cn-north-4.myhuaweicloud.com |
-| 华北-乌兰察布一 | cn-north-9 | functiongraph.cn-north-9.myhuaweicloud.com |
-| 华东-上海一 | cn-east-3 | functiongraph.cn-east-3.myhuaweicloud.com |
-| 华东-上海二 | cn-east-2 | functiongraph.cn-east-2.myhuaweicloud.com |
-| 华东二 | cn-east-4 | functiongraph.cn-east-4.myhuaweicloud.com |
-| 华南-广州 | cn-south-1 | functiongraph.cn-south-1.myhuaweicloud.com |
-| 西南-贵阳一 | cn-southwest-2 | functiongraph.cn-southwest-2.myhuaweicloud.com |
-| 中国-香港 | ap-southeast-1 | functiongraph.ap-southeast-1.myhuaweicloud.com |
+- [中国站 FunctionGraph 地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/FunctionGraph)
+- [国际站 FunctionGraph 地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/FunctionGraph)
 
-### 带专用限定的境内条目
+这是公开目录的查询快照，不是所有账号的可购买承诺。通用区域表与 FunctionGraph 表的合并结果共 33 个 region ID；北京二、深圳、青岛、华北三、开罗、巴黎来自通用区域资料，此次未见于 FunctionGraph 目录，仍保留名称解析能力。
 
-| 区域 | region ID | 官方 Endpoint |
-| --- | --- | --- |
-| 华北-乌兰察布-汽车一 | cn-north-11 | functiongraph.cn-north-11.myhuaweicloud.com |
-| 华南-广州-友好用户环境 | cn-south-4 | functiongraph.cn-south-4.myhuaweicloud.com |
-| 西南-贵阳-汽车二 | cn-southwest-3 | functiongraph.cn-southwest-3.myhuaweicloud.com |
+## 运行时不支持的处理
 
-这三项仅在用户明确选择、账号权限及产品支持核实后使用，不作为普通区域缺货时的替代。
+名称解析与服务能力检查分开进行，静态映射不作为拒绝列表。表内外明确的目标区域均先按官方能力和只读查询核实；未知名称查官方映射，无法唯一解析再询问。完成查询后若区域/局点不支持 FunctionGraph、所需 HTTP 功能或 APIG，正常提示具体缺项并停止该依赖的创建，不自动换区、不反复购买。
 
-中国站部署先用本节筛选 FunctionGraph 候选，再进行账号、HTTP 函数和 APIG 可用性检查。Endpoint 存在只证明官方列出该服务入口，不保证当前账号已开通、HTTP 模板/运行时可用或 APIG 可售。参见 [FunctionGraph 产品功能](https://support.huaweicloud.com/productdesc-functiongraph/functiongraph_01_0141.html)，官方要求按控制台查询具体功能的区域支持。
+保留服务错误码及脱敏说明，区分以下结果：
 
-通用表中的北京二、深圳、青岛、华北三未出现在此次 FunctionGraph 列表中。用户明确选择时先核实最新服务支持，不直接发起创建，也不擅自换区；表中未列出不等于永久不支持。海外部署仍使用官方 FunctionGraph 对应条目核实，不能把本节的境内子集称作中国站完整可售列表。
+- 明确不支持：说明账号上下文、区域和不支持的服务/功能；可列经核实的替代区域供用户选择。
+- 401/403：说明认证或权限问题，不能断言区域不支持。
+- 配额、库存或账户条件限制：如实提示对应原因，不能升级规格或更换站点绕过。
+- 网络超时或查询不完整：说明暂时无法核实，不标记永久不支持。
+
+存在 FunctionGraph Endpoint 仍需分别验证 HTTP 函数和 APIG，不能推导所有功能可用。账号站点需要影响报价/购买而无法从现有上下文确定时再询问一次。依据：[FunctionGraph 产品功能](https://support.huaweicloud.com/productdesc-functiongraph/functiongraph_01_0141.html)、[中国站与国际站差异](https://support.huaweicloud.com/usermanual-account/account_id_015.html)。
 
 ## 通用区域名称映射（不代表 FunctionGraph 支持）
 
@@ -85,6 +77,14 @@
 | 欧洲-都柏林 | 都柏林 | eu-west-101 |
 | 欧洲-巴黎 | 巴黎 | eu-west-0 |
 | 中东-阿布扎比-OP5 | 阿布扎比OP5 | ae-ad-1 |
+
+以下 3 项补自上述中国站及国际站 FunctionGraph 终端节点页面，限定词不能丢失：
+
+| 官方名称 | 常用简称 | region ID |
+| --- | --- | --- |
+| 西南-贵阳-汽车二 | 贵阳汽车二、贵阳汽车2 | cn-southwest-3 |
+| 亚太-吉隆坡-OP6 | 吉隆坡OP6 | my-kualalumpur-1 |
+| 俄罗斯-莫斯科-OP4 | 莫斯科OP4 | ru-moscow-1 |
 
 ## 用法与维护
 
