@@ -1,6 +1,6 @@
 # 区域名称与 region ID
 
-核实日期：2026-11-06。此表缓存官方区域名称和 ID，供自然语言输入优先本地匹配；不是 FunctionGraph/APIG 的可用区域或可售规格清单。部署前仍需查询目标服务和账号可用性。project ID 属于账号，不能写成公共映射。
+核实日期：2026-11-06。此表缓存官方区域名称和 ID，供自然语言输入优先本地匹配；不是 OBS/RDS 的服务可用区域清单。部署前仍需查询目标服务和账号可用性。project ID 属于账号，不能写成公共映射。
 
 ## 匹配规则
 
@@ -16,16 +16,11 @@
 
 两站共用下面的区域名称映射，不把中国站等同于中国境内，也不把国际站等同于海外区域。保留当前凭证对应的账号上下文；不能从 AK 字符串、region ID 或本机语言猜测站点，不能为消除错误自动切换账号/站点。
 
-2026-11-06 已分别读取以下页面全部三页，两边均展示相同的 27 条 FunctionGraph 终端节点：
-
-- [中国站 FunctionGraph 地区和终端节点](https://console.huaweicloud.com/apiexplorer/#/endpoint/FunctionGraph)
-- [国际站 FunctionGraph 地区和终端节点](https://console-intl.huaweicloud.com/apiexplorer/#/endpoint/FunctionGraph)
-
-这是公开目录的查询快照，不是所有账号的可购买承诺。通用区域表与 FunctionGraph 表的合并结果共 33 个 region ID；北京二、深圳、青岛、华北三、开罗、巴黎来自通用区域资料，此次未见于 FunctionGraph 目录，仍保留名称解析能力。
+保留中国站和国际站的区域名称解析；账号站点、OBS 桶所在区域、RDS 应用所在区域和 CDN 加速范围分别核实。CDN 的中国大陆/境外/全球是加速范围，不是 OBS region ID。使用对应站点的官方终端节点目录检查 OBS、RDS 实际能力；仅有 IAM 区域名称并不代表能创建这些服务。
 
 ## 运行时不支持的处理
 
-名称解析与服务能力检查分开进行，静态映射不作为拒绝列表。表内外明确的目标区域均先按官方能力和只读查询核实；未知名称查官方映射，无法唯一解析再询问。完成查询后若区域/局点不支持 FunctionGraph、所需 HTTP 功能或 APIG，正常提示具体缺项并停止该依赖的创建，不自动换区、不反复购买。
+名称解析与服务能力检查分开进行，静态映射不作为拒绝列表。表内外明确的目标区域均先按官方能力和只读查询核实；未知名称查官方映射，无法唯一解析再询问。完成查询后若区域/局点不支持 OBS、RDS Supabase 或所需 CDN 功能，正常提示具体缺项并停止该依赖的创建，不自动换区、不反复购买。
 
 保留服务错误码及脱敏说明，区分以下结果：
 
@@ -34,9 +29,9 @@
 - 配额、库存或账户条件限制：如实提示对应原因，不能升级规格或更换站点绕过。
 - 网络超时或查询不完整：说明暂时无法核实，不标记永久不支持。
 
-存在 FunctionGraph Endpoint 仍需分别验证 HTTP 函数和 APIG，不能推导所有功能可用。账号站点需要影响报价/购买而无法从现有上下文确定时再询问一次。依据：[FunctionGraph 产品功能](https://support.huaweicloud.com/productdesc-functiongraph/functiongraph_01_0141.html)、[中国站与国际站差异](https://support.huaweicloud.com/usermanual-account/account_id_015.html)。
+分别核实 OBS 桶区域、已有 RDS Supabase 应用可用性及 CDN 回源/加速范围；跨区访问还要评估延迟和费用。仅在对应 API 需要时解析账号项目 ID。账号站点影响报价而无法从上下文确定时再询问。依据：[中国站与国际站差异](https://support.huaweicloud.com/usermanual-account/account_id_015.html)。
 
-## 通用区域名称映射（不代表 FunctionGraph 支持）
+## 通用区域名称映射（不代表具体服务支持）
 
 下列 25 项来自 [IAM 官方区域表](https://support.huaweicloud.com/intl/zh-cn/usermanual-iam5/iam_01_1334.html)。来源是 IAM 文档，仅借用区域名称与 ID，不推导其他产品可用性。
 
@@ -78,7 +73,7 @@
 | 欧洲-巴黎 | 巴黎 | eu-west-0 |
 | 中东-阿布扎比-OP5 | 阿布扎比OP5 | ae-ad-1 |
 
-以下 3 项补自上述中国站及国际站 FunctionGraph 终端节点页面，限定词不能丢失：
+以下 3 项保留自旧版已核对的中国站/国际站终端节点目录；仅作为名称映射，执行时到对应站点 OBS/RDS 目录复核，限定词不能丢失：
 
 | 官方名称 | 常用简称 | region ID |
 | --- | --- | --- |

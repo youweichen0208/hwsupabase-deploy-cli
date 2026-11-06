@@ -1,4 +1,0 @@
-interface:
-  display_name: "华为云 FunctionGraph Web 部署"
-  short_description: "使用 KooCLI 创建和部署 Flask、Express、Django 应用"
-  default_prompt: "使用 $huawei-functiongraph-web 识别当前项目，通过 KooCLI 部署到华为云 FunctionGraph，并验证页面和接口。"
