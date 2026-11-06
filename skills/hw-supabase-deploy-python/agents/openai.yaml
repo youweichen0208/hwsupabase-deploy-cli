@@ -1,4 +1,0 @@
-interface:
-  display_name: "华为云 Python Web 部署"
-  short_description: "通过 FunctionGraph HTTP 函数和 APIG 部署 Flask 与 Django"
-  default_prompt: "使用 $hw-supabase-deploy-python 部署当前 Flask 或 Django 项目并验证 APIG 链路。"

@@ -1,4 +1,0 @@
-interface:
-  display_name: "华为云静态前端部署"
-  short_description: "构建连接 Supabase 的静态前端并以可回退版本发布到 OBS"
-  default_prompt: "使用 $hw-supabase-deploy-web 将当前静态前端发布到客户的 OBS 网站桶。"
