@@ -6,9 +6,9 @@
 
 ![前端托管选择与 Supabase 接入流程：已有平台可保留；华为云有域名走 OBS/CDN，准备域名时先本地预览，明确选择 IP 访问时可用 ECS；也可选择其他云厂商并核实其访问入口。最终由浏览器调用已有 Supabase。](docs/deployment-flow.svg)
 
-[查看完整流程图](docs/deployment-flow.svg) · [下载 Excalidraw 可编辑源文件](docs/deployment-flow.excalidraw)
+[查看完整流程图](docs/deployment-flow.svg) · [编辑文字版 SVG](docs/deployment-flow-editable.svg) · [Excalidraw 结构源文件](docs/deployment-flow.excalidraw)
 
-流程图采用 pastel-handdrawn-diagrams 风格：白底、柔和彩色节点、深色圆角轮廓与手写字体；将 `.excalidraw` 文件拖入 Excalidraw 即可编辑。SVG 已嵌入字体子集，字体来源与许可见 [字体说明](docs/diagram-fonts.txt)。
+三种部署场景横向并排，底部共用浏览器访问与 Supabase 接入链路。流程图采用 pastel-handdrawn-diagrams 风格：白底、柔和彩色节点、深色圆角轮廓与手写字体；中文采用 HanziPen SC 纤细手写体，英文保留原手写字体。展示版 SVG 的中文已转为轮廓，跨设备显示一致；文字可编辑版需本机安装 HanziPen SC。Excalidraw 文件保留结构与标签，其字体回退可能与展示版不同。英文嵌入字体的来源与许可见 [字体说明](docs/diagram-fonts.txt)。
 
 图例：**浅蓝**表示主要托管步骤，**浅橙**表示域名准备，**浅紫**表示其他平台选择，**浅绿**表示浏览器访问、Supabase 接入与验收。工作流已覆盖不等于已在真实云环境部署验收。
 
