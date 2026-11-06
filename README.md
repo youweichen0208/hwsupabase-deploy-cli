@@ -23,7 +23,7 @@ $huawei-functiongraph-web 将当前 Express 项目部署到华为云 FunctionGra
 $huawei-functiongraph-web 创建一个 Flask 项目，并连接已有 RDS Supabase。
 ```
 
-部署需要安装官方 KooCLI，并配置对应账号的认证和权限。区域、目标资源、访问方式及新增资源费用由执行流程核实；明确授权后继续操作。真实凭证不写入仓库或聊天。
+部署需要安装官方 KooCLI，并安全配置具有相应权限的 AK/SK 和目标区域。Skill 优先复用 KooCLI 自动获取 project ID，查询现有函数、APIG 和网络资源；首次创建返回的 ID 和访问地址自动记录，无需预填。已有有效认证配置可直接使用，临时凭证还需安全令牌。仅在资源选择有歧义、自动发现受阻或操作超出已有授权时询问。真实凭证不写入仓库或聊天。
 
 ## 指引
 
