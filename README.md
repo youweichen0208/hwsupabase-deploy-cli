@@ -8,9 +8,9 @@
 
 [查看完整流程图](docs/deployment-flow.svg) · [下载 Excalidraw 可编辑源文件](docs/deployment-flow.excalidraw)
 
-流程图采用 Excalidraw 风格的手绘线条与字体；将 `.excalidraw` 文件拖入 Excalidraw 即可编辑。SVG 已嵌入字体子集，字体来源与许可见 [字体说明](docs/diagram-fonts.txt)。
+流程图采用 Sketch Mode 参考风格：暖白背景、浅蓝节点、细手绘线条与手写字体；将 `.excalidraw` 文件拖入 Excalidraw 即可编辑。SVG 已嵌入字体子集，字体来源与许可见 [字体说明](docs/diagram-fonts.txt)。
 
-图例：**蓝色**表示已编写发布与回退指引的托管路线；**绿色**表示共同的浏览器访问与 Supabase 接入链路。工作流已覆盖不等于已在真实云环境部署验收。
+图例：**浅蓝框**表示流程节点；**绿色文字**强调起点、Supabase 接入与最终验收。工作流已覆盖不等于已在真实云环境部署验收。
 
 - 前端已在其他平台托管时，可以保留现有部署；尚未托管时，也可以选择其他云厂商及其托管服务，按实际能力使用自有域名或平台提供的可用入口。平台选择不限于 Vercel、Cloudflare，也不假设每家都提供免费默认域名。
 - 选择华为云且已有可用域名时，使用私有 OBS＋CDN；准备办理域名时，先完成本地构建与预览，待证书及适用备案条件齐备后上线。

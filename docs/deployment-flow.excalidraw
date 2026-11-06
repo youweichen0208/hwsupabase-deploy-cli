@@ -4,1473 +4,68 @@
   "source": "https://excalidraw.com",
   "elements": [
     {
-      "id": "start",
-      "type": "rectangle",
-      "x": 269,
-      "y": 123.5,
-      "width": 502,
-      "height": 81.30000305175781,
-      "angle": 0,
-      "strokeColor": "#2b8a3e",
-      "backgroundColor": "#d3f9d8",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "start-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 101,
-      "version": 1,
-      "versionNonce": 101,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "existing-platform",
-      "type": "rectangle",
-      "x": 64,
-      "y": 252,
-      "width": 912,
-      "height": 184,
-      "angle": 0,
-      "strokeColor": "#adb5bd",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "dashed",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 102,
-      "version": 1,
-      "versionNonce": 102,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "existing-site",
-      "type": "rectangle",
-      "x": 89,
-      "y": 314.5,
-      "width": 352,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "existing-site-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 103,
-      "version": 1,
-      "versionNonce": 103,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "keep-hosting",
-      "type": "rectangle",
-      "x": 529,
-      "y": 314.5,
-      "width": 422,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "keep-hosting-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 104,
-      "version": 1,
-      "versionNonce": 104,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "huawei",
-      "type": "rectangle",
-      "x": 64,
-      "y": 466,
-      "width": 912,
-      "height": 510,
-      "angle": 0,
-      "strokeColor": "#adb5bd",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "dashed",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 105,
-      "version": 1,
-      "versionNonce": 105,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "domain-ready",
-      "type": "rectangle",
-      "x": 89,
-      "y": 539.5,
-      "width": 242,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "domain-ready-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 106,
-      "version": 1,
-      "versionNonce": 106,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "prerequisites",
-      "type": "rectangle",
-      "x": 379,
-      "y": 539.5,
-      "width": 292,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "prerequisites-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 107,
-      "version": 1,
-      "versionNonce": 107,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "domain-pending",
-      "type": "rectangle",
-      "x": 89,
-      "y": 659.5,
-      "width": 242,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "domain-pending-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 108,
-      "version": 1,
-      "versionNonce": 108,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "local-preview",
-      "type": "rectangle",
-      "x": 379,
-      "y": 659.5,
-      "width": 292,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "local-preview-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 109,
-      "version": 1,
-      "versionNonce": 109,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "obs-cdn",
-      "type": "rectangle",
-      "x": 734,
-      "y": 595.5,
-      "width": 222,
-      "height": 101.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "obs-cdn-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 110,
-      "version": 1,
-      "versionNonce": 110,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "ip-choice",
-      "type": "rectangle",
-      "x": 89,
-      "y": 825.5,
-      "width": 242,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "ip-choice-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 111,
-      "version": 1,
-      "versionNonce": 111,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "ecs",
-      "type": "rectangle",
-      "x": 379,
-      "y": 825.5,
-      "width": 292,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "ecs-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 112,
-      "version": 1,
-      "versionNonce": 112,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "ip-entry",
-      "type": "rectangle",
-      "x": 734,
-      "y": 825.5,
-      "width": 222,
-      "height": 81.29998779296875,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "ip-entry-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 113,
-      "version": 1,
-      "versionNonce": 113,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "new-platform",
-      "type": "rectangle",
-      "x": 64,
-      "y": 1006,
-      "width": 912,
-      "height": 192,
-      "angle": 0,
-      "strokeColor": "#adb5bd",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1,
-      "strokeStyle": "dashed",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 114,
-      "version": 1,
-      "versionNonce": 114,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "choose-platform",
-      "type": "rectangle",
-      "x": 89,
-      "y": 1064.5,
-      "width": 352,
-      "height": 81.300048828125,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "choose-platform-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 115,
-      "version": 1,
-      "versionNonce": 115,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "platform-deploy",
-      "type": "rectangle",
-      "x": 529,
-      "y": 1064.5,
-      "width": 422,
-      "height": 81.300048828125,
-      "angle": 0,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#d0ebff",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "platform-deploy-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 116,
-      "version": 1,
-      "versionNonce": 116,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "browser",
-      "type": "rectangle",
-      "x": 239,
-      "y": 1249.5,
-      "width": 562,
-      "height": 77.300048828125,
-      "angle": 0,
-      "strokeColor": "#2b8a3e",
-      "backgroundColor": "#d3f9d8",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "browser-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 117,
-      "version": 1,
-      "versionNonce": 117,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "supabase",
-      "type": "rectangle",
-      "x": 179,
-      "y": 1371.5,
-      "width": 682,
-      "height": 101.300048828125,
-      "angle": 0,
-      "strokeColor": "#2b8a3e",
-      "backgroundColor": "#d3f9d8",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "supabase-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 118,
-      "version": 1,
-      "versionNonce": 118,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "acceptance",
-      "type": "rectangle",
-      "x": 239,
-      "y": 1509.5,
-      "width": 562,
-      "height": 71.300048828125,
-      "angle": 0,
-      "strokeColor": "#2b8a3e",
-      "backgroundColor": "#d3f9d8",
-      "fillStyle": "solid",
-      "strokeWidth": 1.8,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "acceptance-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 119,
-      "version": 1,
-      "versionNonce": 119,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false
-    },
-    {
-      "id": "edge-19",
-      "type": "arrow",
-      "x": 441,
-      "y": 355,
-      "width": 87,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 120,
-      "version": 1,
-      "versionNonce": 120,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          87,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-20",
-      "type": "arrow",
-      "x": 332,
-      "y": 580,
-      "width": 46,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 121,
-      "version": 1,
-      "versionNonce": 121,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          46,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-21",
-      "type": "arrow",
-      "x": 332,
-      "y": 700,
-      "width": 46,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 122,
-      "version": 1,
-      "versionNonce": 122,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          46,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-22",
-      "type": "arrow",
-      "x": 672,
-      "y": 580,
-      "width": 61,
-      "height": 44,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 123,
-      "version": 1,
-      "versionNonce": 123,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          28,
-          0
-        ],
-        [
-          28,
-          44
-        ],
-        [
-          61,
-          44
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-23",
-      "type": "arrow",
-      "x": 672,
-      "y": 700,
-      "width": 61,
-      "height": 40,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 124,
-      "version": 1,
-      "versionNonce": 124,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          28,
-          0
-        ],
-        [
-          28,
-          -40
-        ],
-        [
-          61,
-          -40
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-24",
-      "type": "arrow",
-      "x": 332,
-      "y": 866,
-      "width": 46,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 125,
-      "version": 1,
-      "versionNonce": 125,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          46,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-25",
-      "type": "arrow",
-      "x": 672,
-      "y": 866,
-      "width": 61,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 126,
-      "version": 1,
-      "versionNonce": 126,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          61,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-26",
-      "type": "arrow",
-      "x": 442,
-      "y": 1105,
-      "width": 86,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 127,
-      "version": 1,
-      "versionNonce": 127,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          86,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-27",
-      "type": "line",
-      "x": 952,
-      "y": 355,
-      "width": 486,
-      "height": 869,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 128,
-      "version": 1,
-      "versionNonce": 128,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          54,
-          0
-        ],
-        [
-          54,
-          869
-        ],
-        [
-          -432,
-          869
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": null
-    },
-    {
-      "id": "edge-28",
-      "type": "line",
-      "x": 957,
-      "y": 646,
-      "width": 49,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 129,
-      "version": 1,
-      "versionNonce": 129,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          49,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": null
-    },
-    {
-      "id": "edge-29",
-      "type": "line",
-      "x": 957,
-      "y": 866,
-      "width": 49,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 130,
-      "version": 1,
-      "versionNonce": 130,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          49,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": null
-    },
-    {
-      "id": "edge-30",
-      "type": "line",
-      "x": 952,
-      "y": 1105,
-      "width": 54,
-      "height": 0,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 131,
-      "version": 1,
-      "versionNonce": 131,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          54,
-          0
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": null
-    },
-    {
-      "id": "edge-31",
-      "type": "arrow",
-      "x": 520,
-      "y": 1224,
-      "width": 0,
-      "height": 24,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 132,
-      "version": 1,
-      "versionNonce": 132,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          24
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-32",
-      "type": "arrow",
-      "x": 520,
-      "y": 1328,
-      "width": 0,
-      "height": 42,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 133,
-      "version": 1,
-      "versionNonce": 133,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          42
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-33",
-      "type": "arrow",
-      "x": 520,
-      "y": 1474,
-      "width": 0,
-      "height": 34,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 134,
-      "version": 1,
-      "versionNonce": 134,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          34
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-34",
-      "type": "arrow",
-      "x": 520,
-      "y": 205,
-      "width": 486,
-      "height": 148,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 135,
-      "version": 1,
-      "versionNonce": 135,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          19
-        ],
-        [
-          -14,
-          27
-        ],
-        [
-          -486,
-          27
-        ],
-        [
-          -486,
-          148
-        ],
-        [
-          -432,
-          148
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-35",
-      "type": "arrow",
-      "x": 34,
-      "y": 353,
-      "width": 54,
-      "height": 227,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 136,
-      "version": 1,
-      "versionNonce": 136,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          227
-        ],
-        [
-          54,
-          227
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-36",
-      "type": "arrow",
-      "x": 34,
-      "y": 580,
-      "width": 54,
-      "height": 120,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 137,
-      "version": 1,
-      "versionNonce": 137,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          120
-        ],
-        [
-          54,
-          120
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-37",
-      "type": "arrow",
-      "x": 34,
-      "y": 700,
-      "width": 54,
-      "height": 166,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 138,
-      "version": 1,
-      "versionNonce": 138,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          166
-        ],
-        [
-          54,
-          166
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "edge-38",
-      "type": "arrow",
-      "x": 34,
-      "y": 866,
-      "width": 54,
-      "height": 239,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
-      "frameId": null,
-      "roundness": null,
-      "seed": 139,
-      "version": 1,
-      "versionNonce": 139,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          0,
-          239
-        ],
-        [
-          54,
-          239
-        ]
-      ],
-      "startBinding": null,
-      "endBinding": null,
-      "lastCommittedPoint": null,
-      "startArrowhead": null,
-      "endArrowhead": "arrow"
-    },
-    {
-      "id": "text-0",
+      "id": "sketch-811",
       "type": "text",
       "x": 64,
-      "y": 26,
-      "width": 416,
-      "height": 40,
+      "y": 22,
+      "width": 113.124,
+      "height": 15,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#153c59",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 140,
+      "seed": 811,
       "version": 1,
-      "versionNonce": 140,
+      "versionNonce": 811,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 32,
+      "fontSize": 12,
+      "fontFamily": 1,
+      "text": "DEPLOYMENT MAP",
+      "originalText": "DEPLOYMENT MAP",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-812",
+      "type": "text",
+      "x": 64,
+      "y": 39,
+      "width": 429,
+      "height": 41.25,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 812,
+      "version": 1,
+      "versionNonce": 812,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 33,
       "fontFamily": 1,
       "text": "前端放哪里，用户怎么访问？",
       "originalText": "前端放哪里，用户怎么访问？",
@@ -1481,35 +76,35 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-1",
+      "id": "sketch-813",
       "type": "text",
       "x": 64,
-      "y": 74,
-      "width": 323.874,
-      "height": 22.5,
+      "y": 87,
+      "width": 299.895,
+      "height": 18.75,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 141,
+      "seed": 813,
       "version": 1,
-      "versionNonce": 141,
+      "versionNonce": 813,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 15,
       "fontFamily": 1,
-      "text": "部署选择 × 访问入口 × 已有 Supabase",
-      "originalText": "部署选择 × 访问入口 × 已有 Supabase",
+      "text": "托管路线 × 真实访问入口 × 已有 Supabase",
+      "originalText": "托管路线 × 真实访问入口 × 已有 Supabase",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -1517,34 +112,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-2",
-      "type": "text",
-      "x": 353.889,
-      "y": 134,
-      "width": 332.222,
-      "height": 27.5,
+      "id": "sketch-814",
+      "type": "line",
+      "x": 64,
+      "y": 114,
+      "width": 224,
+      "height": 1.5,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "start-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 142,
+      "seed": 814,
       "version": 1,
-      "versionNonce": 142,
+      "versionNonce": 814,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          5.5987701416015625,
+          -0.14586639404296875
+        ],
+        [
+          11.197715759277344,
+          -0.2847137451171875
+        ],
+        [
+          16.796852111816406,
+          -0.4159393310546875
+        ],
+        [
+          22.396156311035156,
+          -0.5395660400390625
+        ],
+        [
+          27.99560546875,
+          -0.656158447265625
+        ],
+        [
+          33.59523010253906,
+          -0.764556884765625
+        ],
+        [
+          39.194984436035156,
+          -0.8659286499023438
+        ],
+        [
+          44.79486846923828,
+          -0.9596786499023438
+        ],
+        [
+          50.394874572753906,
+          -1.0458221435546875
+        ],
+        [
+          55.99498748779297,
+          -1.1249313354492188
+        ],
+        [
+          61.59520721435547,
+          -1.1958389282226562
+        ],
+        [
+          67.19551086425781,
+          -1.2597198486328125
+        ],
+        [
+          72.7958984375,
+          -1.31597900390625
+        ],
+        [
+          78.39634704589844,
+          -1.3646163940429688
+        ],
+        [
+          83.99687194824219,
+          -1.4062271118164062
+        ],
+        [
+          89.59742736816406,
+          -1.43963623046875
+        ],
+        [
+          95.19804382324219,
+          -1.4660110473632812
+        ],
+        [
+          100.79867553710938,
+          -1.4847640991210938
+        ],
+        [
+          106.39933776855469,
+          -1.4958953857421875
+        ],
+        [
+          112.00001525878906,
+          -1.5
+        ],
+        [
+          117.60067749023438,
+          -1.4958953857421875
+        ],
+        [
+          123.20133972167969,
+          -1.4847640991210938
+        ],
+        [
+          128.80197143554688,
+          -1.4660110473632812
+        ],
+        [
+          134.40260314941406,
+          -1.43963623046875
+        ],
+        [
+          140.00315856933594,
+          -1.4062271118164062
+        ],
+        [
+          145.6036834716797,
+          -1.3646163940429688
+        ],
+        [
+          151.20411682128906,
+          -1.31597900390625
+        ],
+        [
+          156.80450439453125,
+          -1.2597198486328125
+        ],
+        [
+          162.40480041503906,
+          -1.1958389282226562
+        ],
+        [
+          168.00503540039062,
+          -1.1249313354492188
+        ],
+        [
+          173.60513305664062,
+          -1.0458221435546875
+        ],
+        [
+          179.2051239013672,
+          -0.9596786499023438
+        ],
+        [
+          184.8050079345703,
+          -0.8659286499023438
+        ],
+        [
+          190.40475463867188,
+          -0.764556884765625
+        ],
+        [
+          196.00439453125,
+          -0.656158447265625
+        ],
+        [
+          201.60385131835938,
+          -0.5395660400390625
+        ],
+        [
+          207.20315551757812,
+          -0.4159393310546875
+        ],
+        [
+          212.80230712890625,
+          -0.2847137451171875
+        ],
+        [
+          218.40121459960938,
+          -0.14586639404296875
+        ],
+        [
+          224,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-815",
+      "type": "rectangle",
+      "x": 309,
+      "y": 124.5,
+      "width": 424,
+      "height": 78.78572082519531,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "start"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 815,
+      "version": 1,
+      "versionNonce": 815,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-816",
+      "type": "text",
+      "x": 384.091,
+      "y": 141,
+      "width": 271.818,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#32654c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "start"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 816,
+      "version": 1,
+      "versionNonce": 816,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "静态前端＋已有华为云 Supabase",
       "originalText": "静态前端＋已有华为云 Supabase",
@@ -1555,34 +377,34 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-3",
+      "id": "sketch-817",
       "type": "text",
-      "x": 337.696,
-      "y": 168,
-      "width": 364.608,
-      "height": 22.5,
+      "x": 378.20799999999997,
+      "y": 171,
+      "width": 283.584,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "start-group"
+        "start"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 143,
+      "seed": 817,
       "version": 1,
-      "versionNonce": 143,
+      "versionNonce": 817,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
       "text": "SSR / 服务端 API 需求需另行设计运行环境",
       "originalText": "SSR / 服务端 API 需求需另行设计运行环境",
@@ -1593,32 +415,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-4",
-      "type": "text",
-      "x": 90,
-      "y": 264,
-      "width": 248.975,
-      "height": 31.25,
+      "id": "sketch-818",
+      "type": "line",
+      "x": 520,
+      "y": 205,
+      "width": 478,
+      "height": 757,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 144,
+      "seed": 818,
       "version": 1,
-      "versionNonce": 144,
+      "versionNonce": 818,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 25,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -17.875,
+          13.000045776367188
+        ],
+        [
+          -48.75,
+          13.000030517578125
+        ],
+        [
+          -79.625,
+          13.000030517578125
+        ],
+        [
+          -110.5,
+          13.000030517578125
+        ],
+        [
+          -141.375,
+          13.000030517578125
+        ],
+        [
+          -172.25,
+          13.000030517578125
+        ],
+        [
+          -203.125,
+          13.000030517578125
+        ],
+        [
+          -234,
+          13.000015258789062
+        ],
+        [
+          -264.875,
+          13.000015258789062
+        ],
+        [
+          -295.75,
+          13.000015258789062
+        ],
+        [
+          -326.625,
+          13.000015258789062
+        ],
+        [
+          -357.5,
+          13.000015258789062
+        ],
+        [
+          -388.375,
+          13.000015258789062
+        ],
+        [
+          -419.25,
+          13
+        ],
+        [
+          -450.125,
+          13
+        ],
+        [
+          -477.9999694824219,
+          16
+        ],
+        [
+          -477.9999694824219,
+          46.875
+        ],
+        [
+          -477.9999694824219,
+          77.75
+        ],
+        [
+          -477.99997329711914,
+          108.625
+        ],
+        [
+          -477.99997329711914,
+          139.5
+        ],
+        [
+          -477.99997329711914,
+          170.375
+        ],
+        [
+          -477.9999771118164,
+          201.25
+        ],
+        [
+          -477.9999771118164,
+          232.125
+        ],
+        [
+          -477.9999771118164,
+          263
+        ],
+        [
+          -477.9999809265137,
+          293.875
+        ],
+        [
+          -477.9999809265137,
+          324.75
+        ],
+        [
+          -477.9999809265137,
+          355.625
+        ],
+        [
+          -477.99998474121094,
+          386.5
+        ],
+        [
+          -477.99998474121094,
+          417.375
+        ],
+        [
+          -477.99998474121094,
+          448.25
+        ],
+        [
+          -477.9999885559082,
+          479.125
+        ],
+        [
+          -477.9999885559082,
+          510
+        ],
+        [
+          -477.99999237060547,
+          540.875
+        ],
+        [
+          -477.99999237060547,
+          571.75
+        ],
+        [
+          -477.99999237060547,
+          602.625
+        ],
+        [
+          -477.99999618530273,
+          633.5
+        ],
+        [
+          -477.99999618530273,
+          664.375
+        ],
+        [
+          -477.99999618530273,
+          695.25
+        ],
+        [
+          -478,
+          726.125
+        ],
+        [
+          -478,
+          757
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-819",
+      "type": "rectangle",
+      "x": 64,
+      "y": 236.5,
+      "width": 912,
+      "height": 141,
+      "angle": 0,
+      "strokeColor": "#c5cecf",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 0.6,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 55,
+      "groupIds": [
+        "existing-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 819,
+      "version": 1,
+      "versionNonce": 819,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-820",
+      "type": "text",
+      "x": 92,
+      "y": 249,
+      "width": 209.139,
+      "height": 26.25,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "existing-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 820,
+      "version": 1,
+      "versionNonce": 820,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 21,
       "fontFamily": 1,
       "text": "01  已在其他平台托管",
       "originalText": "01  已在其他平台托管",
@@ -1629,35 +680,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-5",
+      "id": "sketch-821",
       "type": "text",
-      "x": 764.384,
-      "y": 270,
-      "width": 185.616,
-      "height": 22.5,
+      "x": 826.8875,
+      "y": 256.5,
+      "width": 121.1125,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [],
+      "groupIds": [
+        "existing-platform"
+      ],
       "frameId": null,
       "roundness": null,
-      "seed": 145,
+      "seed": 821,
       "version": 1,
-      "versionNonce": 145,
+      "versionNonce": 821,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
-      "text": "已覆盖 · 保留现有部署",
-      "originalText": "已覆盖 · 保留现有部署",
+      "text": "保留项目、域名与 CI",
+      "originalText": "保留项目、域名与 CI",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -1665,34 +718,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-6",
-      "type": "text",
-      "x": 177,
-      "y": 325,
-      "width": 176,
-      "height": 27.5,
+      "id": "sketch-822",
+      "type": "arrow",
+      "x": 42,
+      "y": 324,
+      "width": 48,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "existing-site-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 146,
+      "seed": 822,
       "version": 1,
-      "versionNonce": 146,
+      "versionNonce": 822,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2000007629394531,
+          0
+        ],
+        [
+          2.4000015258789062,
+          0
+        ],
+        [
+          3.5999984741210938,
+          0
+        ],
+        [
+          4.799999237060547,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7.200000762939453,
+          0
+        ],
+        [
+          8.400001525878906,
+          0
+        ],
+        [
+          9.599998474121094,
+          0
+        ],
+        [
+          10.799999237060547,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13.200000762939453,
+          0
+        ],
+        [
+          14.400001525878906,
+          0
+        ],
+        [
+          15.599998474121094,
+          0
+        ],
+        [
+          16.799999237060547,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19.200000762939453,
+          0
+        ],
+        [
+          20.400001525878906,
+          0
+        ],
+        [
+          21.599998474121094,
+          0
+        ],
+        [
+          22.800003051757812,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.199996948242188,
+          0
+        ],
+        [
+          26.400001525878906,
+          0
+        ],
+        [
+          27.599998474121094,
+          0
+        ],
+        [
+          28.800003051757812,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          31.199996948242188,
+          0
+        ],
+        [
+          32.400001525878906,
+          0
+        ],
+        [
+          33.599998474121094,
+          0
+        ],
+        [
+          34.80000305175781,
+          0
+        ],
+        [
+          36,
+          0
+        ],
+        [
+          37.19999694824219,
+          0
+        ],
+        [
+          38.400001525878906,
+          0
+        ],
+        [
+          39.599998474121094,
+          0
+        ],
+        [
+          40.80000305175781,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          43.19999694824219,
+          0
+        ],
+        [
+          44.400001525878906,
+          0
+        ],
+        [
+          45.599998474121094,
+          0
+        ],
+        [
+          46.80000305175781,
+          0
+        ],
+        [
+          48,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-823",
+      "type": "rectangle",
+      "x": 93,
+      "y": 290.5,
+      "width": 305,
+      "height": 65,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "existing-site"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 823,
+      "version": 1,
+      "versionNonce": 823,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-824",
+      "type": "text",
+      "x": 173,
+      "y": 301,
+      "width": 144,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "existing-site"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 824,
+      "version": 1,
+      "versionNonce": 824,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "已有前端访问地址",
       "originalText": "已有前端访问地址",
@@ -1703,37 +983,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-7",
+      "id": "sketch-825",
       "type": "text",
-      "x": 193,
-      "y": 359,
-      "width": 144,
-      "height": 22.5,
+      "x": 168,
+      "y": 328,
+      "width": 154,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "existing-site-group"
+        "existing-site"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 147,
+      "seed": 825,
       "version": 1,
-      "versionNonce": 147,
+      "versionNonce": 825,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
-      "text": "不必迁移到华为云",
-      "originalText": "不必迁移到华为云",
+      "text": "确认当前用户可正常访问",
+      "originalText": "确认当前用户可正常访问",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -1741,34 +1021,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-8",
-      "type": "text",
-      "x": 619,
-      "y": 325,
-      "width": 242,
-      "height": 27.5,
+      "id": "sketch-826",
+      "type": "arrow",
+      "x": 400,
+      "y": 324,
+      "width": 154,
+      "height": 2,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "keep-hosting-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 148,
+      "seed": 826,
       "version": 1,
-      "versionNonce": 148,
+      "versionNonce": 826,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          3.846954345703125,
+          -0.1920166015625
+        ],
+        [
+          7.694305419921875,
+          -0.375091552734375
+        ],
+        [
+          11.542144775390625,
+          -0.5482177734375
+        ],
+        [
+          15.390411376953125,
+          -0.711761474609375
+        ],
+        [
+          19.239044189453125,
+          -0.865966796875
+        ],
+        [
+          23.088104248046875,
+          -1.0098876953125
+        ],
+        [
+          26.937469482421875,
+          -1.144744873046875
+        ],
+        [
+          30.78717041015625,
+          -1.26922607421875
+        ],
+        [
+          34.637176513671875,
+          -1.38433837890625
+        ],
+        [
+          38.487457275390625,
+          -1.48968505859375
+        ],
+        [
+          42.3380126953125,
+          -1.584930419921875
+        ],
+        [
+          46.18878173828125,
+          -1.670989990234375
+        ],
+        [
+          50.039794921875,
+          -1.746337890625
+        ],
+        [
+          53.89093017578125,
+          -1.812408447265625
+        ],
+        [
+          57.74224853515625,
+          -1.868438720703125
+        ],
+        [
+          61.593719482421875,
+          -1.9144287109375
+        ],
+        [
+          65.44528198242188,
+          -1.951080322265625
+        ],
+        [
+          69.29693603515625,
+          -1.97686767578125
+        ],
+        [
+          73.14862060546875,
+          -1.993316650390625
+        ],
+        [
+          77.00033569335938,
+          -1.999603271484375
+        ],
+        [
+          80.85205078125,
+          -1.9957275390625
+        ],
+        [
+          84.70376586914062,
+          -1.982452392578125
+        ],
+        [
+          88.555419921875,
+          -1.958221435546875
+        ],
+        [
+          92.40701293945312,
+          -1.924530029296875
+        ],
+        [
+          96.25848388671875,
+          -1.880615234375
+        ],
+        [
+          100.10983276367188,
+          -1.826416015625
+        ],
+        [
+          103.96102905273438,
+          -1.7626953125
+        ],
+        [
+          107.81204223632812,
+          -1.688018798828125
+        ],
+        [
+          111.662841796875,
+          -1.603668212890625
+        ],
+        [
+          115.513427734375,
+          -1.5091552734375
+        ],
+        [
+          119.36370849609375,
+          -1.40411376953125
+        ],
+        [
+          123.2137451171875,
+          -1.289459228515625
+        ],
+        [
+          127.06341552734375,
+          -1.163909912109375
+        ],
+        [
+          130.91278076171875,
+          -1.0284423828125
+        ],
+        [
+          134.76177978515625,
+          -0.882965087890625
+        ],
+        [
+          138.61029052734375,
+          -0.72662353515625
+        ],
+        [
+          142.45843505859375,
+          -0.560577392578125
+        ],
+        [
+          146.30615234375,
+          -0.38385009765625
+        ],
+        [
+          150.1533203125,
+          -0.196807861328125
+        ],
+        [
+          154,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-827",
+      "type": "rectangle",
+      "x": 557,
+      "y": 290.5,
+      "width": 387,
+      "height": 65,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "keep-hosting"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 827,
+      "version": 1,
+      "versionNonce": 827,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-828",
+      "type": "text",
+      "x": 651,
+      "y": 301,
+      "width": 198,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "keep-hosting"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 828,
+      "version": 1,
+      "versionNonce": 828,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "复用现有托管与发布方式",
       "originalText": "复用现有托管与发布方式",
@@ -1779,37 +1286,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-9",
+      "id": "sketch-829",
       "type": "text",
-      "x": 641,
-      "y": 359,
-      "width": 198,
-      "height": 22.5,
+      "x": 644.293,
+      "y": 328,
+      "width": 211.414,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "keep-hosting-group"
+        "keep-hosting"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 149,
+      "seed": 829,
       "version": 1,
-      "versionNonce": 149,
+      "versionNonce": 829,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
-      "text": "确认用户能打开当前前端",
-      "originalText": "确认用户能打开当前前端",
+      "text": "只接入 Supabase，或按请求更新",
+      "originalText": "只接入 Supabase，或按请求更新",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -1817,32 +1324,63 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-10",
-      "type": "text",
-      "x": 90,
-      "y": 478,
-      "width": 235,
-      "height": 31.25,
+      "id": "sketch-830",
+      "type": "rectangle",
+      "x": 64,
+      "y": 400.5,
+      "width": 912,
+      "height": 449,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#c5cecf",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 0.6,
       "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
+      "roughness": 1.2,
+      "opacity": 55,
+      "groupIds": [
+        "huawei"
+      ],
       "frameId": null,
       "roundness": null,
-      "seed": 150,
+      "seed": 830,
       "version": 1,
-      "versionNonce": 150,
+      "versionNonce": 830,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-831",
+      "type": "text",
+      "x": 92,
+      "y": 413,
+      "width": 197.4,
+      "height": 26.25,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "huawei"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 831,
+      "version": 1,
+      "versionNonce": 831,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 25,
+      "fontSize": 21,
       "fontFamily": 1,
       "text": "02  选择华为云托管",
       "originalText": "02  选择华为云托管",
@@ -1853,35 +1391,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-11",
+      "id": "sketch-832",
       "type": "text",
-      "x": 725.234,
-      "y": 484,
-      "width": 224.766,
-      "height": 22.5,
+      "x": 798,
+      "y": 420.5,
+      "width": 150,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [],
+      "groupIds": [
+        "huawei"
+      ],
       "frameId": null,
       "roundness": null,
-      "seed": 151,
+      "seed": 832,
       "version": 1,
-      "versionNonce": 151,
+      "versionNonce": 832,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
-      "text": "OBS 与 ECS 均有执行指引",
-      "originalText": "OBS 与 ECS 均有执行指引",
+      "text": "按域名与访问入口选择路线",
+      "originalText": "按域名与访问入口选择路线",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -1889,34 +1429,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-12",
-      "type": "text",
-      "x": 144,
-      "y": 565,
-      "width": 132,
-      "height": 27.5,
+      "id": "sketch-833",
+      "type": "arrow",
+      "x": 42,
+      "y": 506,
+      "width": 48,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "domain-ready-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 152,
+      "seed": 833,
       "version": 1,
-      "versionNonce": 152,
+      "versionNonce": 833,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2000007629394531,
+          0
+        ],
+        [
+          2.4000015258789062,
+          0
+        ],
+        [
+          3.5999984741210938,
+          0
+        ],
+        [
+          4.799999237060547,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7.200000762939453,
+          0
+        ],
+        [
+          8.400001525878906,
+          0
+        ],
+        [
+          9.599998474121094,
+          0
+        ],
+        [
+          10.799999237060547,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13.200000762939453,
+          0
+        ],
+        [
+          14.400001525878906,
+          0
+        ],
+        [
+          15.599998474121094,
+          0
+        ],
+        [
+          16.799999237060547,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19.200000762939453,
+          0
+        ],
+        [
+          20.400001525878906,
+          0
+        ],
+        [
+          21.599998474121094,
+          0
+        ],
+        [
+          22.800003051757812,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.199996948242188,
+          0
+        ],
+        [
+          26.400001525878906,
+          0
+        ],
+        [
+          27.599998474121094,
+          0
+        ],
+        [
+          28.800003051757812,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          31.199996948242188,
+          0
+        ],
+        [
+          32.400001525878906,
+          0
+        ],
+        [
+          33.599998474121094,
+          0
+        ],
+        [
+          34.80000305175781,
+          0
+        ],
+        [
+          36,
+          0
+        ],
+        [
+          37.19999694824219,
+          0
+        ],
+        [
+          38.400001525878906,
+          0
+        ],
+        [
+          39.599998474121094,
+          0
+        ],
+        [
+          40.80000305175781,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          43.19999694824219,
+          0
+        ],
+        [
+          44.400001525878906,
+          0
+        ],
+        [
+          45.599998474121094,
+          0
+        ],
+        [
+          46.80000305175781,
+          0
+        ],
+        [
+          48,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-834",
+      "type": "rectangle",
+      "x": 93,
+      "y": 468.5,
+      "width": 225,
+      "height": 73,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "domain-ready"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 834,
+      "version": 1,
+      "versionNonce": 834,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-835",
+      "type": "text",
+      "x": 151,
+      "y": 494,
+      "width": 108,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "domain-ready"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 835,
+      "version": 1,
+      "versionNonce": 835,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "已有可用域名",
       "originalText": "已有可用域名",
@@ -1927,34 +1694,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-13",
-      "type": "text",
-      "x": 459,
-      "y": 550,
-      "width": 132,
-      "height": 27.5,
+      "id": "sketch-836",
+      "type": "arrow",
+      "x": 320,
+      "y": 506,
+      "width": 64,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "prerequisites-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 153,
+      "seed": 836,
       "version": 1,
-      "versionNonce": 153,
+      "versionNonce": 836,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.600006103515625,
+          0
+        ],
+        [
+          3.20001220703125,
+          0
+        ],
+        [
+          4.79998779296875,
+          0
+        ],
+        [
+          6.399993896484375,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9.600006103515625,
+          0
+        ],
+        [
+          11.20001220703125,
+          0
+        ],
+        [
+          12.79998779296875,
+          0
+        ],
+        [
+          14.399993896484375,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          17.600006103515625,
+          0
+        ],
+        [
+          19.20001220703125,
+          0
+        ],
+        [
+          20.79998779296875,
+          0
+        ],
+        [
+          22.399993896484375,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.600006103515625,
+          0
+        ],
+        [
+          27.20001220703125,
+          0
+        ],
+        [
+          28.79998779296875,
+          0
+        ],
+        [
+          30.399993896484375,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          33.600006103515625,
+          0
+        ],
+        [
+          35.20001220703125,
+          0
+        ],
+        [
+          36.79998779296875,
+          0
+        ],
+        [
+          38.399993896484375,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          41.600006103515625,
+          0
+        ],
+        [
+          43.20001220703125,
+          0
+        ],
+        [
+          44.79998779296875,
+          0
+        ],
+        [
+          46.399993896484375,
+          0
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          49.600006103515625,
+          0
+        ],
+        [
+          51.20001220703125,
+          0
+        ],
+        [
+          52.79998779296875,
+          0
+        ],
+        [
+          54.399993896484375,
+          0
+        ],
+        [
+          56,
+          0
+        ],
+        [
+          57.600006103515625,
+          0
+        ],
+        [
+          59.20001220703125,
+          0
+        ],
+        [
+          60.79998779296875,
+          0
+        ],
+        [
+          62.399993896484375,
+          0
+        ],
+        [
+          64,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-837",
+      "type": "rectangle",
+      "x": 387,
+      "y": 458.5,
+      "width": 257,
+      "height": 93,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "prerequisites"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 837,
+      "version": 1,
+      "versionNonce": 837,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-838",
+      "type": "text",
+      "x": 461,
+      "y": 481,
+      "width": 108,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "prerequisites"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 838,
+      "version": 1,
+      "versionNonce": 838,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "检查上线条件",
       "originalText": "检查上线条件",
@@ -1965,186 +1959,299 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-14",
+      "id": "sketch-839",
       "type": "text",
-      "x": 435,
-      "y": 584,
-      "width": 180,
-      "height": 22.5,
+      "x": 440.632,
+      "y": 512,
+      "width": 148.736,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "prerequisites-group"
+        "prerequisites"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 154,
+      "seed": 839,
       "version": 1,
-      "versionNonce": 154,
+      "versionNonce": 839,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 14,
+      "fontFamily": 1,
+      "text": "域名 · 证书 · 适用备案",
+      "originalText": "域名 · 证书 · 适用备案",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-840",
+      "type": "arrow",
+      "x": 646,
+      "y": 506,
+      "width": 78,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 840,
+      "version": 1,
+      "versionNonce": 840,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.95001220703125,
+          0
+        ],
+        [
+          3.9000244140625,
+          0
+        ],
+        [
+          5.8499755859375,
+          0
+        ],
+        [
+          7.79998779296875,
+          0
+        ],
+        [
+          9.75,
+          0
+        ],
+        [
+          11.70001220703125,
+          0
+        ],
+        [
+          13.6500244140625,
+          0
+        ],
+        [
+          15.5999755859375,
+          0
+        ],
+        [
+          17.54998779296875,
+          0
+        ],
+        [
+          19.5,
+          0
+        ],
+        [
+          21.45001220703125,
+          0
+        ],
+        [
+          23.4000244140625,
+          0
+        ],
+        [
+          25.3499755859375,
+          0
+        ],
+        [
+          27.29998779296875,
+          0
+        ],
+        [
+          29.25,
+          0
+        ],
+        [
+          31.20001220703125,
+          0
+        ],
+        [
+          33.1500244140625,
+          0
+        ],
+        [
+          35.0999755859375,
+          0
+        ],
+        [
+          37.04998779296875,
+          0
+        ],
+        [
+          39,
+          0
+        ],
+        [
+          40.95001220703125,
+          0
+        ],
+        [
+          42.9000244140625,
+          0
+        ],
+        [
+          44.8499755859375,
+          0
+        ],
+        [
+          46.79998779296875,
+          0
+        ],
+        [
+          48.75,
+          0
+        ],
+        [
+          50.70001220703125,
+          0
+        ],
+        [
+          52.6500244140625,
+          0
+        ],
+        [
+          54.5999755859375,
+          0
+        ],
+        [
+          56.54998779296875,
+          0
+        ],
+        [
+          58.5,
+          0
+        ],
+        [
+          60.45001220703125,
+          0
+        ],
+        [
+          62.4000244140625,
+          0
+        ],
+        [
+          64.3499755859375,
+          0
+        ],
+        [
+          66.29998779296875,
+          0
+        ],
+        [
+          68.25,
+          0
+        ],
+        [
+          70.20001220703125,
+          0
+        ],
+        [
+          72.1500244140625,
+          0
+        ],
+        [
+          74.0999755859375,
+          0
+        ],
+        [
+          76.04998779296875,
+          0
+        ],
+        [
+          78,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-841",
+      "type": "rectangle",
+      "x": 727,
+      "y": 458.5,
+      "width": 217,
+      "height": 93,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "obs-cdn"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 841,
+      "version": 1,
+      "versionNonce": 841,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-842",
+      "type": "text",
+      "x": 766.3389999999999,
+      "y": 481,
+      "width": 137.322,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "obs-cdn"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 842,
+      "version": 1,
+      "versionNonce": 842,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
       "fontSize": 18,
-      "fontFamily": 1,
-      "text": "域名、证书及适用备案",
-      "originalText": "域名、证书及适用备案",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-15",
-      "type": "text",
-      "x": 144,
-      "y": 685,
-      "width": 132,
-      "height": 27.5,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "domain-pending-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 155,
-      "version": 1,
-      "versionNonce": 155,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 22,
-      "fontFamily": 1,
-      "text": "准备办理域名",
-      "originalText": "准备办理域名",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-16",
-      "type": "text",
-      "x": 437,
-      "y": 670,
-      "width": 176,
-      "height": 27.5,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "local-preview-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 156,
-      "version": 1,
-      "versionNonce": 156,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 22,
-      "fontFamily": 1,
-      "text": "先本地构建与预览",
-      "originalText": "先本地构建与预览",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-17",
-      "type": "text",
-      "x": 408,
-      "y": 704,
-      "width": 234,
-      "height": 22.5,
-      "angle": 0,
-      "strokeColor": "#495057",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "local-preview-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 157,
-      "version": 1,
-      "versionNonce": 157,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 18,
-      "fontFamily": 1,
-      "text": "域名、证书及备案条件齐备后",
-      "originalText": "域名、证书及备案条件齐备后",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-18",
-      "type": "text",
-      "x": 761.081,
-      "y": 616,
-      "width": 167.838,
-      "height": 27.5,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "obs-cdn-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 158,
-      "version": 1,
-      "versionNonce": 158,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 22,
       "fontFamily": 1,
       "text": "私有 OBS＋CDN",
       "originalText": "私有 OBS＋CDN",
@@ -2155,34 +2262,34 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-19",
+      "id": "sketch-843",
       "type": "text",
-      "x": 773.648,
-      "y": 650,
-      "width": 142.704,
-      "height": 22.5,
+      "x": 779.504,
+      "y": 512,
+      "width": 110.992,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "obs-cdn-group"
+        "obs-cdn"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 159,
+      "seed": 843,
       "version": 1,
-      "versionNonce": 159,
+      "versionNonce": 843,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
       "text": "HTTPS 域名访问",
       "originalText": "HTTPS 域名访问",
@@ -2193,26 +2300,255 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-20",
-      "type": "text",
-      "x": 90,
-      "y": 768,
-      "width": 363.69,
-      "height": 22.5,
+      "id": "sketch-844",
+      "type": "arrow",
+      "x": 42,
+      "y": 620,
+      "width": 48,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 160,
+      "seed": 844,
       "version": 1,
-      "versionNonce": 160,
+      "versionNonce": 844,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2000007629394531,
+          0
+        ],
+        [
+          2.4000015258789062,
+          0
+        ],
+        [
+          3.5999984741210938,
+          0
+        ],
+        [
+          4.799999237060547,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7.200000762939453,
+          0
+        ],
+        [
+          8.400001525878906,
+          0
+        ],
+        [
+          9.599998474121094,
+          0
+        ],
+        [
+          10.799999237060547,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13.200000762939453,
+          0
+        ],
+        [
+          14.400001525878906,
+          0
+        ],
+        [
+          15.599998474121094,
+          0
+        ],
+        [
+          16.799999237060547,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19.200000762939453,
+          0
+        ],
+        [
+          20.400001525878906,
+          0
+        ],
+        [
+          21.599998474121094,
+          0
+        ],
+        [
+          22.800003051757812,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.199996948242188,
+          0
+        ],
+        [
+          26.400001525878906,
+          0
+        ],
+        [
+          27.599998474121094,
+          0
+        ],
+        [
+          28.800003051757812,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          31.199996948242188,
+          0
+        ],
+        [
+          32.400001525878906,
+          0
+        ],
+        [
+          33.599998474121094,
+          0
+        ],
+        [
+          34.80000305175781,
+          0
+        ],
+        [
+          36,
+          0
+        ],
+        [
+          37.19999694824219,
+          0
+        ],
+        [
+          38.400001525878906,
+          0
+        ],
+        [
+          39.599998474121094,
+          0
+        ],
+        [
+          40.80000305175781,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          43.19999694824219,
+          0
+        ],
+        [
+          44.400001525878906,
+          0
+        ],
+        [
+          45.599998474121094,
+          0
+        ],
+        [
+          46.80000305175781,
+          0
+        ],
+        [
+          48,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-845",
+      "type": "rectangle",
+      "x": 93,
+      "y": 582.5,
+      "width": 225,
+      "height": 73,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "domain-pending"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 845,
+      "version": 1,
+      "versionNonce": 845,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-846",
+      "type": "text",
+      "x": 151,
+      "y": 608,
+      "width": 108,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "domain-pending"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 846,
+      "version": 1,
+      "versionNonce": 846,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
@@ -2220,8 +2556,8 @@
       "locked": false,
       "fontSize": 18,
       "fontFamily": 1,
-      "text": "不准备域名，且明确希望通过公网 IP 访问：",
-      "originalText": "不准备域名，且明确希望通过公网 IP 访问：",
+      "text": "准备办理域名",
+      "originalText": "准备办理域名",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2229,34 +2565,996 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-21",
-      "type": "text",
-      "x": 133,
-      "y": 851,
-      "width": 154,
-      "height": 27.5,
+      "id": "sketch-847",
+      "type": "arrow",
+      "x": 320,
+      "y": 620,
+      "width": 64,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "ip-choice-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 161,
+      "seed": 847,
       "version": 1,
-      "versionNonce": 161,
+      "versionNonce": 847,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.600006103515625,
+          0
+        ],
+        [
+          3.20001220703125,
+          0
+        ],
+        [
+          4.79998779296875,
+          0
+        ],
+        [
+          6.399993896484375,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9.600006103515625,
+          0
+        ],
+        [
+          11.20001220703125,
+          0
+        ],
+        [
+          12.79998779296875,
+          0
+        ],
+        [
+          14.399993896484375,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          17.600006103515625,
+          0
+        ],
+        [
+          19.20001220703125,
+          0
+        ],
+        [
+          20.79998779296875,
+          0
+        ],
+        [
+          22.399993896484375,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.600006103515625,
+          0
+        ],
+        [
+          27.20001220703125,
+          0
+        ],
+        [
+          28.79998779296875,
+          0
+        ],
+        [
+          30.399993896484375,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          33.600006103515625,
+          0
+        ],
+        [
+          35.20001220703125,
+          0
+        ],
+        [
+          36.79998779296875,
+          0
+        ],
+        [
+          38.399993896484375,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          41.600006103515625,
+          0
+        ],
+        [
+          43.20001220703125,
+          0
+        ],
+        [
+          44.79998779296875,
+          0
+        ],
+        [
+          46.399993896484375,
+          0
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          49.600006103515625,
+          0
+        ],
+        [
+          51.20001220703125,
+          0
+        ],
+        [
+          52.79998779296875,
+          0
+        ],
+        [
+          54.399993896484375,
+          0
+        ],
+        [
+          56,
+          0
+        ],
+        [
+          57.600006103515625,
+          0
+        ],
+        [
+          59.20001220703125,
+          0
+        ],
+        [
+          60.79998779296875,
+          0
+        ],
+        [
+          62.399993896484375,
+          0
+        ],
+        [
+          64,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-848",
+      "type": "rectangle",
+      "x": 387,
+      "y": 572.5,
+      "width": 257,
+      "height": 93,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "local-preview"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 848,
+      "version": 1,
+      "versionNonce": 848,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-849",
+      "type": "text",
+      "x": 443,
+      "y": 595,
+      "width": 144,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "local-preview"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 849,
+      "version": 1,
+      "versionNonce": 849,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
+      "fontFamily": 1,
+      "text": "先本地构建与预览",
+      "originalText": "先本地构建与预览",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-850",
+      "type": "text",
+      "x": 445,
+      "y": 626,
+      "width": 140,
+      "height": 17.5,
+      "angle": 0,
+      "strokeColor": "#566167",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "local-preview"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 850,
+      "version": 1,
+      "versionNonce": 850,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 14,
+      "fontFamily": 1,
+      "text": "上线条件齐备后再继续",
+      "originalText": "上线条件齐备后再继续",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-851",
+      "type": "arrow",
+      "x": 646,
+      "y": 620,
+      "width": 189,
+      "height": 62,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 851,
+      "version": 1,
+      "versionNonce": 851,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          6.2750244140625,
+          0
+        ],
+        [
+          12.54998779296875,
+          0
+        ],
+        [
+          18.82501220703125,
+          0
+        ],
+        [
+          25.0999755859375,
+          0
+        ],
+        [
+          31.375,
+          0
+        ],
+        [
+          37.6500244140625,
+          0
+        ],
+        [
+          43.92498779296875,
+          0
+        ],
+        [
+          50.20001220703125,
+          0
+        ],
+        [
+          56.4749755859375,
+          0
+        ],
+        [
+          62.75,
+          0
+        ],
+        [
+          69.0250244140625,
+          0
+        ],
+        [
+          75.29998779296875,
+          0
+        ],
+        [
+          81.57501220703125,
+          0
+        ],
+        [
+          87.8499755859375,
+          0
+        ],
+        [
+          94.125,
+          0
+        ],
+        [
+          100.4000244140625,
+          0
+        ],
+        [
+          106.67498779296875,
+          0
+        ],
+        [
+          112.95001220703125,
+          0
+        ],
+        [
+          119.2249755859375,
+          0
+        ],
+        [
+          125.5,
+          0
+        ],
+        [
+          131.7750244140625,
+          0
+        ],
+        [
+          138.04998779296875,
+          0
+        ],
+        [
+          144.32501220703125,
+          0
+        ],
+        [
+          150.5999755859375,
+          0
+        ],
+        [
+          156.875,
+          0
+        ],
+        [
+          163.1500244140625,
+          0
+        ],
+        [
+          169.42498779296875,
+          0
+        ],
+        [
+          175.70001220703125,
+          0
+        ],
+        [
+          181.9749755859375,
+          0
+        ],
+        [
+          188.25,
+          0
+        ],
+        [
+          189,
+          -5.5250244140625
+        ],
+        [
+          189,
+          -11.79998779296875
+        ],
+        [
+          189,
+          -18.07501220703125
+        ],
+        [
+          189,
+          -24.3499755859375
+        ],
+        [
+          189,
+          -30.625
+        ],
+        [
+          189,
+          -36.9000244140625
+        ],
+        [
+          189,
+          -43.17498779296875
+        ],
+        [
+          189,
+          -49.45001220703125
+        ],
+        [
+          189,
+          -55.7249755859375
+        ],
+        [
+          189,
+          -62
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-852",
+      "type": "line",
+      "x": 92,
+      "y": 688,
+      "width": 856,
+      "height": 1.5,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 852,
+      "version": 1,
+      "versionNonce": 852,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          21.399696350097656,
+          -0.14215087890625
+        ],
+        [
+          42.799407958984375,
+          -0.28436279296875
+        ],
+        [
+          64.19915771484375,
+          -0.41644287109375
+        ],
+        [
+          85.59898376464844,
+          -0.53948974609375
+        ],
+        [
+          106.99880981445312,
+          -0.66156005859375
+        ],
+        [
+          128.3987274169922,
+          -0.7655029296875
+        ],
+        [
+          149.79864501953125,
+          -0.8695068359375
+        ],
+        [
+          171.1986083984375,
+          -0.96258544921875
+        ],
+        [
+          192.5986328125,
+          -1.0474853515625
+        ],
+        [
+          213.9986572265625,
+          -1.13079833984375
+        ],
+        [
+          235.39871215820312,
+          -1.19671630859375
+        ],
+        [
+          256.79876708984375,
+          -1.2626953125
+        ],
+        [
+          278.1988830566406,
+          -1.31732177734375
+        ],
+        [
+          299.5989990234375,
+          -1.3643798828125
+        ],
+        [
+          320.9991455078125,
+          -1.40936279296875
+        ],
+        [
+          342.3992919921875,
+          -1.4375
+        ],
+        [
+          363.7994384765625,
+          -1.4656982421875
+        ],
+        [
+          385.1996154785156,
+          -1.48236083984375
+        ],
+        [
+          406.59979248046875,
+          -1.49169921875
+        ],
+        [
+          428,
+          -1.4989013671875
+        ],
+        [
+          449.400146484375,
+          -1.48956298828125
+        ],
+        [
+          470.80035400390625,
+          -1.48016357421875
+        ],
+        [
+          492.20050048828125,
+          -1.45928955078125
+        ],
+        [
+          513.6005859375,
+          -1.43121337890625
+        ],
+        [
+          535.0007934570312,
+          -1.401123046875
+        ],
+        [
+          556.40087890625,
+          -1.35443115234375
+        ],
+        [
+          577.801025390625,
+          -1.3077392578125
+        ],
+        [
+          599.2011108398438,
+          -1.2498779296875
+        ],
+        [
+          620.6011962890625,
+          -1.1845703125
+        ],
+        [
+          642.0012817382812,
+          -1.11767578125
+        ],
+        [
+          663.4013061523438,
+          -1.0338134765625
+        ],
+        [
+          684.80126953125,
+          -0.95001220703125
+        ],
+        [
+          706.2012939453125,
+          -0.85565185546875
+        ],
+        [
+          727.6011962890625,
+          -0.7532958984375
+        ],
+        [
+          749.0011596679688,
+          -0.65008544921875
+        ],
+        [
+          770.4009399414062,
+          -0.52935791015625
+        ],
+        [
+          791.8008422851562,
+          -0.40863037109375
+        ],
+        [
+          813.2005615234375,
+          -0.2781982421875
+        ],
+        [
+          834.6002807617188,
+          -0.13909912109375
+        ],
+        [
+          856,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-853",
+      "type": "text",
+      "x": 92,
+      "y": 696,
+      "width": 254.884,
+      "height": 17.5,
+      "angle": 0,
+      "strokeColor": "#566167",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 853,
+      "version": 1,
+      "versionNonce": 853,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 14,
+      "fontFamily": 1,
+      "text": "不准备域名，且明确需要公网 IP 访问：",
+      "originalText": "不准备域名，且明确需要公网 IP 访问：",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-854",
+      "type": "arrow",
+      "x": 42,
+      "y": 764,
+      "width": 48,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 854,
+      "version": 1,
+      "versionNonce": 854,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2000007629394531,
+          0
+        ],
+        [
+          2.4000015258789062,
+          0
+        ],
+        [
+          3.5999984741210938,
+          0
+        ],
+        [
+          4.799999237060547,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7.200000762939453,
+          0
+        ],
+        [
+          8.400001525878906,
+          0
+        ],
+        [
+          9.599998474121094,
+          0
+        ],
+        [
+          10.799999237060547,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13.200000762939453,
+          0
+        ],
+        [
+          14.400001525878906,
+          0
+        ],
+        [
+          15.599998474121094,
+          0
+        ],
+        [
+          16.799999237060547,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19.200000762939453,
+          0
+        ],
+        [
+          20.400001525878906,
+          0
+        ],
+        [
+          21.599998474121094,
+          0
+        ],
+        [
+          22.800003051757812,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.199996948242188,
+          0
+        ],
+        [
+          26.400001525878906,
+          0
+        ],
+        [
+          27.599998474121094,
+          0
+        ],
+        [
+          28.800003051757812,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          31.199996948242188,
+          0
+        ],
+        [
+          32.400001525878906,
+          0
+        ],
+        [
+          33.599998474121094,
+          0
+        ],
+        [
+          34.80000305175781,
+          0
+        ],
+        [
+          36,
+          0
+        ],
+        [
+          37.19999694824219,
+          0
+        ],
+        [
+          38.400001525878906,
+          0
+        ],
+        [
+          39.599998474121094,
+          0
+        ],
+        [
+          40.80000305175781,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          43.19999694824219,
+          0
+        ],
+        [
+          44.400001525878906,
+          0
+        ],
+        [
+          45.599998474121094,
+          0
+        ],
+        [
+          46.80000305175781,
+          0
+        ],
+        [
+          48,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-855",
+      "type": "rectangle",
+      "x": 93,
+      "y": 726.5,
+      "width": 225,
+      "height": 73,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ip-choice"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 855,
+      "version": 1,
+      "versionNonce": 855,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-856",
+      "type": "text",
+      "x": 142,
+      "y": 752,
+      "width": 126,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ip-choice"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 856,
+      "version": 1,
+      "versionNonce": 856,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "选择服务器托管",
       "originalText": "选择服务器托管",
@@ -2267,34 +3565,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-22",
-      "type": "text",
-      "x": 434.81100000000004,
-      "y": 836,
-      "width": 180.378,
-      "height": 27.5,
+      "id": "sketch-857",
+      "type": "arrow",
+      "x": 320,
+      "y": 764,
+      "width": 64,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "ecs-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 162,
+      "seed": 857,
       "version": 1,
-      "versionNonce": 162,
+      "versionNonce": 857,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.600006103515625,
+          0
+        ],
+        [
+          3.20001220703125,
+          0
+        ],
+        [
+          4.79998779296875,
+          0
+        ],
+        [
+          6.399993896484375,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9.600006103515625,
+          0
+        ],
+        [
+          11.20001220703125,
+          0
+        ],
+        [
+          12.79998779296875,
+          0
+        ],
+        [
+          14.399993896484375,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          17.600006103515625,
+          0
+        ],
+        [
+          19.20001220703125,
+          0
+        ],
+        [
+          20.79998779296875,
+          0
+        ],
+        [
+          22.399993896484375,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.600006103515625,
+          0
+        ],
+        [
+          27.20001220703125,
+          0
+        ],
+        [
+          28.79998779296875,
+          0
+        ],
+        [
+          30.399993896484375,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          33.600006103515625,
+          0
+        ],
+        [
+          35.20001220703125,
+          0
+        ],
+        [
+          36.79998779296875,
+          0
+        ],
+        [
+          38.399993896484375,
+          0
+        ],
+        [
+          40,
+          0
+        ],
+        [
+          41.600006103515625,
+          0
+        ],
+        [
+          43.20001220703125,
+          0
+        ],
+        [
+          44.79998779296875,
+          0
+        ],
+        [
+          46.399993896484375,
+          0
+        ],
+        [
+          48,
+          0
+        ],
+        [
+          49.600006103515625,
+          0
+        ],
+        [
+          51.20001220703125,
+          0
+        ],
+        [
+          52.79998779296875,
+          0
+        ],
+        [
+          54.399993896484375,
+          0
+        ],
+        [
+          56,
+          0
+        ],
+        [
+          57.600006103515625,
+          0
+        ],
+        [
+          59.20001220703125,
+          0
+        ],
+        [
+          60.79998779296875,
+          0
+        ],
+        [
+          62.399993896484375,
+          0
+        ],
+        [
+          64,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-858",
+      "type": "rectangle",
+      "x": 387,
+      "y": 716.5,
+      "width": 257,
+      "height": 93,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ecs"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 858,
+      "version": 1,
+      "versionNonce": 858,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-859",
+      "type": "text",
+      "x": 441.209,
+      "y": 739,
+      "width": 147.582,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ecs"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 859,
+      "version": 1,
+      "versionNonce": 859,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "ECS＋EIP＋Nginx",
       "originalText": "ECS＋EIP＋Nginx",
@@ -2305,37 +3830,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-23",
+      "id": "sketch-860",
       "type": "text",
-      "x": 408,
-      "y": 870,
-      "width": 234,
-      "height": 22.5,
+      "x": 421.81600000000003,
+      "y": 770,
+      "width": 186.368,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "ecs-group"
+        "ecs"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 163,
+      "seed": 860,
       "version": 1,
-      "versionNonce": 163,
+      "versionNonce": 860,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
-      "text": "服务器、带宽费用与日常维护",
-      "originalText": "服务器、带宽费用与日常维护",
+      "text": "服务器与带宽费用 · 日常维护",
+      "originalText": "服务器与带宽费用 · 日常维护",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2343,34 +3868,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-24",
-      "type": "text",
-      "x": 776.734,
-      "y": 836,
-      "width": 136.532,
-      "height": 27.5,
+      "id": "sketch-861",
+      "type": "arrow",
+      "x": 646,
+      "y": 764,
+      "width": 78,
+      "height": 0,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "ip-entry-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 164,
+      "seed": 861,
       "version": 1,
-      "versionNonce": 164,
+      "versionNonce": 861,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.95001220703125,
+          0
+        ],
+        [
+          3.9000244140625,
+          0
+        ],
+        [
+          5.8499755859375,
+          0
+        ],
+        [
+          7.79998779296875,
+          0
+        ],
+        [
+          9.75,
+          0
+        ],
+        [
+          11.70001220703125,
+          0
+        ],
+        [
+          13.6500244140625,
+          0
+        ],
+        [
+          15.5999755859375,
+          0
+        ],
+        [
+          17.54998779296875,
+          0
+        ],
+        [
+          19.5,
+          0
+        ],
+        [
+          21.45001220703125,
+          0
+        ],
+        [
+          23.4000244140625,
+          0
+        ],
+        [
+          25.3499755859375,
+          0
+        ],
+        [
+          27.29998779296875,
+          0
+        ],
+        [
+          29.25,
+          0
+        ],
+        [
+          31.20001220703125,
+          0
+        ],
+        [
+          33.1500244140625,
+          0
+        ],
+        [
+          35.0999755859375,
+          0
+        ],
+        [
+          37.04998779296875,
+          0
+        ],
+        [
+          39,
+          0
+        ],
+        [
+          40.95001220703125,
+          0
+        ],
+        [
+          42.9000244140625,
+          0
+        ],
+        [
+          44.8499755859375,
+          0
+        ],
+        [
+          46.79998779296875,
+          0
+        ],
+        [
+          48.75,
+          0
+        ],
+        [
+          50.70001220703125,
+          0
+        ],
+        [
+          52.6500244140625,
+          0
+        ],
+        [
+          54.5999755859375,
+          0
+        ],
+        [
+          56.54998779296875,
+          0
+        ],
+        [
+          58.5,
+          0
+        ],
+        [
+          60.45001220703125,
+          0
+        ],
+        [
+          62.4000244140625,
+          0
+        ],
+        [
+          64.3499755859375,
+          0
+        ],
+        [
+          66.29998779296875,
+          0
+        ],
+        [
+          68.25,
+          0
+        ],
+        [
+          70.20001220703125,
+          0
+        ],
+        [
+          72.1500244140625,
+          0
+        ],
+        [
+          74.0999755859375,
+          0
+        ],
+        [
+          76.04998779296875,
+          0
+        ],
+        [
+          78,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-862",
+      "type": "rectangle",
+      "x": 727,
+      "y": 716.5,
+      "width": 217,
+      "height": 93,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ip-entry"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 862,
+      "version": 1,
+      "versionNonce": 862,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-863",
+      "type": "text",
+      "x": 779.146,
+      "y": 739,
+      "width": 111.708,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "ip-entry"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 863,
+      "version": 1,
+      "versionNonce": 863,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "公网 IP 访问",
       "originalText": "公网 IP 访问",
@@ -2381,34 +4133,34 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-25",
+      "id": "sketch-864",
       "type": "text",
-      "x": 764.648,
-      "y": 870,
-      "width": 160.704,
-      "height": 22.5,
+      "x": 772.504,
+      "y": 770,
+      "width": 124.992,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "ip-entry-group"
+        "ip-entry"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 165,
+      "seed": 864,
       "version": 1,
-      "versionNonce": 165,
+      "versionNonce": 864,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
       "text": "HTTPS 需另行配置",
       "originalText": "HTTPS 需另行配置",
@@ -2419,32 +4171,32 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-26",
+      "id": "sketch-865",
       "type": "text",
-      "x": 90,
-      "y": 931,
-      "width": 474.606,
-      "height": 22.5,
+      "x": 92,
+      "y": 820.5,
+      "width": 329.5875,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 166,
+      "seed": 865,
       "version": 1,
-      "versionNonce": 166,
+      "versionNonce": 865,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
       "text": "缺少域名 ≠ 自动购买 ECS；OBS 桶不能直接绑定 EIP。",
       "originalText": "缺少域名 ≠ 自动购买 ECS；OBS 桶不能直接绑定 EIP。",
@@ -2455,35 +4207,66 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-27",
-      "type": "text",
-      "x": 90,
-      "y": 1018,
-      "width": 334.225,
-      "height": 31.25,
+      "id": "sketch-866",
+      "type": "rectangle",
+      "x": 64,
+      "y": 872.5,
+      "width": 912,
+      "height": 141,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#c5cecf",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 0.6,
       "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [],
+      "roughness": 1.2,
+      "opacity": 55,
+      "groupIds": [
+        "new-platform"
+      ],
       "frameId": null,
       "roundness": null,
-      "seed": 167,
+      "seed": 866,
       "version": 1,
-      "versionNonce": 167,
+      "versionNonce": 866,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-867",
+      "type": "text",
+      "x": 92,
+      "y": 885,
+      "width": 280.749,
+      "height": 26.25,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "new-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 867,
+      "version": 1,
+      "versionNonce": 867,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 25,
+      "fontSize": 21,
       "fontFamily": 1,
-      "text": "03  尚未托管，接受其他平台",
-      "originalText": "03  尚未托管，接受其他平台",
+      "text": "03  尚未托管，选择其他平台",
+      "originalText": "03  尚未托管，选择其他平台",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2491,70 +4274,299 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-28",
+      "id": "sketch-868",
       "type": "text",
-      "x": 728.384,
-      "y": 1024,
-      "width": 221.616,
-      "height": 22.5,
+      "x": 794.1,
+      "y": 892.5,
+      "width": 153.9,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "new-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 868,
+      "version": 1,
+      "versionNonce": 868,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 12.5,
+      "fontFamily": 1,
+      "text": "通用流程 · 按实际能力执行",
+      "originalText": "通用流程 · 按实际能力执行",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-869",
+      "type": "arrow",
+      "x": 42,
+      "y": 962,
+      "width": 48,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 168,
+      "seed": 869,
       "version": 1,
-      "versionNonce": 168,
+      "versionNonce": 869,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2000007629394531,
+          0
+        ],
+        [
+          2.4000015258789062,
+          0
+        ],
+        [
+          3.5999984741210938,
+          0
+        ],
+        [
+          4.799999237060547,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7.200000762939453,
+          0
+        ],
+        [
+          8.400001525878906,
+          0
+        ],
+        [
+          9.599998474121094,
+          0
+        ],
+        [
+          10.799999237060547,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13.200000762939453,
+          0
+        ],
+        [
+          14.400001525878906,
+          0
+        ],
+        [
+          15.599998474121094,
+          0
+        ],
+        [
+          16.799999237060547,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19.200000762939453,
+          0
+        ],
+        [
+          20.400001525878906,
+          0
+        ],
+        [
+          21.599998474121094,
+          0
+        ],
+        [
+          22.800003051757812,
+          0
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          25.199996948242188,
+          0
+        ],
+        [
+          26.400001525878906,
+          0
+        ],
+        [
+          27.599998474121094,
+          0
+        ],
+        [
+          28.800003051757812,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          31.199996948242188,
+          0
+        ],
+        [
+          32.400001525878906,
+          0
+        ],
+        [
+          33.599998474121094,
+          0
+        ],
+        [
+          34.80000305175781,
+          0
+        ],
+        [
+          36,
+          0
+        ],
+        [
+          37.19999694824219,
+          0
+        ],
+        [
+          38.400001525878906,
+          0
+        ],
+        [
+          39.599998474121094,
+          0
+        ],
+        [
+          40.80000305175781,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          43.19999694824219,
+          0
+        ],
+        [
+          44.400001525878906,
+          0
+        ],
+        [
+          45.599998474121094,
+          0
+        ],
+        [
+          46.80000305175781,
+          0
+        ],
+        [
+          48,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-870",
+      "type": "rectangle",
+      "x": 93,
+      "y": 928.5,
+      "width": 305,
+      "height": 65,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "choose-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 870,
+      "version": 1,
+      "versionNonce": 870,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-871",
+      "type": "text",
+      "x": 155,
+      "y": 939,
+      "width": 180,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "choose-platform"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 871,
+      "version": 1,
+      "versionNonce": 871,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
       "fontSize": 18,
-      "fontFamily": 1,
-      "text": "通用流程 · 按平台能力执行",
-      "originalText": "通用流程 · 按平台能力执行",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-29",
-      "type": "text",
-      "x": 155,
-      "y": 1075,
-      "width": 220,
-      "height": 27.5,
-      "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "choose-platform-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 169,
-      "version": 1,
-      "versionNonce": 169,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 22,
       "fontFamily": 1,
       "text": "选择云厂商与托管服务",
       "originalText": "选择云厂商与托管服务",
@@ -2565,28 +4577,293 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-30",
+      "id": "sketch-872",
       "type": "text",
-      "x": 139.648,
-      "y": 1109,
-      "width": 250.704,
-      "height": 22.5,
+      "x": 147.50400000000002,
+      "y": 966,
+      "width": 194.992,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "choose-platform-group"
+        "choose-platform"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 170,
+      "seed": 872,
       "version": 1,
-      "versionNonce": 170,
+      "versionNonce": 872,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 14,
+      "fontFamily": 1,
+      "text": "核实入口、HTTPS 与回退能力",
+      "originalText": "核实入口、HTTPS 与回退能力",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-873",
+      "type": "arrow",
+      "x": 400,
+      "y": 962,
+      "width": 154,
+      "height": 2,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 873,
+      "version": 1,
+      "versionNonce": 873,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          3.84698486328125,
+          -0.191162109375
+        ],
+        [
+          7.69439697265625,
+          -0.37347412109375
+        ],
+        [
+          11.542205810546875,
+          -0.54681396484375
+        ],
+        [
+          15.39044189453125,
+          -0.71112060546875
+        ],
+        [
+          19.239044189453125,
+          -0.86578369140625
+        ],
+        [
+          23.088134765625,
+          -1.0089111328125
+        ],
+        [
+          26.9375,
+          -1.1429443359375
+        ],
+        [
+          30.787200927734375,
+          -1.2679443359375
+        ],
+        [
+          34.63720703125,
+          -1.38385009765625
+        ],
+        [
+          38.48748779296875,
+          -1.4893798828125
+        ],
+        [
+          42.338043212890625,
+          -1.58380126953125
+        ],
+        [
+          46.188812255859375,
+          -1.6690673828125
+        ],
+        [
+          50.039794921875,
+          -1.74517822265625
+        ],
+        [
+          53.890960693359375,
+          -1.81201171875
+        ],
+        [
+          57.742279052734375,
+          -1.8680419921875
+        ],
+        [
+          61.59375,
+          -1.91326904296875
+        ],
+        [
+          65.44528198242188,
+          -1.94915771484375
+        ],
+        [
+          69.29693603515625,
+          -1.9757080078125
+        ],
+        [
+          73.14862060546875,
+          -1.992919921875
+        ],
+        [
+          77.00033569335938,
+          -1.99920654296875
+        ],
+        [
+          80.85208129882812,
+          -1.99456787109375
+        ],
+        [
+          84.70376586914062,
+          -1.98052978515625
+        ],
+        [
+          88.555419921875,
+          -1.95703125
+        ],
+        [
+          92.40701293945312,
+          -1.92413330078125
+        ],
+        [
+          96.25848388671875,
+          -1.8802490234375
+        ],
+        [
+          100.10983276367188,
+          -1.82525634765625
+        ],
+        [
+          103.96099853515625,
+          -1.76080322265625
+        ],
+        [
+          107.81201171875,
+          -1.686767578125
+        ],
+        [
+          111.662841796875,
+          -1.60321044921875
+        ],
+        [
+          115.513427734375,
+          -1.50885009765625
+        ],
+        [
+          119.36370849609375,
+          -1.403076171875
+        ],
+        [
+          123.21368408203125,
+          -1.28765869140625
+        ],
+        [
+          127.0633544921875,
+          -1.16259765625
+        ],
+        [
+          130.9127197265625,
+          -1.02789306640625
+        ],
+        [
+          134.76171875,
+          -0.8828125
+        ],
+        [
+          138.6102294921875,
+          -0.7257080078125
+        ],
+        [
+          142.4583740234375,
+          -0.55889892578125
+        ],
+        [
+          146.3060302734375,
+          -0.38232421875
+        ],
+        [
+          150.15325927734375,
+          -0.196044921875
+        ],
+        [
+          154,
+          0
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-874",
+      "type": "rectangle",
+      "x": 557,
+      "y": 928.5,
+      "width": 387,
+      "height": 65,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "platform-deploy"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 874,
+      "version": 1,
+      "versionNonce": 874,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-875",
+      "type": "text",
+      "x": 651,
+      "y": 939,
+      "width": 198,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "platform-deploy"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 875,
+      "version": 1,
+      "versionNonce": 875,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
@@ -2594,8 +4871,8 @@
       "locked": false,
       "fontSize": 18,
       "fontFamily": 1,
-      "text": "核实域名、HTTPS 与发布能力",
-      "originalText": "核实域名、HTTPS 与发布能力",
+      "text": "部署并获得真实访问地址",
+      "originalText": "部署并获得真实访问地址",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2603,37 +4880,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-31",
+      "id": "sketch-876",
       "type": "text",
-      "x": 619,
-      "y": 1075,
-      "width": 242,
-      "height": 27.5,
+      "x": 666,
+      "y": 966,
+      "width": 168,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "platform-deploy-group"
+        "platform-deploy"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 171,
+      "seed": 876,
       "version": 1,
-      "versionNonce": 171,
+      "versionNonce": 876,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "fontSize": 14,
       "fontFamily": 1,
-      "text": "部署并获得前端访问地址",
-      "originalText": "部署并获得前端访问地址",
+      "text": "自有域名或平台提供的入口",
+      "originalText": "自有域名或平台提供的入口",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2641,28 +4918,453 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-32",
-      "type": "text",
-      "x": 602.192,
-      "y": 1109,
-      "width": 275.616,
-      "height": 22.5,
+      "id": "sketch-877",
+      "type": "line",
+      "x": 946,
+      "y": 324,
+      "width": 58,
+      "height": 638,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 877,
+      "version": 1,
+      "versionNonce": 877,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          21.75,
+          0
+        ],
+        [
+          43.5,
+          0
+        ],
+        [
+          7.25,
+          182
+        ],
+        [
+          29,
+          182
+        ],
+        [
+          50.75,
+          182
+        ],
+        [
+          14.5,
+          440
+        ],
+        [
+          36.25,
+          440
+        ],
+        [
+          58,
+          440
+        ],
+        [
+          21.75,
+          638
+        ],
+        [
+          43.5,
+          638
+        ],
+        [
+          58,
+          7.25
+        ],
+        [
+          58,
+          29
+        ],
+        [
+          58,
+          50.75
+        ],
+        [
+          58,
+          72.5
+        ],
+        [
+          58,
+          94.25
+        ],
+        [
+          58,
+          116
+        ],
+        [
+          58,
+          137.75
+        ],
+        [
+          58,
+          159.5
+        ],
+        [
+          58,
+          181.25
+        ],
+        [
+          58,
+          203
+        ],
+        [
+          58,
+          224.75
+        ],
+        [
+          58,
+          246.5
+        ],
+        [
+          58,
+          268.25
+        ],
+        [
+          58,
+          290
+        ],
+        [
+          58,
+          311.75
+        ],
+        [
+          58,
+          333.5
+        ],
+        [
+          58,
+          355.25
+        ],
+        [
+          58,
+          377
+        ],
+        [
+          58,
+          398.75
+        ],
+        [
+          58,
+          420.5
+        ],
+        [
+          58,
+          442.25
+        ],
+        [
+          58,
+          464
+        ],
+        [
+          58,
+          485.75
+        ],
+        [
+          58,
+          507.5
+        ],
+        [
+          58,
+          529.25
+        ],
+        [
+          58,
+          551
+        ],
+        [
+          58,
+          572.75
+        ],
+        [
+          58,
+          594.5
+        ],
+        [
+          58,
+          616.25
+        ],
+        [
+          58,
+          638
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-878",
+      "type": "arrow",
+      "x": 1004,
+      "y": 962,
+      "width": 484,
+      "height": 124,
+      "angle": 0,
+      "strokeColor": "#66757b",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 878,
+      "version": 1,
+      "versionNonce": 878,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          15.1058349609375
+        ],
+        [
+          0,
+          30.21160888671875
+        ],
+        [
+          0,
+          45.31744384765625
+        ],
+        [
+          0,
+          60.4232177734375
+        ],
+        [
+          0,
+          75.529052734375
+        ],
+        [
+          -0.010498046875,
+          90.634765625
+        ],
+        [
+          -9.50830078125,
+          99.9937744140625
+        ],
+        [
+          -24.61407470703125,
+          100
+        ],
+        [
+          -39.7198486328125,
+          100
+        ],
+        [
+          -54.82568359375,
+          100
+        ],
+        [
+          -69.9315185546875,
+          100
+        ],
+        [
+          -85.03729248046875,
+          100
+        ],
+        [
+          -100.14312744140625,
+          100
+        ],
+        [
+          -115.2489013671875,
+          100
+        ],
+        [
+          -130.354736328125,
+          100
+        ],
+        [
+          -145.4605712890625,
+          100
+        ],
+        [
+          -160.56634521484375,
+          100
+        ],
+        [
+          -175.67218017578125,
+          100
+        ],
+        [
+          -190.7779541015625,
+          100
+        ],
+        [
+          -205.8837890625,
+          100
+        ],
+        [
+          -220.9896240234375,
+          100
+        ],
+        [
+          -236.09539794921875,
+          100
+        ],
+        [
+          -251.20123291015625,
+          100
+        ],
+        [
+          -266.3070068359375,
+          100
+        ],
+        [
+          -281.412841796875,
+          100
+        ],
+        [
+          -296.5186767578125,
+          100
+        ],
+        [
+          -311.62445068359375,
+          100
+        ],
+        [
+          -326.73028564453125,
+          100
+        ],
+        [
+          -341.8360595703125,
+          100
+        ],
+        [
+          -356.94189453125,
+          100
+        ],
+        [
+          -372.0477294921875,
+          100
+        ],
+        [
+          -387.15350341796875,
+          100
+        ],
+        [
+          -402.25933837890625,
+          100
+        ],
+        [
+          -417.3651123046875,
+          100
+        ],
+        [
+          -432.470947265625,
+          100
+        ],
+        [
+          -447.5767822265625,
+          100
+        ],
+        [
+          -462.68255615234375,
+          100
+        ],
+        [
+          -477.78839111328125,
+          100
+        ],
+        [
+          -484,
+          108.8941650390625
+        ],
+        [
+          -484,
+          124
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-879",
+      "type": "rectangle",
+      "x": 297,
+      "y": 1090.5,
+      "width": 447,
+      "height": 83,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "platform-deploy-group"
+        "browser"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 172,
+      "seed": 879,
       "version": 1,
-      "versionNonce": 172,
+      "versionNonce": 879,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-880",
+      "type": "text",
+      "x": 421,
+      "y": 1108,
+      "width": 198,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#153c59",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "browser"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 880,
+      "version": 1,
+      "versionNonce": 880,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
@@ -2670,8 +5372,8 @@
       "locked": false,
       "fontSize": 18,
       "fontFamily": 1,
-      "text": "自有域名或平台入口 · 核实可用性",
-      "originalText": "自有域名或平台入口 · 核实可用性",
+      "text": "用户浏览器打开前端入口",
+      "originalText": "用户浏览器打开前端入口",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2679,72 +5381,34 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-33",
+      "id": "sketch-881",
       "type": "text",
-      "x": 333,
-      "y": 1258,
-      "width": 374,
-      "height": 27.5,
+      "x": 457,
+      "y": 1139,
+      "width": 126,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "browser-group"
+        "browser"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 173,
+      "seed": 881,
       "version": 1,
-      "versionNonce": 173,
+      "versionNonce": 881,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
-      "fontFamily": 1,
-      "text": "用户浏览器打开入口，加载并运行前端",
-      "originalText": "用户浏览器打开入口，加载并运行前端",
-      "textAlign": "left",
-      "verticalAlign": "top",
-      "containerId": null,
-      "autoResize": true,
-      "lineHeight": 1.25
-    },
-    {
-      "id": "text-34",
-      "type": "text",
-      "x": 439,
-      "y": 1292,
-      "width": 162,
-      "height": 22.5,
-      "angle": 0,
-      "strokeColor": "#495057",
-      "backgroundColor": "transparent",
-      "fillStyle": "solid",
-      "strokeWidth": 1.5,
-      "strokeStyle": "solid",
-      "roughness": 1.5,
-      "opacity": 100,
-      "groupIds": [
-        "browser-group"
-      ],
-      "frameId": null,
-      "roundness": null,
-      "seed": 174,
-      "version": 1,
-      "versionNonce": 174,
-      "isDeleted": false,
-      "boundElements": null,
-      "updated": 1,
-      "link": null,
-      "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
       "text": "无需登录华为云账号",
       "originalText": "无需登录华为云账号",
@@ -2755,35 +5419,233 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-35",
-      "type": "text",
-      "x": 538,
-      "y": 1338,
-      "width": 186.516,
-      "height": 22.5,
+      "id": "sketch-882",
+      "type": "arrow",
+      "x": 520,
+      "y": 1178,
+      "width": 0,
+      "height": 26,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 175,
+      "seed": 882,
       "version": 1,
-      "versionNonce": 175,
+      "versionNonce": 882,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.6500244140625
+        ],
+        [
+          0,
+          1.300048828125
+        ],
+        [
+          0,
+          1.949951171875
+        ],
+        [
+          0,
+          2.5999755859375
+        ],
+        [
+          0,
+          3.25
+        ],
+        [
+          0,
+          3.9000244140625
+        ],
+        [
+          0,
+          4.550048828125
+        ],
+        [
+          0,
+          5.199951171875
+        ],
+        [
+          0,
+          5.8499755859375
+        ],
+        [
+          0,
+          6.5
+        ],
+        [
+          0,
+          7.1500244140625
+        ],
+        [
+          0,
+          7.800048828125
+        ],
+        [
+          0,
+          8.449951171875
+        ],
+        [
+          0,
+          9.0999755859375
+        ],
+        [
+          0,
+          9.75
+        ],
+        [
+          0,
+          10.4000244140625
+        ],
+        [
+          0,
+          11.050048828125
+        ],
+        [
+          0,
+          11.699951171875
+        ],
+        [
+          0,
+          12.3499755859375
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          13.6500244140625
+        ],
+        [
+          0,
+          14.300048828125
+        ],
+        [
+          0,
+          14.949951171875
+        ],
+        [
+          0,
+          15.5999755859375
+        ],
+        [
+          0,
+          16.25
+        ],
+        [
+          0,
+          16.9000244140625
+        ],
+        [
+          0,
+          17.550048828125
+        ],
+        [
+          0,
+          18.199951171875
+        ],
+        [
+          0,
+          18.8499755859375
+        ],
+        [
+          0,
+          19.5
+        ],
+        [
+          0,
+          20.1500244140625
+        ],
+        [
+          0,
+          20.800048828125
+        ],
+        [
+          0,
+          21.449951171875
+        ],
+        [
+          0,
+          22.0999755859375
+        ],
+        [
+          0,
+          22.75
+        ],
+        [
+          0,
+          23.4000244140625
+        ],
+        [
+          0,
+          24.050048828125
+        ],
+        [
+          0,
+          24.699951171875
+        ],
+        [
+          0,
+          25.3499755859375
+        ],
+        [
+          0,
+          26
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-883",
+      "type": "text",
+      "x": 540,
+      "y": 1185.5,
+      "width": 142.025,
+      "height": 15.625,
+      "angle": 0,
+      "strokeColor": "#566167",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 883,
+      "version": 1,
+      "versionNonce": 883,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 12.5,
       "fontFamily": 1,
-      "text": "由浏览器调用业务 API",
-      "originalText": "由浏览器调用业务 API",
+      "text": "浏览器直接调用业务 API",
+      "originalText": "浏览器直接调用业务 API",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2791,34 +5653,63 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-36",
-      "type": "text",
-      "x": 372.699,
-      "y": 1377,
-      "width": 294.602,
-      "height": 27.5,
+      "id": "sketch-884",
+      "type": "rectangle",
+      "x": 227,
+      "y": 1208.5,
+      "width": 587,
+      "height": 105,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent",
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "supabase-group"
+        "supabase"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 176,
+      "seed": 884,
       "version": 1,
-      "versionNonce": 176,
+      "versionNonce": 884,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-885",
+      "type": "text",
+      "x": 399.481,
+      "y": 1227,
+      "width": 241.038,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#32654c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "supabase"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 885,
+      "version": 1,
+      "versionNonce": 885,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "已有 Supabase HTTPS API",
       "originalText": "已有 Supabase HTTPS API",
@@ -2829,37 +5720,37 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-37",
+      "id": "sketch-886",
       "type": "text",
-      "x": 356.47,
-      "y": 1411,
-      "width": 327.06,
-      "height": 22.5,
+      "x": 403.758,
+      "y": 1259,
+      "width": 232.484,
+      "height": 17.5,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "supabase-group"
+        "supabase"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 177,
+      "seed": 886,
       "version": 1,
-      "versionNonce": 177,
+      "versionNonce": 886,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 14,
       "fontFamily": 1,
-      "text": "配置公开 Key、CORS、登录回调和 RLS",
-      "originalText": "配置公开 Key、CORS、登录回调和 RLS",
+      "text": "公开 Key · CORS · 登录回调 · RLS",
+      "originalText": "公开 Key · CORS · 登录回调 · RLS",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2867,34 +5758,34 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-38",
+      "id": "sketch-887",
       "type": "text",
-      "x": 301.786,
-      "y": 1441,
-      "width": 436.428,
-      "height": 22.5,
+      "x": 368.4625,
+      "y": 1285.5,
+      "width": 303.075,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [
-        "supabase-group"
+        "supabase"
       ],
       "frameId": null,
       "roundness": null,
-      "seed": 178,
+      "seed": 887,
       "version": 1,
-      "versionNonce": 178,
+      "versionNonce": 887,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
       "text": "Secret / Service Role Key 与数据库密码不进入前端",
       "originalText": "Secret / Service Role Key 与数据库密码不进入前端",
@@ -2905,34 +5796,261 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-39",
-      "type": "text",
-      "x": 322,
-      "y": 1530,
-      "width": 396,
-      "height": 27.5,
+      "id": "sketch-888",
+      "type": "arrow",
+      "x": 520,
+      "y": 1318,
+      "width": 0,
+      "height": 24,
       "angle": 0,
-      "strokeColor": "#1e1e1e",
+      "strokeColor": "#66757b",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1.05,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
-      "groupIds": [
-        "acceptance-group"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 179,
+      "seed": 888,
       "version": 1,
-      "versionNonce": 179,
+      "versionNonce": 888,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 22,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0.5999755859375
+        ],
+        [
+          0,
+          1.199951171875
+        ],
+        [
+          0,
+          1.800048828125
+        ],
+        [
+          0,
+          2.4000244140625
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3.5999755859375
+        ],
+        [
+          0,
+          4.199951171875
+        ],
+        [
+          0,
+          4.800048828125
+        ],
+        [
+          0,
+          5.4000244140625
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          6.5999755859375
+        ],
+        [
+          0,
+          7.199951171875
+        ],
+        [
+          0,
+          7.800048828125
+        ],
+        [
+          0,
+          8.4000244140625
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          9.5999755859375
+        ],
+        [
+          0,
+          10.199951171875
+        ],
+        [
+          0,
+          10.800048828125
+        ],
+        [
+          0,
+          11.4000244140625
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          12.5999755859375
+        ],
+        [
+          0,
+          13.199951171875
+        ],
+        [
+          0,
+          13.800048828125
+        ],
+        [
+          0,
+          14.4000244140625
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          0,
+          15.5999755859375
+        ],
+        [
+          0,
+          16.199951171875
+        ],
+        [
+          0,
+          16.800048828125
+        ],
+        [
+          0,
+          17.4000244140625
+        ],
+        [
+          0,
+          18
+        ],
+        [
+          0,
+          18.5999755859375
+        ],
+        [
+          0,
+          19.199951171875
+        ],
+        [
+          0,
+          19.800048828125
+        ],
+        [
+          0,
+          20.4000244140625
+        ],
+        [
+          0,
+          21
+        ],
+        [
+          0,
+          21.5999755859375
+        ],
+        [
+          0,
+          22.199951171875
+        ],
+        [
+          0,
+          22.800048828125
+        ],
+        [
+          0,
+          23.4000244140625
+        ],
+        [
+          0,
+          24
+        ]
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "lastCommittedPoint": null
+    },
+    {
+      "id": "sketch-889",
+      "type": "rectangle",
+      "x": 307,
+      "y": 1346.5,
+      "width": 427,
+      "height": 63,
+      "angle": 0,
+      "strokeColor": "#4c98c8",
+      "backgroundColor": "#e8f2f6",
+      "fillStyle": "solid",
+      "strokeWidth": 1.05,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "acceptance"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 889,
+      "version": 1,
+      "versionNonce": 889,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "sketch-890",
+      "type": "text",
+      "x": 358,
+      "y": 1367,
+      "width": 324,
+      "height": 22.5,
+      "angle": 0,
+      "strokeColor": "#32654c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [
+        "acceptance"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "seed": 890,
+      "version": 1,
+      "versionNonce": 890,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 18,
       "fontFamily": 1,
       "text": "验收页面、资源、路由、登录与数据隔离",
       "originalText": "验收页面、资源、路由、登录与数据隔离",
@@ -2943,35 +6061,35 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-40",
+      "id": "sketch-891",
       "type": "text",
-      "x": 64,
-      "y": 1602,
-      "width": 486,
-      "height": 22.5,
+      "x": 82,
+      "y": 1427.5,
+      "width": 50,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 180,
+      "seed": 891,
       "version": 1,
-      "versionNonce": 180,
+      "versionNonce": 891,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
-      "text": "蓝色：托管路线与发布流程；绿色：浏览器访问与后端接入。",
-      "originalText": "蓝色：托管路线与发布流程；绿色：浏览器访问与后端接入。",
+      "text": "托管路线",
+      "originalText": "托管路线",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -2979,35 +6097,71 @@
       "lineHeight": 1.25
     },
     {
-      "id": "text-41",
+      "id": "sketch-892",
       "type": "text",
-      "x": 64,
-      "y": 1630,
-      "width": 450,
-      "height": 22.5,
+      "x": 188,
+      "y": 1427.5,
+      "width": 145.0125,
+      "height": 15.625,
       "angle": 0,
-      "strokeColor": "#495057",
+      "strokeColor": "#566167",
       "backgroundColor": "transparent",
       "fillStyle": "solid",
-      "strokeWidth": 1.5,
+      "strokeWidth": 1,
       "strokeStyle": "solid",
-      "roughness": 1.5,
+      "roughness": 1.2,
       "opacity": 100,
       "groupIds": [],
       "frameId": null,
       "roundness": null,
-      "seed": 181,
+      "seed": 892,
       "version": 1,
-      "versionNonce": 181,
+      "versionNonce": 892,
       "isDeleted": false,
       "boundElements": null,
       "updated": 1,
       "link": null,
       "locked": false,
-      "fontSize": 18,
+      "fontSize": 12.5,
       "fontFamily": 1,
-      "text": "工作流已补齐；云端部署与业务验收需在实际环境执行。",
-      "originalText": "工作流已补齐；云端部署与业务验收需在实际环境执行。",
+      "text": "浏览器与 Supabase 链路",
+      "originalText": "浏览器与 Supabase 链路",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "sketch-893",
+      "type": "text",
+      "x": 773,
+      "y": 1427.5,
+      "width": 175,
+      "height": 15.625,
+      "angle": 0,
+      "strokeColor": "#566167",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1.2,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 893,
+      "version": 1,
+      "versionNonce": 893,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "fontSize": 12.5,
+      "fontFamily": 1,
+      "text": "流程覆盖不等于已完成云端验收",
+      "originalText": "流程覆盖不等于已完成云端验收",
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
@@ -3016,7 +6170,7 @@
     }
   ],
   "appState": {
-    "viewBackgroundColor": "#ffffff",
+    "viewBackgroundColor": "#f5f4f0",
     "gridSize": null
   },
   "files": {}
