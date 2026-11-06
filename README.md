@@ -34,6 +34,7 @@ $huawei-functiongraph-web 创建一个 Flask 项目，并连接已有 RDS Supaba
 | [部署与回退](skills/huawei-functiongraph-web/references/deployment.md) | KooCLI 参数、函数部署和验收 |
 | [APIG 自动开通](skills/huawei-functiongraph-web/references/apig.md) | 实例复用、按需购买、入口、发布及失败恢复 |
 | [Supabase 对接](skills/huawei-functiongraph-web/references/supabase.md) | 已有后端的 SDK、网络和权限配置 |
+| [区域映射](skills/huawei-functiongraph-web/references/regions.md) | 常见区域名称、region ID 和简称歧义处理 |
 | [官方资料](skills/huawei-functiongraph-web/references/sources.md) | 文档来源与核实边界 |
 
 ## 验证状态
