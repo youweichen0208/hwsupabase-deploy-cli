@@ -6,14 +6,14 @@
 
 优先沿用项目记录约定；否则使用 `.hwsupabase/frontend/<环境>/environment.json`、`releases/<版本>/manifest.json`、`checks/<版本>.json`。本目录排除 Git，记录非敏感事实，文件本身不授予权限。
 
-新记录使用 schema_version=2，hosting_kind 为 obs-cdn、ecs-nginx 或 external；external 另记 provider（cloudflare-pages、vercel 或实际已有平台）。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
+新记录使用 schema_version=2，hosting_kind 为 obs-cdn、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
 
 | 记录 | 内容 |
 | --- | --- |
 | environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
 | obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
 | ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式 |
-| external 专有项 | 平台、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
+| external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
 | manifest | 版本、源码提交、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
 | checks | 时间、目标地址、检查结果、响应状态及脱敏内容摘要、刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
 

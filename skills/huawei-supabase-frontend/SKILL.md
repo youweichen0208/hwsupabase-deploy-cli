@@ -1,6 +1,6 @@
 ---
 name: huawei-supabase-frontend
-description: 创建、部署、更新和回退静态前端并接入已有华为云 RDS Supabase；支持华为云 OBS/CDN、明确选择的 ECS/EIP，以及保留其他平台托管或部署到 Cloudflare Pages/Vercel 默认域名。适用于这些托管与接入任务，不用于普通 UI 修改、SSR 后端部署或数据库采购。
+description: 创建、部署、更新和回退静态前端并接入已有华为云 RDS Supabase；支持华为云 OBS/CDN、明确选择的 ECS/EIP，以及保留或新建用户指定的其他云厂商/平台托管。适用于这些托管与接入任务，不用于普通 UI 修改、SSR 后端部署或数据库采购。
 ---
 
 # 华为云前端部署与 Supabase 接入
@@ -9,7 +9,7 @@ description: 创建、部署、更新和回退静态前端并接入已有华为�
 
 ## 选择路线
 
-先读取项目、会话及已有环境记录；更新/回退沿用已绑定路线，不重新选择平台。无明确选择且缺少域名时，询问是准备域名、选择 ECS 公网 IP，还是使用其他平台默认域名；等待期间可完成本地构建。
+先读取项目、会话及已有环境记录；更新/回退沿用已绑定路线，不重新选择平台。无明确选择且缺少域名时，询问是准备域名、选择 ECS 公网 IP，还是选择其他平台并核实其可用入口；等待期间可完成本地构建。
 
 | 条件 | 行为与必读指引 |
 | --- | --- |
@@ -17,7 +17,7 @@ description: 创建、部署、更新和回退静态前端并接入已有华为�
 | 选择华为云，已有可用域名 | 默认私有 OBS＋CDN；读 [域名与托管](references/hosting.md) 及 [OBS 发布](references/obs-release.md)。 |
 | 选择华为云，准备办理域名 | 先本地构建与预览，域名、证书及适用备案条件齐备后继续 OBS/CDN；不报告公网完成。 |
 | 明确选择 ECS，或选择华为云且明确不准备域名、要求公网 IP 访问 | 复用或按授权创建 ECS＋EIP＋Nginx；读 [ECS 发布](references/ecs-hosting.md)。缺少域名本身不授权购买。 |
-| 尚未托管，接受其他平台默认域名 | 优先已有账号/平台偏好；无法确定时让用户选择 Cloudflare Pages 或 Vercel，按 [其他平台](references/external-hosting.md) 创建及发布。 |
+| 尚未托管，选择其他云厂商/平台 | 沿用用户选择，核实具体托管服务、域名/HTTPS、发布及回退能力，按 [其他平台](references/external-hosting.md) 创建及发布；Pages/Vercel 仅为示例，不是候选白名单。 |
 
 ## 任务与工作流
 

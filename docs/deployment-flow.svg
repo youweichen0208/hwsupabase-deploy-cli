@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1660" viewBox="0 0 1040 1660" role="img" aria-labelledby="title description">
 <title id="title">前端托管选择与华为云 Supabase 接入流程</title>
-<desc id="description">静态前端可保留其他平台托管、使用华为云 OBS 加 CDN，或明确选择 ECS 加 EIP。没有域名时可先本地预览或使用其他平台默认域名，不会自动购买 ECS。当前 skill 覆盖 OBS/CDN、ECS 和其他平台接入，提供 Pages/Vercel 默认域名发布指引。所有路线最终由浏览器调用已有 Supabase HTTPS API。</desc>
+<desc id="description">静态前端可保留其他平台托管、使用华为云 OBS 加 CDN，或明确选择 ECS 加 EIP。没有域名时可先本地预览或核实其他平台的可用入口，不会自动购买 ECS。当前 skill 覆盖 OBS/CDN、ECS 和其他平台接入，按用户选择的云厂商核实具体托管服务与发布能力，Pages/Vercel 仅为示例。所有路线最终由浏览器调用已有 Supabase HTTPS API。</desc>
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9" fill="none" stroke="#76818d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
   <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9" fill="none" stroke="#2766a2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -88,17 +88,17 @@
 <text x="90" y="949" class="note" text-anchor="start">缺少域名 ≠ 自动购买 ECS；OBS 桶不能直接绑定 EIP。</text>
 <g id="new-platform"><rect x="64" y="1006" width="912" height="192" rx="18" fill="white" stroke="#d5dbe0" stroke-width="1.4"/></g>
 <text x="90" y="1043" class="section" text-anchor="start">03  尚未托管，接受其他平台</text>
-<text x="950" y="1042" class="note" text-anchor="end">已覆盖 · Pages / Vercel</text>
+<text x="950" y="1042" class="note" text-anchor="end">通用流程 · 按平台能力执行</text>
 <g id="choose-platform"><path d="M102 1066 Q265.0 1063 428 1066 Q441 1067 439 1079 L441 1132 Q440 1146 427 1144 Q265.0 1147 102 1145 Q89 1145 91 1132 L89 1079 Q90 1066 102 1066 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
 <path d="M108 1070 Q265.0 1066 422 1069" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
-<text x="265.0" y="1097.0" class="body" text-anchor="middle">选择 Pages / Vercel</text>
-<text x="265.0" y="1127.0" class="note" text-anchor="middle">平台需提供可访问的默认域名</text>
+<text x="265.0" y="1097.0" class="body" text-anchor="middle">选择云厂商与托管服务</text>
+<text x="265.0" y="1127.0" class="note" text-anchor="middle">核实域名、HTTPS 与发布能力</text>
 </g>
 <path d="M 442 1105 Q 480 1103 528 1105" class="connector"/>
 <g id="platform-deploy"><path d="M542 1066 Q740.0 1063 938 1066 Q951 1067 949 1079 L951 1132 Q950 1146 937 1144 Q740.0 1147 542 1145 Q529 1145 531 1132 L529 1079 Q530 1066 542 1066 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
 <path d="M548 1070 Q740.0 1066 932 1069" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="740.0" y="1097.0" class="body" text-anchor="middle">部署并获得前端访问地址</text>
-<text x="740.0" y="1127.0" class="note" text-anchor="middle">无需自行购买域名 · 核实套餐与可达性</text>
+<text x="740.0" y="1127.0" class="note" text-anchor="middle">自有域名或平台入口 · 核实可用性</text>
 </g>
 <path d="M 952 355 L 1006 355 L 1006 1224 L 520 1224" fill="none" stroke="#76818d" stroke-width="2" stroke-linejoin="round"/>
 <path d="M 957 646 L 1006 646 M 957 866 L 1006 866 M 952 1105 L 1006 1105" fill="none" stroke="#76818d" stroke-width="2"/>
