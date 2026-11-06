@@ -6,7 +6,9 @@
 
 ![前端托管选择与 Supabase 接入流程：已有平台可保留；华为云有域名走 OBS/CDN，准备域名时先本地预览，明确选择 IP 访问时可用 ECS；也可选择其他云厂商并核实其访问入口。最终由浏览器调用已有 Supabase。](docs/deployment-flow.svg)
 
-[查看完整流程图与可编辑 SVG](docs/deployment-flow.svg)
+[查看完整流程图](docs/deployment-flow.svg) · [下载 Excalidraw 可编辑源文件](docs/deployment-flow.excalidraw)
+
+流程图采用 Excalidraw 风格的手绘线条与字体；将 `.excalidraw` 文件拖入 Excalidraw 即可编辑。SVG 已嵌入字体子集，字体来源与许可见 [字体说明](docs/diagram-fonts.txt)。
 
 图例：**蓝色**表示已编写发布与回退指引的托管路线；**绿色**表示共同的浏览器访问与 Supabase 接入链路。工作流已覆盖不等于已在真实云环境部署验收。
 
