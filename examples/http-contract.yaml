@@ -1,0 +1,46 @@
+# Replace the host with the disposable test function's real APIG HTTPS domain.
+# Enable CONTRACT_TESTS=1 only on this disposable function. Merge real web and
+# Supabase cases from verify.yaml before using the report for activation.
+cases:
+  - id: health
+    category: api
+    url: https://api.example.com/healthz
+    expect: {status: 200, contains: '"ok"', release: {header: X-HWSupabase-Release}}
+  - id: raw-body-and-deep-route
+    category: api
+    url: https://api.example.com/contract/deep/path?x=1&x=2
+    method: POST
+    body: 'raw+body=%E4%B8%AD&literal=true'
+    expect: {status: 200, body: 'raw+body=%E4%B8%AD&literal=true'}
+  - id: redirect
+    category: api
+    url: https://api.example.com/contract/redirect
+    expect:
+      status: 302
+      headers: {Location: /healthz}
+  - id: multiple-cookies
+    category: api
+    url: https://api.example.com/contract/cookies
+    expect:
+      status: 200
+      header_counts: {Set-Cookie: 2}
+  - id: error-status
+    category: api
+    url: https://api.example.com/contract/error
+    expect: {status: 422, body: expected-error}
+  - id: unauthenticated
+    category: api
+    url: https://api.example.com/me
+    expect: {status: 401}
+  - id: invalid-token
+    category: api
+    url: https://api.example.com/me
+    headers:
+      Authorization: {$env: INVALID_TEST_AUTHORIZATION}
+    expect: {status: 401}
+  - id: binary
+    category: api
+    url: https://api.example.com/contract/binary
+    expect:
+      status: 200
+      sha256: 40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880

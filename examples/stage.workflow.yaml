@@ -1,0 +1,43 @@
+# Example of observing/creating one immutable function version. An agent generates
+# the full customer workflow from current hcloud --help/skeleton and readback.
+version: 1
+id: example-stage-r1
+phase: stage
+release: r1
+steps:
+  - id: function-version
+    ownership: created
+    probe:
+      call:
+        kind: api
+        service: FunctionGraph
+        operation: ListFunctionVersions
+        input:
+          path:
+            project_id: {$ref: config.project_id}
+            function_urn: 'urn:fss:cn-north-4:replace-with-project-id:function:default:example:latest'
+          query:
+            maxitems: '100'
+      select:
+        path: versions
+        where:
+          version: r1
+      expect:
+        version: r1
+      capture:
+        function_urn: func_urn
+        version: version
+    apply:
+      kind: api
+      service: FunctionGraph
+      operation: CreateFunctionVersion
+      input:
+        path:
+          project_id: {$ref: config.project_id}
+          function_urn: 'urn:fss:cn-north-4:replace-with-project-id:function:default:example:latest'
+        body:
+          version: r1
+          description: example-customer staging release r1
+    capture:
+      function_urn: func_urn
+      version: version

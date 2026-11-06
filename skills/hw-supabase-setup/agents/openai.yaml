@@ -1,0 +1,4 @@
+interface:
+  display_name: "华为云 Supabase 环境准备"
+  short_description: "创建或复用客户的 OBS、APIG、函数网络与 Supabase Storage 配置"
+  default_prompt: "使用 $hw-supabase-setup 为已有 RDS Supabase 准备应用部署环境。"

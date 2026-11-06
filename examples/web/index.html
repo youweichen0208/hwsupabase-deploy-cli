@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supabase 交付验证</title>
+<body>
+  <h1>Supabase 交付验证</h1>
+  <p id="result">正在检查公开配置与 Auth 服务…</p>
+  <script type="module">
+    const result = document.querySelector('#result');
+    try {
+      const config = await fetch('./config.json', { cache: 'no-store' }).then(r => r.json());
+      if (!config.url || !config.publicKey) throw new Error('missing-public-config');
+      const response = await fetch(`${config.url.replace(/\/$/, '')}/auth/v1/health`, {
+        headers: { apikey: config.publicKey },
+      });
+      result.textContent = response.ok ? `连接成功，发布版本：${config.release}` : '连接失败，请检查服务与访问配置。';
+    } catch {
+      result.textContent = '连接失败，请检查配置、HTTPS 与跨域设置。';
+    }
+  </script>
+</body>
+</html>

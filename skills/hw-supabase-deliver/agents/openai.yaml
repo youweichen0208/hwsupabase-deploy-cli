@@ -1,0 +1,4 @@
+interface:
+  display_name: "华为云 Supabase 应用交付"
+  short_description: "编排客户应用部署、失败续跑、真实链路验收和应用版本回退"
+  default_prompt: "使用 $hw-supabase-deliver 将当前客户项目部署到华为云并连接已有 RDS Supabase。"

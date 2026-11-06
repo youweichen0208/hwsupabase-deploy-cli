@@ -1,0 +1,46 @@
+version: 1
+customer: example-customer
+environment: staging
+region: cn-north-4
+profile: example-customer-staging
+project_id: replace-with-project-id
+supabase:
+  application_id: replace-with-application-id
+  public_url: https://supabase.example.com:8443
+  internal_url: https://supabase.internal.example.com:8443
+  public_key_env: SUPABASE_PUBLIC_KEY
+  service_key_env: SUPABASE_SERVICE_KEY
+  database_url_env: DATABASE_URL
+network:
+  vpc_id: replace-with-vpc-id
+  subnet_id: replace-with-subnet-id
+  security_group_id: replace-with-security-group-id
+obs:
+  endpoint: https://obs.cn-north-4.myhuaweicloud.com
+  config_file: .hwsupabase/credentials/example-customer-staging.obsutilconfig
+  site_bucket: example-customer-staging-web
+  artifact_bucket: example-customer-staging-artifacts
+  # storage_bucket: example-customer-staging-storage
+  access_key_env: HWC_OBS_ACCESS_KEY
+  secret_key_env: HWC_OBS_SECRET_KEY
+  token_env: HWC_OBS_SECURITY_TOKEN
+apig:
+  mode: reuse
+  instance_id: replace-with-apig-instance-id
+  # For create: remove instance_id, supply spec_id, network_id (APIG's network ID,
+  # not necessarily the VPC subnet ID), available_zone_ids and chosen public ingress.
+web:
+  source: web
+  build: [node, build.mjs]
+  output: dist
+  domain: app.example.com
+python:
+  framework: flask
+  source: flask
+  entrypoint: app:app
+  version: '3.12'
+  requirements: requirements.txt
+  include: [app.py, requirements.txt]
+  # Set an actual tested EulerOS-compatible image digest before build-python.
+  build_image: ''
+  platform: linux/amd64

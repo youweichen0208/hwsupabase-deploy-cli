@@ -1,0 +1,27 @@
+cases:
+  - id: frontend
+    category: web
+    url: https://app.example.com/
+    expect:
+      status: 200
+      contains: '<!doctype html>'
+  - id: frontend-version
+    category: web
+    url: https://app.example.com/config.json
+    expect:
+      status: 200
+      release: {json_path: release}
+  - id: function-health
+    category: api
+    url: https://api.example.com/healthz
+    expect:
+      status: 200
+      contains: '"ok"'
+      release: {header: X-HWSupabase-Release}
+  - id: supabase-health
+    category: supabase
+    url: https://supabase.example.com:8443/auth/v1/health
+    headers:
+      apikey: {$env: SUPABASE_PUBLIC_KEY}
+    expect:
+      status: 200

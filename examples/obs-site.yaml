@@ -1,0 +1,10 @@
+website:
+  indexDocument:
+    suffix: index.html
+  errorDocument:
+    key: 404.html
+cors:
+  - allowedOrigin: ['https://app.example.com']
+    allowedMethod: [GET, HEAD]
+    allowedHeader: ['*']
+    maxAgeSeconds: 300
