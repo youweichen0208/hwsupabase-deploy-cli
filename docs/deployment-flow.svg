@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1660" viewBox="0 0 1040 1660" role="img" aria-labelledby="title description">
 <title id="title">前端托管选择与华为云 Supabase 接入流程</title>
-<desc id="description">静态前端可保留其他平台托管、使用华为云 OBS 加 CDN，或明确选择 ECS 加 EIP。没有域名时可先本地预览或使用其他平台默认域名，不会自动购买 ECS。当前 skill 完整覆盖 OBS/CDN 流程，其他路线仅供选型。所有路线最终由浏览器调用已有 Supabase HTTPS API。</desc>
+<desc id="description">静态前端可保留其他平台托管、使用华为云 OBS 加 CDN，或明确选择 ECS 加 EIP。没有域名时可先本地预览或使用其他平台默认域名，不会自动购买 ECS。当前 skill 覆盖 OBS/CDN、ECS 和其他平台接入，提供 Pages/Vercel 默认域名发布指引。所有路线最终由浏览器调用已有 Supabase HTTPS API。</desc>
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9" fill="none" stroke="#76818d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
   <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto-start-reverse"><path d="M 1 1 L 8 5 L 1 9" fill="none" stroke="#2766a2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -26,21 +26,21 @@
 </g>
 <g id="existing-platform"><rect x="64" y="252" width="912" height="184" rx="18" fill="white" stroke="#d5dbe0" stroke-width="1.4"/></g>
 <text x="90" y="289" class="section" text-anchor="start">01  已在其他平台托管</text>
-<text x="950" y="288" class="note" text-anchor="end">可选路线 · 保留现有部署</text>
-<g id="existing-site"><path d="M102 316 Q265.0 313 428 316 Q441 317 439 329 L441 382 Q440 396 427 394 Q265.0 397 102 395 Q89 395 91 382 L89 329 Q90 316 102 316 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M108 320 Q265.0 316 422 319" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<text x="950" y="288" class="note" text-anchor="end">已覆盖 · 保留现有部署</text>
+<g id="existing-site"><path d="M102 316 Q265.0 313 428 316 Q441 317 439 329 L441 382 Q440 396 427 394 Q265.0 397 102 395 Q89 395 91 382 L89 329 Q90 316 102 316 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M108 320 Q265.0 316 422 319" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="265.0" y="347.0" class="body" text-anchor="middle">已有前端访问地址</text>
 <text x="265.0" y="377.0" class="note" text-anchor="middle">不必迁移到华为云</text>
 </g>
 <path d="M 441 355 Q 480 353 528 355" class="connector"/>
-<g id="keep-hosting"><path d="M542 316 Q740.0 313 938 316 Q951 317 949 329 L951 382 Q950 396 937 394 Q740.0 397 542 395 Q529 395 531 382 L529 329 Q530 316 542 316 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M548 320 Q740.0 316 932 319" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<g id="keep-hosting"><path d="M542 316 Q740.0 313 938 316 Q951 317 949 329 L951 382 Q950 396 937 394 Q740.0 397 542 395 Q529 395 531 382 L529 329 Q530 316 542 316 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M548 320 Q740.0 316 932 319" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="740.0" y="347.0" class="body" text-anchor="middle">复用现有托管与发布方式</text>
 <text x="740.0" y="377.0" class="note" text-anchor="middle">确认用户能打开当前前端</text>
 </g>
 <g id="huawei"><rect x="64" y="466" width="912" height="510" rx="18" fill="white" stroke="#b5cde5" stroke-width="1.4"/></g>
 <text x="90" y="503" class="section" text-anchor="start">02  选择华为云托管</text>
-<text x="950" y="502" class="note" text-anchor="end">蓝色实线＝当前 skill 覆盖</text>
+<text x="950" y="502" class="note" text-anchor="end">OBS 与 ECS 均有执行指引</text>
 <g id="domain-ready"><path d="M102 541 Q210.0 538 318 541 Q331 542 329 554 L331 607 Q330 621 317 619 Q210.0 622 102 620 Q89 620 91 607 L89 554 Q90 541 102 541 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
 <path d="M108 545 Q210.0 541 312 544" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="210.0" y="587.0" class="body" text-anchor="middle">已有可用域名</text>
@@ -69,34 +69,34 @@
 <text x="845.0" y="668.0" class="note" text-anchor="middle">HTTPS 域名访问</text>
 </g>
 <text x="90" y="786" class="note" text-anchor="start">不准备域名，且明确希望通过公网 IP 访问：</text>
-<g id="ip-choice"><path d="M102 827 Q210.0 824 318 827 Q331 828 329 840 L331 893 Q330 907 317 905 Q210.0 908 102 906 Q89 906 91 893 L89 840 Q90 827 102 827 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M108 831 Q210.0 827 312 830" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<g id="ip-choice"><path d="M102 827 Q210.0 824 318 827 Q331 828 329 840 L331 893 Q330 907 317 905 Q210.0 908 102 906 Q89 906 91 893 L89 840 Q90 827 102 827 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M108 831 Q210.0 827 312 830" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="210.0" y="873.0" class="body" text-anchor="middle">选择服务器托管</text>
 </g>
 <path d="M 332 866 Q 350 864 378 866" class="connector"/>
-<g id="ecs"><path d="M392 827 Q525.0 824 658 827 Q671 828 669 840 L671 893 Q670 907 657 905 Q525.0 908 392 906 Q379 906 381 893 L379 840 Q380 827 392 827 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M398 831 Q525.0 827 652 830" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<g id="ecs"><path d="M392 827 Q525.0 824 658 827 Q671 828 669 840 L671 893 Q670 907 657 905 Q525.0 908 392 906 Q379 906 381 893 L379 840 Q380 827 392 827 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M398 831 Q525.0 827 652 830" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="525.0" y="858.0" class="body" text-anchor="middle">ECS＋EIP＋Nginx</text>
 <text x="525.0" y="888.0" class="note" text-anchor="middle">服务器、带宽费用与日常维护</text>
 </g>
 <path d="M 672 866 Q 700 864 733 866" class="connector"/>
-<g id="ip-entry"><path d="M747 827 Q845.0 824 943 827 Q956 828 954 840 L956 893 Q955 907 942 905 Q845.0 908 747 906 Q734 906 736 893 L734 840 Q735 827 747 827 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M753 831 Q845.0 827 937 830" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<g id="ip-entry"><path d="M747 827 Q845.0 824 943 827 Q956 828 954 840 L956 893 Q955 907 942 905 Q845.0 908 747 906 Q734 906 736 893 L734 840 Q735 827 747 827 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M753 831 Q845.0 827 937 830" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="845.0" y="858.0" class="body" text-anchor="middle">公网 IP 访问</text>
 <text x="845.0" y="888.0" class="note" text-anchor="middle">HTTPS 需另行配置</text>
 </g>
 <text x="90" y="949" class="note" text-anchor="start">缺少域名 ≠ 自动购买 ECS；OBS 桶不能直接绑定 EIP。</text>
 <g id="new-platform"><rect x="64" y="1006" width="912" height="192" rx="18" fill="white" stroke="#d5dbe0" stroke-width="1.4"/></g>
 <text x="90" y="1043" class="section" text-anchor="start">03  尚未托管，接受其他平台</text>
-<text x="950" y="1042" class="note" text-anchor="end">可选路线 · 可用平台默认域名</text>
-<g id="choose-platform"><path d="M102 1066 Q265.0 1063 428 1066 Q441 1067 439 1079 L441 1132 Q440 1146 427 1144 Q265.0 1147 102 1145 Q89 1145 91 1132 L89 1079 Q90 1066 102 1066 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M108 1070 Q265.0 1066 422 1069" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
-<text x="265.0" y="1097.0" class="body" text-anchor="middle">选择静态托管平台</text>
+<text x="950" y="1042" class="note" text-anchor="end">已覆盖 · Pages / Vercel</text>
+<g id="choose-platform"><path d="M102 1066 Q265.0 1063 428 1066 Q441 1067 439 1079 L441 1132 Q440 1146 427 1144 Q265.0 1147 102 1145 Q89 1145 91 1132 L89 1079 Q90 1066 102 1066 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M108 1070 Q265.0 1066 422 1069" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
+<text x="265.0" y="1097.0" class="body" text-anchor="middle">选择 Pages / Vercel</text>
 <text x="265.0" y="1127.0" class="note" text-anchor="middle">平台需提供可访问的默认域名</text>
 </g>
 <path d="M 442 1105 Q 480 1103 528 1105" class="connector"/>
-<g id="platform-deploy"><path d="M542 1066 Q740.0 1063 938 1066 Q951 1067 949 1079 L951 1132 Q950 1146 937 1144 Q740.0 1147 542 1145 Q529 1145 531 1132 L529 1079 Q530 1066 542 1066 Z" fill="#fafbfc" stroke="#86909a" stroke-width="2" stroke-dasharray="7 5"/>
-<path d="M548 1070 Q740.0 1066 932 1069" fill="none" stroke="#86909a" stroke-width="0.7" opacity="0.4"/>
+<g id="platform-deploy"><path d="M542 1066 Q740.0 1063 938 1066 Q951 1067 949 1079 L951 1132 Q950 1146 937 1144 Q740.0 1147 542 1145 Q529 1145 531 1132 L529 1079 Q530 1066 542 1066 Z" fill="#f1f7ff" stroke="#2766a2" stroke-width="2"/>
+<path d="M548 1070 Q740.0 1066 932 1069" fill="none" stroke="#2766a2" stroke-width="0.7" opacity="0.4"/>
 <text x="740.0" y="1097.0" class="body" text-anchor="middle">部署并获得前端访问地址</text>
 <text x="740.0" y="1127.0" class="note" text-anchor="middle">无需自行购买域名 · 核实套餐与可达性</text>
 </g>
@@ -121,8 +121,8 @@
 <path d="M258 1515 Q520.0 1511 782 1514" fill="none" stroke="#438274" stroke-width="0.7" opacity="0.4"/>
 <text x="520.0" y="1552.0" class="body" text-anchor="middle">验收页面、资源、路由、登录与数据隔离</text>
 </g>
-<text x="64" y="1620" class="note" text-anchor="start">蓝色实线：当前已支持    灰色虚线：选型参考，尚无完整 skill 工作流</text>
-<text x="64" y="1648" class="note" text-anchor="start">绿色：共同访问与接入链路；流程图不代表已购买资源或完成部署。</text>
+<text x="64" y="1620" class="note" text-anchor="start">蓝色：托管路线与发布流程；绿色：浏览器访问与后端接入。</text>
+<text x="64" y="1648" class="note" text-anchor="start">工作流已补齐；云端部署与业务验收需在实际环境执行。</text>
 <path d="M 520 205 L 520 224 Q 520 232 506 232 L 34 232 L 34 353 L 88 353" class="connector"/>
 <path d="M 34 353 L 34 580 L 88 580" class="connector"/>
 <path d="M 34 580 L 34 700 L 88 700" class="connector"/>

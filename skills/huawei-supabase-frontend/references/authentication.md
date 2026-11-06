@@ -1,6 +1,6 @@
 # KooCLI 认证与只读预检
 
-部署只需有效的认证上下文和目标区域，不强制创建永久 AK/SK。优先复用用户指定或当前有效 profile，确认目标账号；需要补充认证时按运行环境选择。只读取模式、区域、profile 名称等必要元数据，展示前过滤秘密字段，不输出整个配置文件。
+管理华为云资源需有效的认证上下文和目标区域，不强制创建永久 AK/SK。优先复用用户指定或当前有效 profile，确认目标账号；需要补充认证时按运行环境选择。只读取模式、区域、profile 名称等必要元数据，展示前过滤秘密字段，不输出整个配置文件。
 
 | 环境 | 认证选择与前提 |
 | --- | --- |
@@ -27,7 +27,7 @@ hcloud configure sso --cli-profile="$FRONTEND_PROFILE"
 
 ## 只读预检与错误诊断
 
-已确认委托的 ECS 可由 KooCLI 的 ecsAgency 模式获取临时凭证；这只是认证方式，不需要为静态前端新购 ECS。本机复用选定 profile。先查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help` 和 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
+已确认委托的 ECS 可由 KooCLI 的 ecsAgency 模式获取临时凭证；这只是认证方式，不需要为静态前端新购 ECS。本机复用选定 profile。先按路线查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help`、`hcloud ECS --help`、`hcloud EIP --help` 或 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
 
 只有目标 API 需要 project ID 时，才优先让 KooCLI 自动解析；保留用户指定项目。全局服务、桶访问与 RDS 区域项目不能混用同一 ID。自动解析受限且认证有效时，再查询官方 IAM 项目接口或使用已知目标 ID。
 

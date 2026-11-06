@@ -7,7 +7,7 @@
 | [KooCLI 概述](https://support.huaweicloud.com/intl/en-us/productdesc-hcli/hcli_01.html) | 工具安装与能力入口 |
 | [JSON 参数输入](https://support.huaweicloud.com/usermanual-hcli/hcli_05_12.html) | 生成当前 API 请求文件 |
 | [SSO](https://support.huaweicloud.com/usermanual-hcli/hcli_03_009.html)、[认证模式](https://support.huaweicloud.com/usermanual-hcli/hcli_05_10.html) | 认证准备；已有参数源自此前 7.3.12 帮助核对，本次未云端实测 |
-| [中国站 API Explorer](https://console.huaweicloud.com/apiexplorer/)、[国际站 API Explorer](https://console-intl.huaweicloud.com/apiexplorer/) | 查询 OBS/RDS 服务终端节点、最新 API 与 schema |
+| [中国站 API Explorer](https://console.huaweicloud.com/apiexplorer/)、[国际站 API Explorer](https://console-intl.huaweicloud.com/apiexplorer/) | 查询 OBS/ECS/EIP/RDS 服务终端节点、最新 API 与 schema |
 | [OBS 默认域名预览限制](https://support.huaweicloud.com/usermanual-obs/obs_03_0342.html) | 缺少自有域名时说明网页下载限制 |
 | [备案条件](https://support.huaweicloud.com/icprb-icp/icp_01_0008.html) | 检查首次备案的资源及身份条件 |
 | [私有桶 CDN 接入](https://support.huaweicloud.com/usermanual-obs/obs_03_0600.html) | 私有桶回源、委托权限及加速范围 |
@@ -19,4 +19,20 @@
 
 本次通过官方页面/检索核对域名限制、备案条件、私有桶委托、CDN 改写、obsutil 元数据和 Key 类型。当前执行环境未找到 KooCLI/obsutil，因此未执行 CLI 帮助或云端请求。`ListAiApplications`、`ShowSupabaseApplication` 沿用任务提供的已核实命令名；本次公开文档搜索未返回可独立核对的对应参数页，所以仅提供帮助发现入口，不编造请求字段或声称已再次验证。
 
-区域表保留历史名称解析，OBS/RDS 能力需逐次按实际账号确认。价格、配额、可备案资源资格及委托范围均在实施时查询；预算示例不代表报价或费用上限。
+区域表保留历史名称解析，OBS/ECS/EIP/RDS 能力需逐次按实际账号确认。价格、配额、可备案资源资格及委托范围均在实施时查询；预算示例不代表报价或费用上限。
+
+## 新增路线的官方依据
+
+| 资料 | 核实内容 |
+| --- | --- |
+| [ECS CLI 操作目录](https://support.huaweicloud.com/clir-ecs/ecs_cli_02.html) | ListServersDetails、ShowServer、CreatePostPaidServers、ShowJob 名称；参数执行时查帮助 |
+| [EIP CLI v2](https://support.huaweicloud.com/intl/zh-cn/clir-eip/EIP-cli_v2.html)、[绑定 EIP](https://support.huaweicloud.com/usermanual-eip/eip_0009.html) | 带 /v2 的查询/创建/更新操作及网卡绑定 |
+| [Nginx 核心指令](https://nginx.org/en/docs/http/ngx_http_core_module.html)、[运行与重载](https://nginx.org/en/docs/beginners_guide.html) | location、try_files、站点文件和配置检查/重载 |
+| [Pages Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/) | 项目创建、预览与生产分支、实际默认域名 |
+| [Pages 路由](https://developers.cloudflare.com/pages/configuration/serving-pages/)、[重写](https://developers.cloudflare.com/pages/configuration/redirects/)、[回退](https://developers.cloudflare.com/pages/configuration/rollbacks/) | 顶层 404.html、限定页面改写和生产部署回退 |
+| [Vercel 部署](https://vercel.com/docs/cli/deploy)、[阶段发布](https://vercel.com/docs/cli/deploying-from-cli) | Build Output、生产构建与跳过域名分配 |
+| [Vercel 推广](https://vercel.com/docs/cli/promote)、[回退](https://vercel.com/docs/cli/rollback)、[配置](https://vercel.com/docs/project-configuration/vercel-json) | 生产入口切换、能力边界和路由配置 |
+
+本次另用 Wrangler 4.158.0 的本地帮助复核了 `pages deploy` 的 directory、project-name、branch 参数和 `pages deployment list` 的 project-name/environment 参数。只执行帮助查询，没有登录或发布。Vercel 65.12.1 的临时 CLI 下载未及时完成，已停止；其参数仅按上列官方文档核对，未声称本地 CLI 实测。
+
+这些来源用于编写工作流，不意味着已在用户账号执行。新增路线没有云端创建、购买或生产部署实测；Nginx 示例的本地验证和文档检查见仓库 README。第三方 CLI 的实际版本/套餐、IP 证书签发能力及地区访问质量仍需执行任务时核实。

@@ -1,4 +1,4 @@
 interface:
   display_name: "华为云前端部署与 Supabase 接入"
-  short_description: "部署 React/Vue 到私有 OBS 与 CDN，并接入已有 Supabase"
-  default_prompt: "使用 $huawei-supabase-frontend 检查当前前端和已有 Supabase，准备华为云 OBS/CDN 环境，部署并验证；缺少域名时先完成本地预览与上线清单。"
+  short_description: "按域名与现有托管选择 OBS、ECS 或其他平台，并接入华为云 Supabase"
+  default_prompt: "使用 $huawei-supabase-frontend 检查当前前端与已有 Supabase，保留现有托管或按我的选择使用 OBS/CDN、ECS/EIP 或平台默认域名，完成发布、验证与回退准备。"
