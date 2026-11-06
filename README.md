@@ -23,7 +23,7 @@ $huawei-functiongraph-web 将当前 Express 项目部署到华为云 FunctionGra
 $huawei-functiongraph-web 创建一个 Flask 项目，并连接已有 RDS Supabase。
 ```
 
-部署需要安装官方 KooCLI，并安全配置具有相应权限的 AK/SK 和目标区域。Skill 优先复用 KooCLI 自动获取 project ID，查询现有函数、APIG 和网络资源；首次创建返回的 ID 和访问地址自动记录，无需预填。已有有效认证配置可直接使用，临时凭证还需安全令牌。仅在资源选择有歧义、自动发现受阻或操作超出已有授权时询问。真实凭证不写入仓库或聊天。
+部署需要安装官方 KooCLI，并准备具有相应权限的认证上下文和目标区域；支持已有 profile、SSO、ECS 委托或 AKSK，不强制创建永久访问密钥。Skill 优先复用 KooCLI 自动获取 project ID，查询现有函数、APIG 和网络资源；首次创建返回的 ID 和访问地址自动记录，无需预填。已有有效认证配置可直接使用，临时凭证还需安全令牌。仅在资源选择有歧义、自动发现受阻或操作超出已有授权时询问。真实凭证不写入仓库或聊天。
 
 ## 指引
 
@@ -31,6 +31,7 @@ $huawei-functiongraph-web 创建一个 Flask 项目，并连接已有 RDS Supaba
 | --- | --- |
 | [SKILL.md](skills/huawei-functiongraph-web/SKILL.md) | 工作流与工具选择 |
 | [框架适配](skills/huawei-functiongraph-web/references/frameworks.md) | Flask、Express、Django 打包和启动 |
+| [认证与只读预检](skills/huawei-functiongraph-web/references/authentication.md) | SSO、ECS 委托、CloudShell 环境选择及认证失败诊断 |
 | [部署与回退](skills/huawei-functiongraph-web/references/deployment.md) | KooCLI 参数、函数部署和验收 |
 | [APIG 自动开通](skills/huawei-functiongraph-web/references/apig.md) | 实例复用、按需购买、入口、发布及失败恢复 |
 | [Supabase 对接](skills/huawei-functiongraph-web/references/supabase.md) | 已有后端的 SDK、网络和权限配置 |
