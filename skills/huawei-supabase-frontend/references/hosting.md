@@ -1,5 +1,7 @@
 # 域名、私有 OBS 与 CDN
 
+本页仅适用于公有云默认 obs-cdn。明确选择内部 OBS 的配置、发布与回退见 [内部 OBS 自定义域名](obs-custom-domain.md)。
+
 ## 入口前置条件
 
 用户使用 `https://app.example.com`，DNS 指向 CDN 实际返回的 CNAME；CDN 终止客户端 TLS 并回源私有 OBS，浏览器另行访问 Supabase HTTPS API。用户登录应用使用 Supabase Auth，无需华为云账号。

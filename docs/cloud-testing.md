@@ -19,10 +19,10 @@
 
 ## 2. 认证与只读预检
 
-先按 [README 的认证入口](../README.md#认证入口与工具分工) 复用已有认证；首次永久 AK/SK 使用固定版本 DevKit 一次终端初始化，已有多账号配置先核对迁移影响。无需单独安装 obsutil。特殊认证不走永久凭证简化入口。然后调用：
+先按 [README 的认证入口](../README.md#认证入口与工具分工) 复用已有认证；首次永久 AK/SK 使用固定版本 DevKit 一次终端初始化，已有多账号配置先核对迁移影响。无需单独安装 obsutil。内部 OBS 保留实际 Endpoint 与独立配置，不运行默认 DevKit 初始化；特殊认证不走永久凭证简化入口。然后调用：
 
 ```text
-$huawei-supabase-frontend 检查当前项目的云端测试条件。使用我已配置的 profile <名称>，目标区域 <Region ID>，测试路线 <OBS/CDN、ECS 宿主机 Nginx、ECS Docker 或指定外部平台>，复用已有 Supabase <应用标识>。先只读核实认证、权限、资源、构建环境、入口和费用，列出缺项，不购买、不安装、不发布。
+$huawei-supabase-frontend 检查当前项目的云端测试条件。使用我已配置的 profile <名称>，目标区域 <Region ID>，测试路线 <OBS/CDN、内部 OBS 自定义域名、ECS 宿主机 Nginx、ECS Docker 或指定外部平台>，复用已有 Supabase <应用标识>。先只读核实认证、权限、资源、构建环境、入口和费用，列出缺项，不购买、不安装、不发布。
 ```
 
 分别记录“配置已完成 / 云 API 可用 / OBS 可用”；OBS 路线使用 `hcloud obs` 查询目标桶，不以缺少全局列桶权限判定认证失败。测试统一入口的已知限制见 [认证验证记录](auth-validation.md)。
@@ -36,6 +36,7 @@ ECS 还要独立核实 SSH 主机身份、登录用户及安装所需权限；Ko
 | 路线 | 进入发布前的条件 | 本轮应核实 |
 | --- | --- | --- |
 | OBS/CDN | 专用私有桶、CDN 回源权限、可用域名/证书、DNS 权限及适用备案条件 | 实际返回的 CDN CNAME、HTTPS 入口、路由/缓存和桶资源隔离 |
+| 内部 OBS 自定义域名 | 明确选择、实际 Endpoint、专用前端桶、访问范围授权和独立配置 | 按 [内部 OBS 流程](../skills/huawei-supabase-frontend/references/obs-custom-domain.md) 快照、网站/权限配置、上传、绑定域名、DNS/适用证书与恢复；无 CDN 不刷新 CDN |
 | ECS 宿主机 Nginx | ECS/EIP、SSH、应用目录/端口权限和 Nginx | 配置检查、目录权限、入口切换及旧资源保留 |
 | ECS Docker | 上述 ECS 条件，以及可用 Engine/Compose 和固定镜像 | daemon 目标、候选回环端口、只读挂载、健康状态、日志和恢复点 |
 | 外部平台 | 实际托管服务、账号/项目权限及原有发布渠道 | 平台构建版本、候选/稳定地址、路由与实际回退能力 |
@@ -67,6 +68,8 @@ $huawei-supabase-frontend 按刚才核实的目标准备测试环境并发布候
 
 隔离测试只使用获授权的测试账号与数据，不能为通过测试关闭 RLS。没有测试账号、写入授权或安全入口时，把受影响项记为未验证，不报告整体线上通过。完整标准以 [通用验收](../skills/huawei-supabase-frontend/references/deployment.md) 为准。
 
+首页和实际 JS/CSS/图片必须 GET 检查最终状态、Content-Type、Content-Disposition 与正文；根路径 XML、错误页或附件判失败。HEAD 仅作辅助，不能证明无强制下载。可复制的 shell/PowerShell（`curl.exe`）命令见 [GET 留证示例](../skills/huawei-supabase-frontend/references/deployment.md#get-留证示例)。跟随跳转后记录最终 URL 与最终响应。HTTP 成功或缺少 attachment 不等于页面可用，必须浏览器验证。`--resolve` 成功但正常解析失败时仅报告诊断通过。旧 HEAD 记录保留历史，下一次部署/回退补做 GET 和浏览器检查。
+
 ## 5. 验证更新、回退与失败恢复
 
 在第一版通过后，发布有可见差异的第二版，记录两个版本与入口响应；核实旧版打开的页面仍可加载旧资源。然后调用：
@@ -92,6 +95,8 @@ $huawei-supabase-frontend 回退测试环境到 <第一版的已验证版本标�
 Supabase 应用标识：
 当前服务版本 / 最近成功版本 / 回退目标：
 检查项：通过、失败、未验证、不适用及理由
+请求方法 / 最终 URL（脱敏）/ normal 或 resolve-diagnostic：
+最终状态 / Content-Type / Content-Disposition / 脱敏正文摘要 / 浏览器结果：
 错误阶段 / 脱敏请求 ID / 恢复结果：
 仍保留的资源及计费项 / 允许的清理范围：
 完成状态：skill、本地应用、环境、线上验收分别填写

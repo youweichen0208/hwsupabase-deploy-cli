@@ -14,8 +14,9 @@ description: 准备构建环境，创建、部署、更新、回退和维护静�
 | 条件 | 行为与必读指引 |
 | --- | --- |
 | 已在其他平台托管 | 优先保留项目、域名与 CI，仅接入后端或按请求更新；读 [其他平台](references/external-hosting.md)。 |
-| 选择华为云，已有可用域名 | 默认私有 OBS＋CDN；读 [域名与托管](references/hosting.md) 及 [OBS 发布](references/obs-release.md)。 |
-| 选择华为云，准备办理域名 | 先在已确定的构建环境中构建并提供可用预览，域名、证书及适用备案条件齐备后继续 OBS/CDN；不报告公网完成。 |
+| 明确选择内部 OBS，提供实际 Endpoint 且授权相应访问范围 | 读 [内部 OBS 自定义域名](references/obs-custom-domain.md)，使用独立 OBS 配置；更新/回退沿用该分支。 |
+| 选择公有华为云，已有可用域名 | 默认私有 OBS＋CDN；读 [域名与托管](references/hosting.md) 及 [OBS 发布](references/obs-release.md)。 |
+| 选择公有华为云，准备办理域名 | 先在已确定的构建环境中构建并提供可用预览，域名、证书及适用备案条件齐备后继续 OBS/CDN；不报告公网完成。 |
 | 明确选择 ECS，或选择华为云且明确不准备域名、要求公网 IP 访问 | 复用或按授权创建 ECS＋EIP＋Nginx；读 [ECS 发布](references/ecs-hosting.md)。缺少域名本身不授权购买。 |
 | 尚未托管，选择其他云厂商/平台 | 沿用用户选择，核实具体托管服务、域名/HTTPS、发布及回退能力，按 [其他平台](references/external-hosting.md) 创建及发布；Pages/Vercel 仅为示例，不是候选白名单。 |
 
@@ -23,7 +24,7 @@ description: 准备构建环境，创建、部署、更新、回退和维护静�
 
 1. **确定范围。** 区分环境检查、安装/准备构建环境、创建并部署、只接入 Supabase、更新、回退及环境/服务维护。只接入后端不隐含迁移前端或采购资源；仅有访问 URL 而无源码/发布权限时完成只读诊断并列出缺项，不宣称已改造应用。
 2. **检查应用。** 创建/修改应用时读 [前端构建](references/frameworks.md)。新项目未指定时使用 React＋Vite＋TypeScript；Vue、普通静态网站和已有静态导出沿用原方案。SSR、服务端 API、运行时秘密需求单独说明，选择 ECS 也不自动授权部署后端。
-3. **核实所需环境。** 构建、工具缺失或维护时读 [构建环境](references/build-environment.md)，先确定构建位置，再按项目约束检查该环境的 Node 与包管理器。优先复用已有构建产物或 CI；本地构建复用兼容的现有工具，版本不匹配时不自动安装、升级或切换本地 Node。OBS 仅接收静态产物。用户选择 Docker 或维护已有容器时另读 [Docker](references/docker-hosting.md)。仅在查询/管理华为云资源时读 [认证](references/authentication.md) 和 [区域](references/regions.md)。首次永久 AK/SK 默认通过已核实版本 DevKit 一次终端初始化；已有认证直接复用，特殊认证沿用专用流程。第三方前端已有 Supabase HTTPS URL/公开 Key 时可直接检查接入，不强制配置华为云 CLI。各平台按对应指引核实账号归属、资源、部署权限、费用和已有记录。
+3. **核实所需环境。** 构建、工具缺失或维护时读 [构建环境](references/build-environment.md)，先确定构建位置，再按项目约束检查该环境的 Node 与包管理器。优先复用已有构建产物或 CI；本地构建复用兼容的现有工具，版本不匹配时不自动安装、升级或切换本地 Node。OBS 仅接收静态产物。用户选择 Docker 或维护已有容器时另读 [Docker](references/docker-hosting.md)。仅在查询/管理华为云资源时读 [认证](references/authentication.md) 和 [区域](references/regions.md)。内部 OBS 保留实际 Endpoint 与独立配置，不走默认 DevKit 初始化；其他首次永久 AK/SK 默认通过已核实版本 DevKit 一次终端初始化；已有认证直接复用，特殊认证沿用专用流程。第三方前端已有 Supabase HTTPS URL/公开 Key 时可直接检查接入，不强制配置华为云 CLI。各平台按对应指引核实账号归属、资源、部署权限、费用和已有记录。
 4. **接入已有 Supabase。** 需要后端时读 [Supabase](references/supabase.md)，配置公开连接参数、真实 origin、回调、CORS 和 RLS。先取得真实稳定入口；新平台尚无入口时先创建项目或无登录的预览，再配置回调并重新构建。没有安全可用的后端地址时，不扩张网络权限来掩盖缺项。
 5. **构建并发布。** 按选中路线准备具体请求、资源/配置差异、费用和恢复点；在已有授权内执行。新付费资源、授权外公网/数据库变更才需确认；首次登录、MFA、域名实名及备案由用户完成。仅检查或资源准备计划请求保持只读；必要工具只在已确定且授权覆盖的目标内准备；部署请求本身不授权修改本地 Node/包管理器，本地工具链安装或切换需用户明确要求。环境安装本身不意味着发布生产。
 6. **验证与记录。** 所有路线读 [通用发布记录与验收](references/deployment.md)。先校验产物再切换入口，用真实访问地址验收，失败按对应路线恢复。只在适用检查通过后记录成功版本。

@@ -12,6 +12,8 @@
 
 已有 AssumeRole 配置需保留其源 profile 和委托关系；认证失败不自动创建委托、启用身份中心或授予额外权限。
 
+内部 OBS 使用用户提供的实际 Endpoint 与独立 `-config`，先核实目标桶访问；不运行默认 DevKit `auth init`/`auth sync` 覆盖内部 Endpoint，也不由 region 推导替换。具体流程见 [内部 OBS 自定义域名](obs-custom-domain.md)。
+
 ## 首次永久 AK/SK：一次终端初始化
 
 默认使用官方 Huawei Cloud DevKit 的统一入口，不另做配置助手。已核对 npm 发布包 **1.1.13**（包声明 Node.js ≥22，隔离实测 Node 22.23.3）；执行时沿用该固定版本及核对帮助，不使用浮动 latest。DevKit 负责初始化，KooCLI 负责云操作，skill 负责部署流程；不要求安装整套 DevKit 插件或其他 skills。

@@ -1,26 +1,29 @@
 # 通用发布记录与验收
 
-所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md)、[ECS](ecs-hosting.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
+所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md)、[内部 OBS 自定义域名](obs-custom-domain.md)、[ECS](ecs-hosting.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
 
 ## 环境与版本记录
 
 优先沿用项目记录约定；否则使用 `.hwsupabase/frontend/<环境>/environment.json`、`releases/<版本>/manifest.json`、`checks/<版本>.json`。本目录排除 Git，记录非敏感事实，文件本身不授予权限。
 
-新记录使用 schema_version=2，hosting_kind 为 obs-cdn、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
+新记录使用 schema_version=2，hosting_kind 为 obs-cdn、obs-custom-domain、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
 
 | 记录 | 内容 |
 | --- | --- |
 | environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
 | 构建环境（可选增量字段） | build_location（local/ci/ecs）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
 | obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
+| obs-custom-domain 专有项 | 实际 OBS Endpoint、独立配置位置（无秘密）、桶、自定义域名、网站首页/错误文档、桶策略及对象 ACL 的授权范围/快照位置、适用的 DNS 提供商/记录/TTL、证书标识/到期时间及状态；不要求 CDN 字段 |
 | ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式、service_mode（host/docker）；Docker 另记 Compose project/文件位置、service、daemon 主机、端口及当前/前一验证镜像摘要 |
 | external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
 | manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
-| checks | 时间、目标地址、检查结果、响应状态及脱敏内容摘要、刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
+| checks | 时间、目标地址、检查结果、request_method、final_url、access_mode（normal/resolve-diagnostic）、最终状态、Content-Type/Content-Disposition、脱敏正文摘要、浏览器结果、适用的刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
 
 新增字段保持 schema_version=2 的增量兼容；旧 ecs-nginx 记录缺少 service_mode 时先按目标主机实际进程、容器和站点配置核实，再补 host 或 docker，不能缺省判为宿主机服务或自动迁移。回退使用目标版本的构建事实与适用服务配置，不以当前工具版本覆盖历史。
 
 Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记录。备份与配置快照放在 web root 外的私有位置；平台环境变量仅记录名称、作用域及安全存储位置，不记录值。旧版本回退使用归档产物或原 deployment，不重新构建旧源码冒充原版本。
+
+旧验收仅有 HEAD 证据时保留历史，标注证据不足；下一次部署或回退补做 GET 和浏览器验证，不直接沿用“无强制下载”或通过结论。
 
 ## 共同发布约束
 
@@ -34,8 +37,8 @@ Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记�
 
 | 检查 | 通过条件 |
 | --- | --- |
-| 入口 | 预期状态和页面正文、无强制下载；HTTPS 证书有效、无混合内容；明确选择的 HTTP 调试入口单列为 HTTP 验证 |
-| JS/CSS/图片 | 实际 HTML 引用及懒加载资源可加载，MIME 正确，无浏览器加载错误 |
+| 入口 | GET 最终响应状态、Content-Type、Content-Disposition 和正文均正确，根路径为预期 HTML；XML、错误页或附件均失败；HTTPS 证书有效、无混合内容；明确选择的 HTTP 调试入口单列为 HTTP 验证 |
+| JS/CSS/图片 | 对实际 HTML 引用及懒加载资源逐项 GET，核对最终状态、Content-Type、Content-Disposition 与正文，MIME/内容正确且无附件，无浏览器加载错误 |
 | 页面路由 | 深层直接打开/刷新、带查询和片段的回调可用 |
 | 负面路径 | 缺失静态资源、未知 API 和非页面路径返回 4xx，正文不是首页 |
 | 缓存 | 普通 URL 返回目标版本，可变入口不被长期缓存，旧页面仍能取得所需不可变资源 |
@@ -43,3 +46,22 @@ Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记�
 | 更新/回退 | 新版本可见，指定已验证版本恢复后重新验证入口、路由、资源与后端兼容性 |
 
 写入测试仅使用获授权测试对象。没有账号、访问权限或安全入口时，受影响项标为未验证；只接入任务无新建云资源时“环境已准备”指所需现有环境已核实，不暗示新建。用户要求的测试未完成时不能报告整体线上验收通过。
+
+### GET 留证示例
+
+HEAD（`curl -I`）仅作辅助，不能证明“无强制下载”；内部环境可能对 HEAD 与 GET 返回不同响应头。以下默认发 GET，保存跳转链响应头、最终正文及最终 URL。变量使用真实入口或实际资源 URL，每项分别保存；临时文件放在 web root 外的私有目录。
+
+```sh
+curl --silent --show-error --location --max-redirs 5 --max-time 30 \
+  --dump-header "$CHECK_DIR/headers.txt" --output "$CHECK_DIR/body.bin" \
+  --write-out 'method=GET status=%{http_code} final_url=%{url_effective}\n' \
+  "$FRONTEND_CHECK_URL"
+```
+
+PowerShell 使用 `curl.exe`，避免 `curl` 别名；先设置 `$CheckDir` 和 `$FrontendCheckUrl`：
+
+```powershell
+curl.exe --silent --show-error --location --max-redirs 5 --max-time 30 --dump-header "$CheckDir/headers.txt" --output "$CheckDir/body.bin" --write-out 'method=GET status=%{http_code} final_url=%{url_effective}\n' "$FrontendCheckUrl"
+```
+
+先检查 curl 退出码，再核对响应头文件的**最后一个响应块**与正文；命令退出 0、HTTP 200 或缺少 attachment 均不足以通过。HTML 应为预期版本页面而非 XML/错误模板；JS/CSS/图片应匹配清单类型及实际文件，不能接受首页伪装成资源。完整响应可能含 cookie、认证跳转参数或用户数据，仅在受限临时目录检查，脱敏后记录必要响应头、最终 URL（去除秘密参数）与正文摘要，不归档完整认证响应。最后用目标用户网络的正常解析地址做浏览器加载、路由及适用的 HTTPS/Auth 验证。
