@@ -11,11 +11,14 @@
 | 记录 | 内容 |
 | --- | --- |
 | environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
+| 构建环境（可选增量字段） | build_location（local/ci/ecs）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
 | obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
-| ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式 |
+| ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式、service_mode（host/docker）；Docker 另记 Compose project/文件位置、service、daemon 主机、端口及当前/前一验证镜像摘要 |
 | external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
-| manifest | 版本、源码提交、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
+| manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
 | checks | 时间、目标地址、检查结果、响应状态及脱敏内容摘要、刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
+
+新增字段保持 schema_version=2 的增量兼容；旧 ecs-nginx 记录缺少 service_mode 时先按目标主机实际进程、容器和站点配置核实，再补 host 或 docker，不能缺省判为宿主机服务或自动迁移。回退使用目标版本的构建事实与适用服务配置，不以当前工具版本覆盖历史。
 
 Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记录。备份与配置快照放在 web root 外的私有位置；平台环境变量仅记录名称、作用域及安全存储位置，不记录值。旧版本回退使用归档产物或原 deployment，不重新构建旧源码冒充原版本。
 

@@ -1,6 +1,17 @@
 # 华为云前端部署与 Supabase 接入 Skill
 
-通过 AI agent 创建、部署、更新和回退 React/Vue 静态前端，并连接已有华为云 RDS Supabase。支持私有 OBS＋CDN、明确选择的 ECS＋EIP＋Nginx，以及保留或新建用户指定的其他云厂商/平台托管；Cloudflare Pages/Vercel 仅作为具体操作示例。新项目未指定框架时采用 React＋Vite＋TypeScript，也支持普通静态网站和已能静态导出的项目。
+通过 AI agent 准备构建环境，创建、部署、更新、回退和维护 React/Vue 静态前端，并连接已有华为云 RDS Supabase。支持私有 OBS＋CDN、明确选择的 ECS＋EIP＋Nginx（宿主机或 Docker），以及保留或新建用户指定的其他云厂商/平台托管；Cloudflare Pages/Vercel 仅作为具体操作示例。新项目未指定框架时采用 React＋Vite＋TypeScript，也支持普通静态网站和已能静态导出的项目。
+
+## 从这里开始
+
+本仓库交付供 AI agent 使用的 skill，不是独立部署 CLI，也不包含客户应用。推送到 GitHub 只更新 skill 与文档，不会自动发布前端或创建云资源。
+
+1. 安装或更新完整 skill 目录，随后在需要部署的前端项目中调用。
+2. 选择托管路线，准备该路线所需认证、访问入口和已有 Supabase 信息。
+3. 先执行只读预检；缺少工具、域名、权限或预算授权时先明确缺项。
+4. 在已明确的授权范围内准备环境、构建及发布，完成真实访问、更新与回退验收。
+
+首次云端测试请按 [云端测试指南](docs/cloud-testing.md) 操作；术语含义见 [GLOSSARY.md](GLOSSARY.md)，已完成的本地实测见 [环境验证记录](docs/environment-validation.md)。**当前尚无本项目的真实云端部署验收记录。**
 
 ## 部署选择与接入流程
 
@@ -23,7 +34,9 @@
 
 将 [skills/huawei-supabase-frontend](skills/huawei-supabase-frontend) 整个目录复制或链接到 agent 的 skills 目录，保留 `references` 和 `agents`。从旧版迁移时仅替换确实指向本仓库的安装链接，独立副本先比对再处理。旧 FunctionGraph 版本保留在 Git 历史中。
 
-准备环境、创建并部署、只接入 Supabase、更新和回退共用项目环境记录，不提供独立部署 CLI：
+安装后确认 agent 能读取 `huawei-supabase-frontend`；复制安装需要同步更新完整目录，链接安装则跟随其指向的仓库版本。任务在实际应用项目中执行，部署记录也归属于该应用。
+
+环境检查、构建环境准备、创建并部署、只接入 Supabase、更新、回退和服务维护共用项目环境记录：
 
 ```text
 $huawei-supabase-frontend 准备北京四的前端部署环境，连接已有 Supabase，先检查域名和资源费用。
@@ -38,6 +51,50 @@ $huawei-supabase-frontend 用我指定的其他云厂商部署，先核实具体
 
 华为云资源优先使用官方 KooCLI，OBS 文件用内置 OBS 工具或 obsutil，ECS 站点用 SSH/Nginx；第三方平台优先已有连接器、官方 CLI 或 CI。只接入任务已有可用 Supabase URL/公开 Key 时，不强制配置华为云 CLI。复用已有认证，首次凭证配置与登录通过官方交互完成；秘密不写入聊天、仓库或前端构建产物。
 
+## 认证入口与工具分工
+
+**KooCLI（命令名 `hcloud`）是华为云认证配置与云资源管理入口；skill 是协调项目检查、构建、发布和验收的工作流入口。** 配置成功还需要通过目标服务只读查询验证认证与权限。
+
+| 工具或信息 | 本项目中的作用 |
+| --- | --- |
+| KooCLI / profile | 保存或选择云认证上下文，查询及管理获授权的云资源 |
+| AK/SK / SecurityToken | 云 API 认证；临时 AK/SK 还需 SecurityToken，不放进聊天或前端产物 |
+| Region ID / Project ID | 前者确定目标区域；后者是账号下的项目，按 API 需要解析，不相互替代 |
+| OBS 工具 / obsutil | 上传、校验前端对象；另行核实其认证和桶权限，不假定自动继承 KooCLI 登录 |
+| SSH | 登录 ECS 操作系统，检查及管理站点软件、文件与服务；云 API 密钥不能替代 SSH 身份 |
+| Node.js / 包管理器 | 按项目要求安装依赖和构建，默认运行在本地或已有 CI |
+| Nginx / Docker Compose | ECS 静态文件服务与可选容器管理；Docker 不属于 OBS 托管前置条件 |
+| Supabase URL / 公开 Key | 浏览器访问后端的连接参数；与云 AK/SK 分开，权限仍由业务策略与 RLS 控制 |
+
+首次选择永久 AK/SK 且没有可复用配置时，先按 [KooCLI 官方说明](https://support.huaweicloud.com/intl/en-us/productdesc-hcli/hcli_01.html) 安装工具，在自己的终端核对帮助并进行交互配置：
+
+```sh
+hcloud configure init --help
+hcloud configure init
+```
+
+按提示输入 AK、SK 和默认区域，例如 `cn-north-4`（北京四）。这个初始化方式对应永久 AK/SK，见 [官方初始化配置](https://support.huaweicloud.com/usermanual-hcli/hcli_03_002.html)。已有 profile 时直接复用，不为测试重置默认配置。临时凭证、SSO、ECS 委托及 AssumeRole 按 [认证指引](skills/huawei-supabase-frontend/references/authentication.md) 选择，不能遗漏临时令牌或将控制台网页登录视为本机已认证。区域可输入明确中文名称，映射及服务能力另行核实。
+
+配置完成后，只向 agent 提供 profile 名、目标区域、项目位置和所选路线，不提供密钥值。例如：
+
+```text
+$huawei-supabase-frontend 使用已配置的 profile <名称>，目标北京四，检查当前项目是否可部署到 <所选路线>，复用已有 Supabase <应用标识>。先只读预检并列出权限、工具、入口和费用缺项，不购买、不安装、不发布。
+```
+
+OBS/CDN 还需要域名、证书及相关资源权限；ECS 还需要 SSH 和必要系统权限；其他平台沿用其自身认证和发布渠道。只有既有前端及公开后端参数的接入任务，不必先新增华为云 CLI 认证。
+
+## 构建环境与服务管理
+
+按项目的 Node.js、包管理器、锁文件和 CI 配置准备工具链，默认本地或已有 CI 构建。OBS 仅保存静态产物；ECS 默认用宿主机 Nginx，也可明确选择 Docker 构建和 Nginx 容器托管。普通更新沿用已验证版本，环境升级单独验证；检查任务只读，明确安装或部署时在已有授权范围内准备必要软件。
+
+```text
+$huawei-supabase-frontend 按项目版本准备 Node.js 和包管理器，使用锁文件构建，保留其他项目的全局环境。
+$huawei-supabase-frontend 使用 Docker 构建并在已有 ECS 上用 Nginx 容器发布静态前端，准备更新和回退。
+$huawei-supabase-frontend 检查当前应用的构建环境、Nginx 或容器状态，先报告问题，不修改服务。
+```
+
+云资源用 KooCLI，ECS 内部软件与服务通过 SSH 管理。服务自启动和退出重启由系统服务或 Docker 策略承担，skill 按调用检查和维护；健康检查失败不等于 Docker 会自动重启。SSR/API 不属于本 skill 的静态发布范围。
+
 ## 首次上线条件
 
 若采用 OBS＋CDN 路线且尚未准备可用域名，首次正式上线需先准备域名。OBS 默认域名可能强制下载网页，不能作为可靠的网页入口，见 [OBS 访问说明](https://support.huaweicloud.com/usermanual-obs/obs_03_0342.html)。缺少域名时交付本地预览、构建产物和上线清单。
@@ -50,8 +107,12 @@ $huawei-supabase-frontend 用我指定的其他云厂商部署，先核实具体
 
 | 文件 | 内容 |
 | --- | --- |
+| [术语表](GLOSSARY.md) | 托管、身份、版本和完成状态的统一定义 |
+| [云端测试](docs/cloud-testing.md) | 首次预检、发布、验收、回退、留证与清理 |
 | [SKILL.md](skills/huawei-supabase-frontend/SKILL.md) | 任务入口、边界与工作流 |
 | [前端构建](skills/huawei-supabase-frontend/references/frameworks.md) | 静态边界、版本资源和本地验证 |
+| [构建环境](skills/huawei-supabase-frontend/references/build-environment.md) | Node/包管理器识别、隔离安装、Docker 构建与升级 |
+| [Docker 静态托管](skills/huawei-supabase-frontend/references/docker-hosting.md) | Engine/Compose 准备、Nginx 容器、检查、发布与恢复 |
 | [认证](skills/huawei-supabase-frontend/references/authentication.md) | 凭证复用与失败诊断 |
 | [区域映射](skills/huawei-supabase-frontend/references/regions.md) | 中国站/国际站名称解析与服务能力核实 |
 | [Supabase](skills/huawei-supabase-frontend/references/supabase.md) | 已有应用发现、公开 Key、HTTPS 与权限隔离 |
@@ -64,11 +125,13 @@ $huawei-supabase-frontend 用我指定的其他云厂商部署，先核实具体
 
 ## 验证状态
 
+本次补齐构建环境与 Docker 管理：skill 格式、内部链接和 shell 示例检查通过；本地 Node 构建与 Nginx/Compose 的 23 项检查通过，覆盖挂载、路由、更新、回退和配置失败恢复。另完成版本冲突、缺工具、只读检查、已有 CI 等场景推演。测试版本、文件共享限制及未执行范围见 [环境验证记录](docs/environment-validation.md)。
+
 本仓库交付由 agent 执行的 skill 指引，不是独立部署程序，也不包含用户应用。命令的核对来源及未实测部分见官方资料；当前支持的路线均有准备、发布、更新和回退流程，缺少权限或平台能力时明确停止对应操作。
 
-已执行本地检查：skill 格式、内部引用、shell/JSON 示例、UI 元数据和流程图渲染；在官方 Nginx 1.30.6 容器中通过 20 项测试，覆盖页面路由、负面路径、MIME/缓存、资源先上传、旧资源 URL、更新/回退和错误配置拒绝。独立前向推演覆盖无域名待选择、ECS 发布中断、外部平台无源码/权限、Vercel 发布与回退，并据此修正指引。
+此前版本已执行本地检查：skill 格式、内部引用、shell/JSON 示例、UI 元数据和流程图渲染；在官方 Nginx 1.30.6 容器中通过 20 项测试，覆盖页面路由、负面路径、MIME/缓存、资源先上传、旧资源 URL、更新/回退和错误配置拒绝。独立前向推演覆盖无域名待选择、ECS 发布中断、外部平台无源码/权限、Vercel 发布与回退，并据此修正指引。
 
-- **skill 已完成**：OBS/CDN、ECS/EIP、保留或新建其他云厂商托管的通用工作流（含 Pages/Vercel 示例）及 UI 元数据已同步。
-- **本地应用已验证**：不适用，本次未创建应用。
+- **skill 已完成**：OBS/CDN、ECS/EIP、保留或新建其他云厂商托管的通用工作流（含 Pages/Vercel 示例）及 UI 元数据已同步；新增构建工具准备、Nginx/Docker 服务维护指引。
+- **本地应用已验证**：临时测试样例已验证；尚未验证客户应用。
 - **环境已准备**：未执行，本次未配置云资源。
 - **线上验收通过**：未执行，待域名及环境就绪后验证 HTTPS、路由、登录、隔离、更新和回退。

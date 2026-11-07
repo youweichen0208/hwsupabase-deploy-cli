@@ -35,7 +35,9 @@ EIP 通过网卡端口绑定：查询 ECS 对应主网卡的实际 port ID、所
 
 ## 2. 准备站点和路由
 
-检查系统包管理器及现有 Nginx；缺失时在授权内使用发行版官方仓库安装，不覆盖其他站点、不执行无来源安装脚本。本地按锁文件构建，只将已扫描的静态产物上传。构建配置、源码、`.env`、SSH 密钥和发布清单不放 web root。
+默认使用宿主机 Nginx；用户选择 Docker 或已有容器时，按 [Docker 静态托管](docker-hosting.md) 准备及管理服务，复用本篇的路由、发布锁、旧资源保留和回退约定。两种服务方式均不默认在生产主机安装 Node，构建工具见 [构建环境](build-environment.md)。
+
+检查系统包管理器及现有 Nginx；缺失时在授权内使用发行版官方仓库安装，不覆盖其他站点、不执行无来源安装脚本。默认本地或已有 CI 按锁文件构建，只将已扫描的静态产物上传；明确选择 ECS 构建时，在站点目录外准备隔离构建环境。构建配置、源码、`.env`、SSH 密钥和发布清单不放 web root。
 
 复用已有目录；新站点采用 `/srv/frontend/<应用>/`，应用名使用经过验证的单段目录名。站点目录约定：
 
@@ -110,3 +112,9 @@ HTTP IP 可用于明确要求的页面连通调试；HTTPS 正式入口必须有
 报告仍存在且可能计费的 ECS、EIP、磁盘等资源。仅按已授权清理策略删除本次新建且无共享依赖的资源，逐项核实；服务器停机不代表磁盘/EIP停止计费。保留旧页面引用的资源，清理另定期限。
 
 依据：[ECS CLI](https://support.huaweicloud.com/clir-ecs/ecs_cli_02.html)、[EIP CLI v2](https://support.huaweicloud.com/intl/zh-cn/clir-eip/EIP-cli_v2.html)、[EIP 绑定](https://support.huaweicloud.com/usermanual-eip/eip_0009.html)、[Nginx location 与 try_files](https://nginx.org/en/docs/http/ngx_http_core_module.html)、[Nginx 配置重载](https://nginx.org/en/docs/beginners_guide.html)。
+
+## 5. 宿主机服务维护
+
+维护已有站点先通过 SSH 查询实际 Nginx 版本、配置位置、服务管理器、监听端口、磁盘及最近错误日志。systemd 主机可使用 `systemctl is-active nginx`、`systemctl is-enabled nginx` 和必要范围的 `journalctl -u nginx --since ...`；无 systemd 时使用已核实的发行版服务方式，不套命令。日志脱敏，不输出完整配置中的秘密。
+
+仅检查请求保持只读。首次安装/部署范围内核实自启动设置；已有服务沿用原策略。变更配置先备份、`nginx -t`，成功才受控 reload，失败恢复配置文件并验证旧服务。版本升级单独准备候选环境和旧版本恢复路径，不随普通前端更新自动升级系统包。共享 Nginx 的 reload/重启影响所有站点，先确认影响与授权；不终止共享进程来抢占端口。健康与持续监控由既有系统服务/监控负责，skill 按调用执行检查和修复。

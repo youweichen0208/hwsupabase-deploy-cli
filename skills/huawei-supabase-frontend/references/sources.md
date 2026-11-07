@@ -36,3 +36,18 @@
 本次另用 Wrangler 4.158.0 的本地帮助复核了 `pages deploy` 的 directory、project-name、branch 参数和 `pages deployment list` 的 project-name/environment 参数。只执行帮助查询，没有登录或发布。Vercel 65.12.1 的临时 CLI 下载未及时完成，已停止；其参数仅按上列官方文档核对，未声称本地 CLI 实测。
 
 这些来源用于编写工作流，不意味着已在用户账号执行。新增路线没有云端创建、购买或生产部署实测；Nginx 示例的本地验证和文档检查见仓库 README。第三方 CLI 的实际版本/套餐、IP 证书签发能力及地区访问质量仍需执行任务时核实。
+
+## 构建环境与容器管理
+
+版本和操作以执行时官方文档与本地帮助为准，不把示例镜像或本地验证版本当作永久推荐版本。
+
+| 资料 | 使用时机 |
+| --- | --- |
+| [Node 发布状态](https://nodejs.org/en/about/previous-releases)、[发行文件](https://nodejs.org/dist/) | 选择受支持版本、系统/架构与下载校验 |
+| [package.json](https://docs.npmjs.com/cli/v11/configuring-npm/package-json/)、[npm ci](https://docs.npmjs.com/cli/v11/commands/npm-ci/) | 版本约束及锁文件安装 |
+| [pnpm install](https://pnpm.io/cli/install)、[Yarn install](https://yarnpkg.com/cli/install) | 按已识别包管理器版本冻结安装 |
+| [Node 镜像](https://github.com/nodejs/docker-node)、[构建 secrets](https://docs.docker.com/build/building/secrets/) | 固定构建环境、私有依赖凭证 |
+| [Docker 安装](https://docs.docker.com/engine/install/)、[Compose 生产使用](https://docs.docker.com/compose/how-tos/production/) | 系统支持、安装和单应用更新 |
+| [Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)、[重启策略](https://docs.docker.com/engine/containers/start-containers-automatically/)、[端口发布](https://docs.docker.com/engine/network/port-publishing/) | 目录挂载、自动启动边界和网络检查 |
+
+本次补齐不代表已在客户机器安装工具或在 ECS 实测。实际本地测试与未验证项目见 README 的验证状态。

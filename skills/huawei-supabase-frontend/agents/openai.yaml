@@ -1,4 +1,4 @@
 interface:
   display_name: "华为云前端部署与 Supabase 接入"
-  short_description: "按域名与现有托管选择 OBS、ECS 或其他平台，并接入华为云 Supabase"
-  default_prompt: "使用 $huawei-supabase-frontend 检查当前前端与已有 Supabase，保留现有托管或按我的选择使用 OBS/CDN、ECS/EIP 或我指定的其他云厂商/托管平台，完成发布、验证与回退准备。"
+  short_description: "准备项目构建环境，选择 OBS、ECS/Nginx 或 Docker 等静态托管并接入 Supabase"
+  default_prompt: "使用 $huawei-supabase-frontend 检查当前前端与已有 Supabase，保留现有托管或按我的选择使用 OBS/CDN、ECS/EIP 或我指定的其他云厂商/托管平台，按项目版本准备构建环境，完成发布、验证、回退准备与服务维护；Docker 按需使用。"

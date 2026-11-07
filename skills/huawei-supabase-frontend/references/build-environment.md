@@ -1,0 +1,45 @@
+# 构建环境识别、准备与维护
+
+准备构建、遇到工具缺失/版本冲突或请求维护构建环境时读取。静态适配与产物检查见 [前端构建](frameworks.md)，容器托管见 [Docker](docker-hosting.md)。
+
+## 识别项目和版本
+
+先定位实际应用目录及 workspace 根，读取 `.nvmrc`、`.node-version`、package.json 的 `volta`/`engines`/`packageManager`、锁文件、Dockerfile 和生效的 CI/平台构建配置。按目标应用区分多个子项目的锁文件；同一工作区同时存在多个包管理器锁文件且没有明确生效渠道时停止安装，说明候选，不删除锁文件来消除冲突。
+
+- 复用已验证且满足全部相关约束的版本；`engines` 范围不是精确版本，锁文件格式也不能单独证明 Node 版本。CI 或 Docker 的版本与项目声明冲突时列出冲突来源，不设一个静默覆盖其他来源的优先级。
+- 只有版本范围或无声明时，检查依赖/框架要求及 Node 官方维护状态，选择兼容的受支持 LTS，解析并记录具体补丁版本。已有精确版本停止维护时说明现状和升级候选，不静默改项目约束；遗留环境复现与升级分别验收。
+- 包管理器按 `packageManager`、生效的项目工具配置/CI 以及锁文件共同确定；只知道包管理器种类时核实与锁格式兼容的版本并固定。不要假定所有 Node 发行版都附带 Corepack。
+- 纯 HTML/CSS/JS 没有安装或构建步骤时直接验证静态文件，不要求 Node 或 Docker。SSR/API/服务端秘密要求仍按静态边界处理。
+
+输出环境判断：构建位置（local/ci/ecs）、方式（native/docker）、系统与架构、版本约束来源、选定 Node/包管理器版本、构建命令/目录、已具备工具及缺项。无源码时只核实已有入口与发布权限，不声称已识别版本。
+
+## 准备工具链
+
+默认在本地或现有 CI 构建。只有用户明确选择 ECS 构建时才在 ECS 安装构建工具，临时工作区位于 web root 外并检查 CPU、内存、磁盘余量。平台构建复用平台支持的版本设置与现有 CI；平台不支持项目版本时报告不匹配，不自动迁移托管。
+
+仅要求“检查环境”或费用/资源准备计划时保持只读；明确要求安装、准备构建环境或创建并部署时，在已有授权覆盖的目标内安装必要工具。报告缺少的权限、交互登录或网络条件，不索取密码或替换共享系统工具来绕过限制。
+
+1. 检查实际 `node --version`、包管理器版本、可执行文件路径、操作系统和 CPU 架构；远端通过既有 SSH 执行。只查询必要字段，不输出完整环境变量或认证文件。
+2. 优先使用客户已有 nvm/fnm/Volta 等版本管理器，在当前任务或项目作用域选择版本，保留全局默认值和 shell 配置。先按当前官方帮助核实命令。
+3. 缺少版本管理器时，可从 Node 官方发布渠道将对应系统/架构的固定版本安装到用户级独立目录，验证官方 SHA-256 和可用的签名，再为本次命令设置 PATH。Windows 使用对应官方发行包及 shell 命令；不把 Unix 安装脚本套到 Windows。不支持的系统、校验失败或下载不可达时停止安装并说明，不换来源或跳过校验。
+4. 包管理器沿用项目固定版本，通过官方方式在该隔离环境准备。需要 Corepack 时先核实其安装与启用能力；不借安装包管理器顺带升级系统 Node。确认实际启动版本与记录一致。
+5. 依赖安装使用项目既有参数和锁文件：npm 用 `npm ci`，pnpm 用 `pnpm install --frozen-lockfile`，Yarn 1 用 `yarn install --frozen-lockfile`，现代 Yarn 用 `yarn install --immutable`。构建依赖通常在 devDependencies，构建前不使用 production-only 安装。缺少锁文件需先说明可复现性缺项；仅在项目依赖初始化/修改范围内生成并验证新锁文件。锁与清单不一致时定位原因，不通过普通 install 绕过失败。
+6. 运行已有检查及生产构建，确认真实输出目录、静态可服务性与公开配置；工具安装成功不等于应用构建通过。
+
+下载/认证失败、版本不兼容、依赖脚本失败分别记录；保留当前线上版本。安装和构建日志仅截取必要错误并脱敏，私有包凭证使用既有安全存储，不写进产物。
+
+## 可选 Docker 构建
+
+已有容器构建优先复用；用户选择 Docker 时读取 [Docker 准备](docker-hosting.md)。构建方式与托管方式独立：Docker 可以为 OBS 生成静态产物，也可以为宿主机 Nginx 生成产物；这不意味着必须在生产 ECS 安装 Node。
+
+选用与项目版本匹配的官方 Node 镜像，固定具体版本、变体和摘要，并核实构建机与目标平台架构；不得把浮动 `latest` 或主版本标签当成已固定环境。构建阶段可有 Node，静态服务阶段只需要 Nginx 和产物。
+
+使用独立临时构建目录或多阶段构建，不复用宿主机 node_modules；原生模块不能跨系统/架构直接拷贝。仅复制必要源码和锁文件，排除 .git、私钥、云配置、旧产物及无关 .env；Supabase URL/公开 Key 按目标环境显式注入。私有依赖凭证采用 BuildKit secret 等临时机制，不进入 ARG、镜像层或构建输出。依赖脚本只获得任务所需权限，不挂载 Docker socket、SSH 目录或整份用户主目录。
+
+按同样冻结安装和构建流程执行，导出产物到任务独立目录，校验拥有者、大小和清单；扫描秘密及 source map 后才进入发布流程。容器测试通过不等于已验证 ECS 或平台上线。
+
+## 维护与升级
+
+环境检查只读输出版本、路径/镜像摘要、支持状态、磁盘和最近构建结果；更新应用默认沿用已验证工具链。用户请求升级时，保存旧工具链信息和原产物，在隔离候选版本下重新安装、检查与构建，验证通过才更新记录；升级失败保持原环境及线上版本。应用回退复用归档产物，不重新安装旧依赖构建来冒充原版本。
+
+依据：[Node 发布状态](https://nodejs.org/en/about/previous-releases)、[Node 发行文件与校验](https://nodejs.org/dist/)、[package.json](https://docs.npmjs.com/cli/v11/configuring-npm/package-json/)、[npm ci](https://docs.npmjs.com/cli/v11/commands/npm-ci/)、[pnpm install](https://pnpm.io/cli/install)、[Yarn install](https://yarnpkg.com/cli/install)、[官方 Node 镜像](https://github.com/nodejs/docker-node)、[Docker 构建秘密](https://docs.docker.com/build/building/secrets/)。
