@@ -4,10 +4,9 @@
 
 | 环境 | 认证选择与前提 |
 | --- | --- |
-| 已有有效 profile | 沿用其 AKSK、SSO、ecsAgency 或 AssumeRole 模式，不覆盖配置或擅自切换账号。 |
+| 已有有效 profile | 沿用其 AKSK、SSO 或 AssumeRole 等已有模式，不覆盖配置或擅自切换账号。 |
 | 本机且组织已启用 IAM 身份中心 | 使用 SSO；需要门户 URL、身份中心所在区域及获分配的账号/权限集，用户完成登录。 |
-| 已绑定 IAM 委托的 ECS | 使用 ecsAgency，KooCLI 根据 ECS 委托自动获取临时凭证；委托需具备目标服务权限。普通本机不能仅凭这个选项取得身份。 |
-| CloudShell | 可作为用户登录控制台后的在线执行环境；先验证当前 shell 的 KooCLI 认证。浏览器登录不代表本机 CLI 已登录，不复制 CloudShell 凭证到本机，也不假定 CloudShell 等同于已配置委托的 ECS。 |
+| CloudShell | 可作为用户登录控制台后的在线执行环境；先验证当前 shell 的 KooCLI 认证。浏览器登录不代表本机 CLI 已登录，不复制 CloudShell 凭证到本机。 |
 | 以上条件不具备 | 使用官方配置流程配置 AKSK；临时 AK/SK 必须连同 SecurityToken 使用。不要让用户在聊天中粘贴密钥。 |
 
 已有 AssumeRole 配置需保留其源 profile 和委托关系；认证失败不自动创建委托、启用身份中心或授予额外权限。
@@ -35,7 +34,7 @@ HW_REGION=cn-north-4 npx --yes huaweicloud-devkit@1.1.13 auth init
 - **存储边界。** DevKit 凭证库与 OBS 配置含可读取的秘密，不能宣称全部加密。文件留在用户目录、限制为本人访问（macOS/Linux 0600，Windows 检查 ACL）；备份同样保护，不放项目内、不上传。工具内部可能将密钥传给 KooCLI 子进程参数，不宣称进程列表完全不可见；共享主机优先保留组织已有认证方式。
 - **已有加密配置。** 不自行解密 KooCLI、不关闭加密。需要统一迁移时，客户在终端重新输入一次凭证；不承诺从任意 profile 自动导出秘密。
 - **临时凭证。** 本次核对发现 1.1.13 的 `auth init` 会将 SecurityToken 写入 OBS/凭证库，却未把它传入 KooCLI 配置命令，因此临时 AK/SK 不走此简化入口。沿用官方专用流程并同时验证令牌完整性、有效期及两端身份；不删除令牌来消除错误。
-- **SSO / AssumeRole / ECS 委托。** 保留既有认证流程，不转换为永久 AK/SK。已绑定委托的 ECS 可按 `hcloud obs help` 核实并使用 `-authSource=ecsAgency`；本机不能借此取得身份。
+- **SSO / AssumeRole。** 保留既有认证流程，不转换为永久 AK/SK。
 - **自动同步。** `auth sync` 也会改写配置，不作为每次部署的默认步骤。只有已明确使用 DevKit 管理的永久凭证环境且需要修复时才使用，之后重新验收。当前会话未连接官方同步 MCP 工具，不能把工具名称写成必然可调用的能力。
 
 ## SSO
@@ -53,7 +52,7 @@ hcloud configure sso --cli-profile="$FRONTEND_PROFILE"
 
 ## 只读预检与错误诊断
 
-已确认委托的 ECS 可由 KooCLI 的 ecsAgency 模式获取临时凭证；这只是认证方式，不需要为静态前端新购 ECS。本机复用选定 profile。先按路线查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help`、`hcloud ECS --help`、`hcloud EIP --help` 或 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
+复用选定 profile。先按路线查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help` 或 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
 
 只有目标 API 需要 project ID 时，才优先让 KooCLI 自动解析；保留用户指定项目。全局服务、桶访问与 RDS 区域项目不能混用同一 ID。自动解析受限且认证有效时，再查询官方 IAM 项目接口或使用已知目标 ID。
 

@@ -1,24 +1,23 @@
 # 通用发布记录与验收
 
-所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md)、[ECS](ecs-hosting.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
+所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
 
 ## 环境与版本记录
 
 优先沿用项目记录约定；否则使用 `.hwsupabase/frontend/<环境>/environment.json`、`releases/<版本>/manifest.json`、`checks/<版本>.json`。本目录排除 Git，记录非敏感事实，文件本身不授予权限。
 
-新记录使用 schema_version=2，hosting_kind 为 obs-cdn、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
+新记录使用 schema_version=2，hosting_kind 为 obs-cdn 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
 
 | 记录 | 内容 |
 | --- | --- |
 | environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
-| 构建环境（可选增量字段） | build_location（local/ci/ecs）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
+| 构建环境（可选增量字段） | build_location（local/ci）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
 | obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
-| ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式、service_mode（host/docker）；Docker 另记 Compose project/文件位置、service、daemon 主机、端口及当前/前一验证镜像摘要 |
 | external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
-| manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
+| manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID、适用的刷新范围 |
 | checks | 时间、目标地址、检查结果、request_method、final_url、access_mode（normal/resolve-diagnostic）、最终状态、Content-Type/Content-Disposition、脱敏正文摘要、浏览器结果、适用的刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
 
-新增字段保持 schema_version=2 的增量兼容；旧 ecs-nginx 记录缺少 service_mode 时先按目标主机实际进程、容器和站点配置核实，再补 host 或 docker，不能缺省判为宿主机服务或自动迁移。回退使用目标版本的构建事实与适用服务配置，不以当前工具版本覆盖历史。
+新增字段保持 schema_version=2 的增量兼容；旧记录属于当前不支持的路线时保留历史并报告范围限制，不自动迁移或套用其他路线。回退使用目标版本的构建事实与适用服务配置，不以当前工具版本覆盖历史。
 
 Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记录。备份与配置快照放在 web root 外的私有位置；平台环境变量仅记录名称、作用域及安全存储位置，不记录值。旧版本回退使用归档产物或原 deployment，不重新构建旧源码冒充原版本。
 
@@ -32,7 +31,7 @@ Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记�
 
 ## 真实验收
 
-从目标用户网络打开实际入口，记录版本与结果；ECS 用真实 EIP，平台同时检查稳定生产地址和适用的 deployment 地址。仅本机预览、修改 Host、跳过 TLS 或 cache-busting 成功都不能代替验收。
+从目标用户网络打开实际入口，记录版本与结果；平台同时检查稳定生产地址和适用的 deployment 地址。仅本机预览、修改 Host、跳过 TLS 或 cache-busting 成功都不能代替验收。
 
 | 检查 | 通过条件 |
 | --- | --- |

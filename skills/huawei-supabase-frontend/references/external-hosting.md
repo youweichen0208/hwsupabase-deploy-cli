@@ -1,6 +1,6 @@
 # 其他云厂商与平台托管
 
-在前端已托管于其他平台，或用户希望在指定的其他云厂商/平台新建托管时读取。Cloudflare Pages 和 Vercel 仅是下方操作示例，不限制平台选择。前端可在其他云、Supabase 仍在华为云；无需迁移前端或为它采购 OBS/ECS。公共记录与验收见 [发布与验收](deployment.md)，后端配置见 [Supabase](supabase.md)。
+在前端已托管于其他平台，或用户希望在指定的其他云厂商/平台新建托管时读取。Cloudflare Pages 和 Vercel 仅是下方操作示例，不限制平台选择。前端可在其他云、Supabase 仍在华为云；无需迁移前端或为它采购额外云资源。公共记录与验收见 [发布与验收](deployment.md)，后端配置见 [Supabase](supabase.md)。
 
 构建环境统一按 [构建环境](build-environment.md) 读取项目版本约束并与实际 CI/平台设置对照；保留原有发布渠道，不为补齐工具链迁移平台。
 
