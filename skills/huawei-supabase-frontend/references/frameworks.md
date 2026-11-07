@@ -1,6 +1,6 @@
 # 前端构建与静态适配
 
-先按 [构建环境](build-environment.md) 识别并准备工具链，再读取 package.json、锁文件、框架配置和实际路由。已有项目沿用包管理器、Node 版本约束和构建脚本；按锁文件安装依赖，运行项目已有的类型检查、必要测试及生产构建。新项目未指定框架时用 React＋Vite＋TypeScript；Vue、普通 HTML/CSS/JS 及已能静态导出的项目同样适用。
+先按 [构建环境](build-environment.md) 确定产物来源或构建位置，再检查该环境的工具链，再读取 package.json、锁文件、框架配置和实际路由。已有项目沿用包管理器、Node 版本约束和构建脚本；按锁文件安装依赖，运行项目已有的类型检查、必要测试及生产构建。新项目未指定框架时用 React＋Vite＋TypeScript；Vue、普通 HTML/CSS/JS 及已能静态导出的项目同样适用。
 
 ## 静态边界
 

@@ -62,7 +62,7 @@ $huawei-supabase-frontend 用我指定的其他云厂商部署，先核实具体
 | Region ID / Project ID | 前者确定目标区域；后者是账号下的项目，按 API 需要解析，不相互替代 |
 | OBS 工具 / obsutil | 上传、校验前端对象；另行核实其认证和桶权限，不假定自动继承 KooCLI 登录 |
 | SSH | 登录 ECS 操作系统，检查及管理站点软件、文件与服务；云 API 密钥不能替代 SSH 身份 |
-| Node.js / 包管理器 | 按项目要求安装依赖和构建，默认运行在本地或已有 CI |
+| Node.js / 包管理器 | 按项目要求安装依赖和构建，仅在选定的构建环境运行，OBS 不安装 Node |
 | Nginx / Docker Compose | ECS 静态文件服务与可选容器管理；Docker 不属于 OBS 托管前置条件 |
 | Supabase URL / 公开 Key | 浏览器访问后端的连接参数；与云 AK/SK 分开，权限仍由业务策略与 RLS 控制 |
 
@@ -85,10 +85,10 @@ OBS/CDN 还需要域名、证书及相关资源权限；ECS 还需要 SSH 和必
 
 ## 构建环境与服务管理
 
-按项目的 Node.js、包管理器、锁文件和 CI 配置准备工具链，默认本地或已有 CI 构建。OBS 仅保存静态产物；ECS 默认用宿主机 Nginx，也可明确选择 Docker 构建和 Nginx 容器托管。普通更新沿用已验证版本，环境升级单独验证；检查任务只读，明确安装或部署时在已有授权范围内准备必要软件。
+先确定构建位置，再按项目的 Node.js、包管理器、锁文件和 CI 配置检查工具链。优先复用已有产物或 CI；本地构建使用现有兼容工具，版本不匹配时报告缺项，不自动下载、升级或切换本地 Node/包管理器。只有明确要求准备本地工具链时才修改本地环境。OBS 仅保存静态产物；ECS 默认用宿主机 Nginx，也可明确选择 Docker 构建和 Nginx 容器托管。普通更新沿用已验证版本，环境升级单独验证；检查任务只读，远端或容器工具在选定目标及授权范围内准备。
 
 ```text
-$huawei-supabase-frontend 按项目版本准备 Node.js 和包管理器，使用锁文件构建，保留其他项目的全局环境。
+$huawei-supabase-frontend 使用已有 CI 按项目版本和锁文件构建，再发布静态产物；不要修改本地 Node 或包管理器。
 $huawei-supabase-frontend 使用 Docker 构建并在已有 ECS 上用 Nginx 容器发布静态前端，准备更新和回退。
 $huawei-supabase-frontend 检查当前应用的构建环境、Nginx 或容器状态，先报告问题，不修改服务。
 ```
