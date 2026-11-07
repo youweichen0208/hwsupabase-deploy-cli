@@ -12,14 +12,14 @@
 6. 刷新 `/`、`/index.html`、实际页面缓存键及变更的可变文件。动态路由按实际缓存键采用范围适当的目录刷新或经核实的刷新方式，核对配额与费用；不能列几个示例 URL 就认为动态页面全已刷新。记录任务 ID，查询直到完成，再通过普通 URL（非仅 cache-busting 参数）验收。
 7. 只有适用验收通过后，才将本次版本记为成功并更新当前/前一成功版本。刷新失败、部分节点旧页面或测试缺失均记录为待完成，保留上一成功版本。
 
-使用官方 obsutil 示例时，变量须来自已核实环境。以下演示**单个入口最后上传**，前提是全部资源已校验且快照已保存；不是整套一键部署：
+默认使用 KooCLI 内置 OBS 操作，先按 [认证指引](authentication.md) 验证 OBS 身份和目标桶权限；已有独立 obsutil 发布环境继续复用。使用以下示例时，变量须来自已核实环境。以下演示**单个入口最后上传**，前提是全部资源已校验且快照已保存；不是整套一键部署：
 
 ```sh
-obsutil cp "$FRONTEND_ENTRY_FILE" "obs://$FRONTEND_BUCKET/index.html" \
+hcloud obs cp "$FRONTEND_ENTRY_FILE" "obs://$FRONTEND_BUCKET/index.html" \
   -vmd5 -meta='Content-Type:text/html#Cache-Control:no-cache'
 ```
 
-执行前运行 `obsutil help cp` 核对当前版本参数及凭证配置；仅上传清单内产物，不递归上传整个项目。命令按官方 [上传对象](https://support.huaweicloud.com/utiltg-obs/obs_11_0013.html) 编写，本次没有云端执行背书。CDN 刷新命令版本也须核对，例如官方目录列出 `hcloud CDN CreateRefreshTasks/v2`；先 `--help`，再按实际 schema 生成请求，不混用旧版字段。
+执行前运行 `hcloud obs help cp` 核对当前版本参数及凭证配置；仅上传清单内产物，不递归上传整个项目。命令按官方 [上传对象](https://support.huaweicloud.com/utiltg-obs/obs_11_0013.html) 编写，本次没有云端执行背书。CDN 刷新命令版本也须核对，例如官方目录列出 `hcloud CDN CreateRefreshTasks/v2`；先 `--help`，再按实际 schema 生成请求，不混用旧版字段。
 
 ## 失败恢复与回退
 

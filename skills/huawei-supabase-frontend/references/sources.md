@@ -51,3 +51,12 @@
 | [Bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)、[重启策略](https://docs.docker.com/engine/containers/start-containers-automatically/)、[端口发布](https://docs.docker.com/engine/network/port-publishing/) | 目录挂载、自动启动边界和网络检查 |
 
 本次补齐不代表已在客户机器安装工具或在 ECS 实测。实际本地测试与未验证项目见 README 的验证状态。
+
+## 统一认证入口
+
+- [DevKit 1.1.13 发布包](https://www.npmjs.com/package/huaweicloud-devkit/v/1.1.13)：固定入口及运行要求；已检查发布包初始化行为，不将 GitHub main 的能力视为已发布保证。
+- [官方 DevKit](https://github.com/huaweicloud/huaweicloud-devkit)：统一认证设计与官方维护来源。
+- [KooCLI 内置 OBS](https://support.huaweicloud.com/usermanual-hcli/hcli_04_009.html)：`hcloud obs`、独立配置和 ECS 委托鉴权。
+- [KooCLI 配置参数](https://support.huaweicloud.com/usermanual-hcli/hcli_03_003_01.html)：认证模式和加密配置；本项目不关闭加密以提取秘密。
+
+隔离测试覆盖虚构凭证输入、部分成功、身份失败和覆盖行为，见仓库 `docs/auth-validation.md`。没有真实云认证或 OBS 上传实测。

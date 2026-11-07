@@ -19,7 +19,7 @@
 5. 读取 CDN 返回的域名 ID、实际 CNAME 和运行状态，再在有权限的 DNS 提供商配置对应记录。先检查现有解析、冲突和 TTL，保留无关记录；不拼接 CNAME，不用未经验证的 apex CNAME。第三方 DNS 不可操作时提供精确记录给用户。
 6. 等待 CDN 配置与 DNS 生效，有限等待并记录最后状态；默认最多 30 分钟，每次查询间隔 15–30 秒。超时下次从查询恢复，不重复创建资源。真实浏览器域名验收通过才算入口就绪，手改 Host 或 `curl --resolve` 仅用于诊断。
 
-管理操作优先 `hcloud CDN --help`、`hcloud DNS --help` 发现命令；OBS 优先内置工具或 obsutil。查询/修改的 JSON schema 从当前命令帮助或 API Explorer 取得，不自行猜测字段。请求文件也可能含证书等秘密，使用临时受限文件且不纳入版本记录。
+管理操作优先 `hcloud CDN --help`、`hcloud DNS --help` 发现命令；OBS 默认使用 `hcloud obs`，兼容已有独立 obsutil。查询/修改的 JSON schema 从当前命令帮助或 API Explorer 取得，不自行猜测字段。请求文件也可能含证书等秘密，使用临时受限文件且不纳入版本记录。
 
 依据：[私有桶接入及委托](https://support.huaweicloud.com/usermanual-obs/obs_03_0600.html)、[CDN 配置入口](https://support.huaweicloud.com/usermanual-cdn/cdn_01_0001.html)。
 

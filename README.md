@@ -49,31 +49,35 @@ $huawei-supabase-frontend 用 Cloudflare Pages 默认域名部署这个项目，
 $huawei-supabase-frontend 用我指定的其他云厂商部署，先核实具体托管服务、访问入口、费用和回退能力。
 ```
 
-华为云资源优先使用官方 KooCLI，OBS 文件用内置 OBS 工具或 obsutil，ECS 站点用 SSH/Nginx；第三方平台优先已有连接器、官方 CLI 或 CI。只接入任务已有可用 Supabase URL/公开 Key 时，不强制配置华为云 CLI。复用已有认证，首次凭证配置与登录通过官方交互完成；秘密不写入聊天、仓库或前端构建产物。
+华为云资源优先使用官方 KooCLI，OBS 文件默认用 KooCLI 内置 `hcloud obs`，兼容已有独立 obsutil，ECS 站点用 SSH/Nginx；第三方平台优先已有连接器、官方 CLI 或 CI。只接入任务已有可用 Supabase URL/公开 Key 时，不强制配置华为云 CLI。复用已有认证，首次凭证配置与登录通过官方交互完成；秘密不写入聊天、仓库或前端构建产物。
 
 ## 认证入口与工具分工
 
-**KooCLI（命令名 `hcloud`）是华为云认证配置与云资源管理入口；skill 是协调项目检查、构建、发布和验收的工作流入口。** 配置成功还需要通过目标服务只读查询验证认证与权限。
+**首次接入用官方 DevKit 一次初始化，云资源操作用 KooCLI（`hcloud`），项目部署由 skill 协调。** 配置成功还需要通过目标服务只读查询验证认证与权限。
 
 | 工具或信息 | 本项目中的作用 |
 | --- | --- |
+| DevKit 统一初始化 | 首次在终端输入一次永久 AK/SK，配置 KooCLI 与 OBS；不必安装整套插件 |
 | KooCLI / profile | 保存或选择云认证上下文，查询及管理获授权的云资源 |
 | AK/SK / SecurityToken | 云 API 认证；临时 AK/SK 还需 SecurityToken，不放进聊天或前端产物 |
 | Region ID / Project ID | 前者确定目标区域；后者是账号下的项目，按 API 需要解析，不相互替代 |
-| OBS 工具 / obsutil | 上传、校验前端对象；另行核实其认证和桶权限，不假定自动继承 KooCLI 登录 |
+| `hcloud obs` / 已有 obsutil | 上传、校验前端对象；统一初始化后仍单独核实 OBS 身份与桶权限 |
 | SSH | 登录 ECS 操作系统，检查及管理站点软件、文件与服务；云 API 密钥不能替代 SSH 身份 |
 | Node.js / 包管理器 | 按项目要求安装依赖和构建，仅在选定的构建环境运行，OBS 不安装 Node |
 | Nginx / Docker Compose | ECS 静态文件服务与可选容器管理；Docker 不属于 OBS 托管前置条件 |
 | Supabase URL / 公开 Key | 浏览器访问后端的连接参数；与云 AK/SK 分开，权限仍由业务策略与 RLS 控制 |
 
-首次选择永久 AK/SK 且没有可复用配置时，先按 [KooCLI 官方说明](https://support.huaweicloud.com/intl/en-us/productdesc-hcli/hcli_01.html) 安装工具，在自己的终端核对帮助并进行交互配置：
+首次永久 AK/SK 接入且没有配置冲突时，skill 先检查工具，客户只需在自己的终端执行一次初始化。下面以 macOS/Linux 的北京四为例（区域按实际目标修改）：
 
 ```sh
-hcloud configure init --help
-hcloud configure init
+HW_REGION=cn-north-4 npx --yes huaweicloud-devkit@1.1.13 auth init
 ```
 
-按提示输入 AK、SK 和默认区域，例如 `cn-north-4`（北京四）。这个初始化方式对应永久 AK/SK，见 [官方初始化配置](https://support.huaweicloud.com/usermanual-hcli/hcli_03_002.html)。已有 profile 时直接复用，不为测试重置默认配置。临时凭证、SSO、ECS 委托及 AssumeRole 按 [认证指引](skills/huawei-supabase-frontend/references/authentication.md) 选择，不能遗漏临时令牌或将控制台网页登录视为本机已认证。区域可输入明确中文名称，映射及服务能力另行核实。
+按提示输入 AK、SK，永久凭证的 Security Token 留空。DevKit 需要现有 Node.js ≥22；这与前端项目的构建版本无关，skill 不会自动升级或切换本地 Node。KooCLI 缺失时由 skill 在工具准备授权内通过官方安装入口准备；无需再单独安装 obsutil。
+
+已有认证可用时直接复用，不要求重配。**此版本初始化可能重建当前 KooCLI profile、覆盖默认 OBS 配置**，已有多账号或自定义配置先按 [认证指引](skills/huawei-supabase-frontend/references/authentication.md) 核实迁移范围并保护原配置。凭证只在客户终端输入及官方工具的用户目录存储，不进入聊天或仓库。临时凭证、SSO、ECS 委托及 AssumeRole 沿用专用流程，不强制切换认证方式。
+
+初始化后分别检查云 API 和目标桶权限；“配置已写入”不等于“环境已准备”。固定版本的测试范围及兼容限制见 [认证验证记录](docs/auth-validation.md)。
 
 配置完成后，只向 agent 提供 profile 名、目标区域、项目位置和所选路线，不提供密钥值。例如：
 
@@ -125,7 +129,9 @@ $huawei-supabase-frontend 检查当前应用的构建环境、Nginx 或容器状
 
 ## 验证状态
 
-本次补齐构建环境与 Docker 管理：skill 格式、内部链接和 shell 示例检查通过；本地 Node 构建与 Nginx/Compose 的 23 项检查通过，覆盖挂载、路由、更新、回退和配置失败恢复。另完成版本冲突、缺工具、只读检查、已有 CI 等场景推演。测试版本、文件共享限制及未执行范围见 [环境验证记录](docs/environment-validation.md)。
+统一认证入口已按 DevKit 1.1.13 发布包核对，并完成无网络隔离测试、虚构凭证交互及 KooCLI 7.3.12 OBS 帮助验证；未执行真实云认证。详见 [认证验证记录](docs/auth-validation.md)。
+
+此前补齐构建环境与 Docker 管理：skill 格式、内部链接和 shell 示例检查通过；本地 Node 构建与 Nginx/Compose 的 23 项检查通过，覆盖挂载、路由、更新、回退和配置失败恢复。另完成版本冲突、缺工具、只读检查、已有 CI 等场景推演。测试版本、文件共享限制及未执行范围见 [环境验证记录](docs/environment-validation.md)。
 
 本仓库交付由 agent 执行的 skill 指引，不是独立部署程序，也不包含用户应用。命令的核对来源及未实测部分见官方资料；当前支持的路线均有准备、发布、更新和回退流程，缺少权限或平台能力时明确停止对应操作。
 
