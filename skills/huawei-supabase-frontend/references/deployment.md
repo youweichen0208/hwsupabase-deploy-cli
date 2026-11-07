@@ -1,19 +1,18 @@
 # 通用发布记录与验收
 
-所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md)、[内部 OBS 自定义域名](obs-custom-domain.md)、[ECS](ecs-hosting.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
+所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md)、[ECS](ecs-hosting.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
 
 ## 环境与版本记录
 
 优先沿用项目记录约定；否则使用 `.hwsupabase/frontend/<环境>/environment.json`、`releases/<版本>/manifest.json`、`checks/<版本>.json`。本目录排除 Git，记录非敏感事实，文件本身不授予权限。
 
-新记录使用 schema_version=2，hosting_kind 为 obs-cdn、obs-custom-domain、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
+新记录使用 schema_version=2，hosting_kind 为 obs-cdn、ecs-nginx 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
 
 | 记录 | 内容 |
 | --- | --- |
 | environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
 | 构建环境（可选增量字段） | build_location（local/ci/ecs）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
 | obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
-| obs-custom-domain 专有项 | 实际 OBS Endpoint、独立配置位置（无秘密）、桶、自定义域名、网站首页/错误文档、桶策略及对象 ACL 的授权范围/快照位置、适用的 DNS 提供商/记录/TTL、证书标识/到期时间及状态；不要求 CDN 字段 |
 | ecs-nginx 专有项 | profile、region/project、server/EIP/网卡端口 ID、实际公网 IP、SSH 主机别名、站点目录、Nginx 配置位置、current 目标、异步任务 ID、计费模式、service_mode（host/docker）；Docker 另记 Compose project/文件位置、service、daemon 主机、端口及当前/前一验证镜像摘要 |
 | external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
 | manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID 或 ECS release 目录、适用的刷新范围 |
@@ -49,7 +48,7 @@ Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记�
 
 ### GET 留证示例
 
-HEAD（`curl -I`）仅作辅助，不能证明“无强制下载”；内部环境可能对 HEAD 与 GET 返回不同响应头。以下默认发 GET，保存跳转链响应头、最终正文及最终 URL。变量使用真实入口或实际资源 URL，每项分别保存；临时文件放在 web root 外的私有目录。
+HEAD（`curl -I`）仅作辅助，不能证明“无强制下载”；HEAD 与 GET 的响应头可能不同。以下默认发 GET，保存跳转链响应头、最终正文及最终 URL。变量使用真实入口或实际资源 URL，每项分别保存；临时文件放在 web root 外的私有目录。
 
 ```sh
 curl --silent --show-error --location --max-redirs 5 --max-time 30 \

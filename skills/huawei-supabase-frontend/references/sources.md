@@ -61,10 +61,6 @@
 
 隔离测试覆盖虚构凭证输入、部分成功、身份失败和覆盖行为，见仓库 `docs/auth-validation.md`。没有真实云认证或 OBS 上传实测。
 
-## 内部 OBS 自定义域名与 GET 验收
+## GET 验收
 
-- [自定义域名访问桶](https://support.huaweicloud.com/usermanual-obs/obs_03_0032.html)：网站与域名绑定、DNS 的官方依据；内部环境能力另验。
-- [设置自定义域名](https://support.huaweicloud.com/intl/zh-cn/utiltg-obs/obs_11_1005.html)、[获取配置](https://support.huaweicloud.com/intl/zh-cn/utiltg-obs/obs_11_1006.html)：显式 method 与 config 参数。
-- [Issue #1 现场报告](https://github.com/youweichen0208/hwsupabase-deploy-cli/issues/1)：内部默认域名注入附件、HEAD/GET 差异及绑定后表现；不是公有云统一保证。
-
-2026-11-07 核对上述官方页面，并在无网络容器复核 KooCLI 7.3.12 帮助遗漏 method 及参数解析；本地 HTTP 模拟验证 GET 识别附件等失败。详见 [验证记录](../../../docs/obs-validation.md)。未执行真实域名绑定、权限变更、DNS 或证书部署；帮助列出 certificate 参数不构成 HTTPS 可用保证。
+[Issue #1 现场报告](https://github.com/youweichen0208/hwsupabase-deploy-cli/issues/1) 揭示 HEAD 与 GET 响应不一致的验收盲点。通用验收要求检查 GET 最终响应、正文并完成浏览器验证，不将单个环境的响应行为推广为所有 OBS 的特性。本地模拟与历史 CLI 验证见 [验证记录](../../../docs/obs-validation.md)。

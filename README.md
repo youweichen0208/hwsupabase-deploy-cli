@@ -25,7 +25,6 @@
 
 - 前端已在其他平台托管时，可以保留现有部署；尚未托管时，也可以选择其他云厂商及其托管服务，按实际能力使用自有域名或平台提供的可用入口。平台选择不限于 Vercel、Cloudflare，也不假设每家都提供免费默认域名。
 - 选择公有华为云且已有可用域名时，默认使用私有 OBS＋CDN；准备办理域名时，先完成本地构建与预览，待证书及适用备案条件齐备后上线。
-- 明确选择内部 OBS、提供实际 Endpoint 且授权访问范围时，使用 [内部 OBS 自定义域名流程](skills/huawei-supabase-frontend/references/obs-custom-domain.md)，保留独立配置，完成网站配置、产物权限、域名绑定及 GET/浏览器验收；不默认套用 DevKit 初始化或 CDN 刷新。
 - 不准备域名且明确需要公网 IP 访问时，可选择 ECS＋EIP＋Nginx，需要承担服务器维护、带宽费用并处理 HTTPS。**缺少域名不会自动购买 ECS，OBS 桶也不能直接绑定 EIP。**
 - 所有路线均由用户浏览器调用已有 Supabase 的 HTTPS API；公开 Key、CORS、登录回调与 RLS 需配置并验收。更新与回退沿用所选路线；未列明的第三方平台按官方文档核实能力，通过已有或新配置的 CI/官方工具发布，能力不足时交付明确缺项。
 
@@ -123,7 +122,6 @@ $huawei-supabase-frontend 检查当前应用的构建环境、Nginx 或容器状
 | [Supabase](skills/huawei-supabase-frontend/references/supabase.md) | 已有应用发现、公开 Key、HTTPS 与权限隔离 |
 | [域名与托管](skills/huawei-supabase-frontend/references/hosting.md) | 私有 OBS、CDN、DNS、SPA 路由和费用 |
 | [通用记录与验收](skills/huawei-supabase-frontend/references/deployment.md) | 路线标识、兼容旧记录、版本与验收 |
-| [内部 OBS 自定义域名](skills/huawei-supabase-frontend/references/obs-custom-domain.md) | 明确选择的内部环境、独立 Endpoint、域名绑定、诊断与恢复 |
 | [OBS 发布与回退](skills/huawei-supabase-frontend/references/obs-release.md) | 对象上传、入口切换、CDN 刷新与恢复 |
 | [ECS 发布与回退](skills/huawei-supabase-frontend/references/ecs-hosting.md) | 资源复用/创建、EIP 绑定、Nginx、SSH 发布与恢复 |
 | [其他平台](skills/huawei-supabase-frontend/references/external-hosting.md) | 保留或新建指定平台托管、通用发布与回退、Pages/Vercel 示例 |
@@ -131,7 +129,7 @@ $huawei-supabase-frontend 检查当前应用的构建环境、Nginx 或容器状
 
 ## 验证状态
 
-Issue #1 修复增加 GET 最终响应与正文验收、内部 OBS 自定义域名流程，保持 schema_version=2。HEAD 不能证明无强制下载；旧记录保留，下一次部署/回退补验。模拟及 CLI 解析结果见 [GET 与自定义域名验证](docs/obs-validation.md)；未验证客户内部站点。
+Issue #1 修复增加 GET 最终响应与正文验收，保持 schema_version=2。HEAD 不能证明无强制下载；旧记录保留，下一次部署/回退补验。模拟及历史 CLI 解析结果见 [GET 验证记录](docs/obs-validation.md)。
 
 统一认证入口已按 DevKit 1.1.13 发布包核对，并完成无网络隔离测试、虚构凭证交互及 KooCLI 7.3.12 OBS 帮助验证；未执行真实云认证。详见 [认证验证记录](docs/auth-validation.md)。
 
