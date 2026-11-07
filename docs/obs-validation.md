@@ -1,4 +1,6 @@
-# GET 与内部 OBS 自定义域名验证记录
+# GET 验收与历史验证记录
+
+当前 skill 已按用户要求移除内部 OBS 专属流程；以下保留原始验证范围与结果，域名命令检查仅为历史记录，不代表当前支持路线。
 
 验证日期：2026-11-07。交付为 Issue #1 的 skill 修复，不是客户内部站点修复；未连接真实云环境，未修改客户权限、桶、DNS 或证书。
 
@@ -36,4 +38,4 @@
 
 88 个 Markdown 本地链接目标、15 个 shell 代码块语法及 git diff 空白检查通过；核对路线入口、独立配置、发布/回退、记录兼容和 CDN 适用范围。GET 留证只保存脱敏摘要；旧 HEAD 记录保留但下次补验。
 
-[Issue #1](https://github.com/youweichen0208/hwsupabase-deploy-cli/issues/1) 提供内部附件注入与绑定后表现的现场报告；本地模拟仅复现关键响应差异。官方依据见 [sources.md](../skills/huawei-supabase-frontend/references/sources.md#内部-obs-自定义域名与-get-验收)。两者均不能代替目标内部环境的网站、权限、域名、DNS、证书和浏览器实测。
+[Issue #1](https://github.com/youweichen0208/hwsupabase-deploy-cli/issues/1) 提供内部附件注入与绑定后表现的现场报告；本地模拟仅复现关键响应差异。官方依据见 [sources.md](../skills/huawei-supabase-frontend/references/sources.md#get-验收)。两者均不能代替目标内部环境的网站、权限、域名、DNS、证书和浏览器实测。
