@@ -1,6 +1,6 @@
 # 官方资料与核实边界
 
-维护日期：2026-11-06。执行时以目标站点/区域官方文档、API Explorer 和本地 CLI 帮助为准。此仓库交付操作指引，不包含生产部署证明。
+维护日期：2026-11-07。执行时以目标站点/区域官方文档、API Explorer 和本地 CLI 帮助为准。此仓库交付操作指引，不包含生产部署证明。
 
 | 资料 | 使用时机 |
 | --- | --- |
@@ -17,7 +17,7 @@
 | [RDS Supabase Data API](https://support.huaweicloud.com/usermanual-rds-pg/rds_supabase_23.html)、[Dashboard](https://support.huaweicloud.com/usermanual-rds-pg/rds_supabase_04.html) | 已有应用 SDK/RLS 与实际支持范围 |
 | [Supabase API Keys](https://supabase.com/docs/guides/getting-started/api-keys) | 公开 Key 与服务端秘密的边界，华为云可用类型另验 |
 
-本次通过官方页面/检索核对域名限制、备案条件、私有桶委托、CDN 改写、obsutil 元数据和 Key 类型。当前执行环境未找到 KooCLI/obsutil，因此未执行 CLI 帮助或云端请求。`ListAiApplications`、`ShowSupabaseApplication` 沿用任务提供的已核实命令名；本次公开文档搜索未返回可独立核对的对应参数页，所以仅提供帮助发现入口，不编造请求字段或声称已再次验证。
+本次通过官方页面/检索核对域名限制、备案条件、私有桶委托、CDN 改写、obsutil 元数据和 Key 类型。早期核对时未找到 KooCLI/obsutil；后续隔离帮助验证见下文，仍未执行真实云请求。`ListAiApplications`、`ShowSupabaseApplication` 沿用任务提供的已核实命令名；本次公开文档搜索未返回可独立核对的对应参数页，所以仅提供帮助发现入口，不编造请求字段或声称已再次验证。
 
 区域表保留历史名称解析，OBS/ECS/EIP/RDS 能力需逐次按实际账号确认。价格、配额、可备案资源资格及委托范围均在实施时查询；预算示例不代表报价或费用上限。
 
@@ -60,3 +60,11 @@
 - [KooCLI 配置参数](https://support.huaweicloud.com/usermanual-hcli/hcli_03_003_01.html)：认证模式和加密配置；本项目不关闭加密以提取秘密。
 
 隔离测试覆盖虚构凭证输入、部分成功、身份失败和覆盖行为，见仓库 `docs/auth-validation.md`。没有真实云认证或 OBS 上传实测。
+
+## 内部 OBS 自定义域名与 GET 验收
+
+- [自定义域名访问桶](https://support.huaweicloud.com/usermanual-obs/obs_03_0032.html)：网站与域名绑定、DNS 的官方依据；内部环境能力另验。
+- [设置自定义域名](https://support.huaweicloud.com/intl/zh-cn/utiltg-obs/obs_11_1005.html)、[获取配置](https://support.huaweicloud.com/intl/zh-cn/utiltg-obs/obs_11_1006.html)：显式 method 与 config 参数。
+- [Issue #1 现场报告](https://github.com/youweichen0208/hwsupabase-deploy-cli/issues/1)：内部默认域名注入附件、HEAD/GET 差异及绑定后表现；不是公有云统一保证。
+
+2026-11-07 核对上述官方页面，并在无网络容器复核 KooCLI 7.3.12 帮助遗漏 method 及参数解析；本地 HTTP 模拟验证 GET 识别附件等失败。详见 [验证记录](../../../docs/obs-validation.md)。未执行真实域名绑定、权限变更、DNS 或证书部署；帮助列出 certificate 参数不构成 HTTPS 可用保证。

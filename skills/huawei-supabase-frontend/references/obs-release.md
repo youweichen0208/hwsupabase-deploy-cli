@@ -1,6 +1,6 @@
 # OBS 版本发布与回退
 
-仅在 OBS/CDN 路线读取；先完成 [托管配置](hosting.md)，通用记录与验收见 [发布与验收](deployment.md)。
+本页的 CDN 配置、刷新与恢复仅用于 obs-cdn；内部 obs-custom-domain 的发布/回退直接读 [内部 OBS 自定义域名](obs-custom-domain.md)，不执行 CDN 步骤。OBS/CDN 路线先完成 [托管配置](hosting.md)，通用记录与验收见 [发布与验收](deployment.md)。
 
 ## 发布顺序
 
