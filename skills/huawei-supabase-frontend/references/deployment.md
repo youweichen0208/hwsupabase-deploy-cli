@@ -1,47 +1,42 @@
-# 通用发布记录与验收
+# OBS 发布记录与验收
 
-所有路线共用此记录和验收约定。实际发布分别使用 [OBS/CDN](obs-release.md) 或 [其他平台](external-hosting.md)，不把 OBS 对象操作套到服务器或托管平台。
+本指引适用于公开读桶的静态前端，两条托管路线共用；实际发布步骤见 [OBS 发布](obs-release.md)。既有非 OBS 记录只保留历史并报告范围限制，不改标为 OBS 或自动迁移资源。
 
 ## 环境与版本记录
 
-优先沿用项目记录约定；否则使用 `.hwsupabase/frontend/<环境>/environment.json`、`releases/<版本>/manifest.json`、`checks/<版本>.json`。本目录排除 Git，记录非敏感事实，文件本身不授予权限。
-
-新记录使用 schema_version=2，hosting_kind 为 obs-cdn 或 external；external 另记实际 provider（用户选定的云厂商/平台，不限枚举）及具体 service；兼容已有 cloudflare-pages、vercel 等 provider 值，查询确认后补充 service。旧记录未标记路线但含已确认的桶/CDN 绑定时按 obs-cdn 读取，查询核实后再补字段，保留旧值及历史；不能把空记录当成 OBS，也不自动迁移资源。
-
-| 记录 | 内容 |
-| --- | --- |
-| environment 公共项 | hosting_kind、provider、账号非秘密标识、稳定入口 URL 及协议、Supabase 应用 ID/HTTPS URL、当前/前一成功版本、当前远端发布状态、最后完成阶段 |
-| 构建环境（可选增量字段） | build_location（local/ci）、build_method（native/docker）、OS/架构、Node/包管理器约束来源与实际版本、工具来源/路径、构建镜像摘要、最近验证结果 |
-| obs-cdn 专有项 | profile、OBS/RDS region、必要的 project ID、桶、CDN ID/CNAME、DNS 记录 ID、证书 ID/到期时间、委托范围 |
-| external 专有项 | 平台、具体托管服务、区域及资源 ID（适用时）、账号/团队 ID、项目 ID、发布方式（Git/CLI/连接器）、生产分支、稳定地址、预览/生产 deployment ID/URL、构建目录与设置、可用回退方式 |
-| manifest | 版本、源码提交、实际 Node/包管理器版本、构建位置/方式、适用镜像摘要、构建命令/锁文件摘要、每个公开文件的路径/大小/SHA-256/MIME/缓存策略、路由、入口原字节/配置备份位置、前一版本、外部 deployment ID、适用的刷新范围 |
-| checks | 时间、目标地址、检查结果、request_method、final_url、access_mode（normal/resolve-diagnostic）、最终状态、Content-Type/Content-Disposition、脱敏正文摘要、浏览器结果、适用的刷新/部署任务状态、失败原因与未执行项；无 cookie、token 或用户数据 |
-
-新增字段保持 schema_version=2 的增量兼容；旧记录属于当前不支持的路线时保留历史并报告范围限制，不自动迁移或套用其他路线。回退使用目标版本的构建事实与适用服务配置，不以当前工具版本覆盖历史。
-
-Key、私钥、数据库密码、云/平台凭证与完整认证响应不入记录。备份与配置快照放在 web root 外的私有位置；平台环境变量仅记录名称、作用域及安全存储位置，不记录值。旧版本回退使用归档产物或原 deployment，不重新构建旧源码冒充原版本。
-
-旧验收仅有 HEAD 证据时保留历史，标注证据不足；下一次部署或回退补做 GET 和浏览器验证，不直接沿用“无强制下载”或通过结论。
+开始发布、续跑、结果不明、验收和回退前读 [OBS 发布记录契约](record-contract.md)。记录位置、字段、状态、脱敏、备份及旧记录兼容均以该契约为准；在状态变化时更新，不能只在任务结尾补写。
 
 ## 共同发布约束
 
-单环境串行发布，切换前核对远端版本/入口摘要仍是预期值；发现其他发布先对账。先校验全部资源再更新入口，保留上一个成功版本及旧页面所需资源。内容哈希/版本 URL 长缓存；HTML、service worker 和其他可变文件重新验证或短缓存。平台内置缓存按官方机制处理，不盲目套用 CDN 手动刷新。
+单环境串行发布，切换前核对远端版本/入口摘要仍是预期值；发现其他发布先对账。先校验全部资源再更新入口，保留上一个成功版本及旧页面所需资源。内容哈希/版本 URL 长缓存；HTML、service worker 和其他可变文件重新验证或短缓存。`obs-cdn` 按实际缓存键和受影响范围刷新并等待完成，`obs-domain` 直接覆盖入口对象后即时生效。两种情况下都要在切换后重新验收。
 
 失败或结果不明时分别记录实际服务中的版本与最近成功版本，恢复后重新验证；首次发布没有旧版本时明确没有回退点。数据库迁移不随前端回退自动撤销；旧前端与当前后端不兼容时先说明阻碍。清理需要保留期限和授权，不能同步删除旧页面引用的资源或复用资源。
 
+## 回退与旧记录兼容
+
+1. 先检查目标版本当时的成功发布记录及已有验收证据。缺少新字段不等于版本失败；历史仅有 HEAD 的结果不能证明当前 GET、无强制下载或浏览器验收通过，也不能直接沿用为本次成功结论。
+2. 有历史成功依据时，核对归档原产物、入口字节和元数据仍可取得、内容与资源完整，并确认当前后端及必要服务配置兼容。保存当前入口、配置和实际服务版本作为本次恢复点；不重建旧源码冒充原产物。
+3. 有可用的现成候选入口时，先补 GET 和浏览器验收，通过后再切换稳定入口。没有候选入口时，在上述条件具备且已有回退授权覆盖的范围内，可恢复稳定入口后立即补验；不为补验新建付费资源。切换前发现无历史成功依据、原产物不可得、完整性/兼容性不满足，或候选验证失败时，停止切换并报告缺项。
+4. 按下述真实验收检查恢复后的稳定入口，补验结果另记时间和证据，保留旧记录。只有适用检查通过才记录回退成功；恢复后验收失败时按已保存恢复点及 [OBS 恢复流程](obs-release.md#失败恢复与回退) 处理，分别记录实际服务状态和最近成功版本，不继续切换到失败候选。
+
 ## 真实验收
 
-从目标用户网络打开实际入口，记录版本与结果；平台同时检查稳定生产地址和适用的 deployment 地址。仅本机预览、修改 Host、跳过 TLS 或 cache-busting 成功都不能代替验收。
+从目标用户网络通过正常 DNS 解析打开实际入口域名，记录版本与结果。仅本机预览、候选入口、修改 Host、跳过 TLS 或 cache-busting 成功都不能代替稳定入口验收。
 
-| 检查 | 通过条件 |
-| --- | --- |
-| 入口 | GET 最终响应状态、Content-Type、Content-Disposition 和正文均正确，根路径为预期 HTML；XML、错误页或附件均失败；HTTPS 证书有效、无混合内容；明确选择的 HTTP 调试入口单列为 HTTP 验证 |
-| JS/CSS/图片 | 对实际 HTML 引用及懒加载资源逐项 GET，核对最终状态、Content-Type、Content-Disposition 与正文，MIME/内容正确且无附件，无浏览器加载错误 |
-| 页面路由 | 深层直接打开/刷新、带查询和片段的回调可用 |
-| 负面路径 | 缺失静态资源、未知 API 和非页面路径返回 4xx，正文不是首页 |
-| 缓存 | 普通 URL 返回目标版本，可变入口不被长期缓存，旧页面仍能取得所需不可变资源 |
-| Supabase | 浏览器可达真实 HTTPS API，所需 CORS、登录/退出/回调及获授权的用户隔离检查通过 |
-| 更新/回退 | 新版本可见，指定已验证版本恢复后重新验证入口、路由、资源与后端兼容性 |
+| 检查 | 通过条件 | 适用路线 |
+| --- | --- | --- |
+| 入口探测（`domain_probe`） | `GET /` 最终 2xx、HTML Content-Type、非附件、正文含本版本标记；失败按 [失败原因枚举](domain-provisioning.md#失败原因枚举) 归类 | 两者 |
+| 入口（`entry`） | GET 最终响应状态、Content-Type、Content-Disposition 和正文均正确，根路径为预期 HTML；XML、错误页或附件均失败；HTTPS 入口证书有效、无混合内容；明确选择的 HTTP 入口单列为 HTTP 验证 | 两者 |
+| JS/CSS/图片（`assets`） | 对实际 HTML 引用及懒加载资源逐项 GET，核对最终状态、Content-Type、Content-Disposition 与正文，MIME/内容正确且无附件，无浏览器加载错误 | 两者 |
+| 页面路由（`routes`） | `obs-cdn`：深层直接打开/刷新、带查询和片段的回调返回预期页面；`obs-domain`：只验证回落行为符合预期，不据此宣称深层路由独立可用 | 两者（强度不同） |
+| 负面路径（`negative_paths`） | 缺失静态资源、未知 API 和非页面路径返回 4xx，正文不是首页 | 仅 `obs-cdn`；`obs-domain` 记不适用 |
+| 缓存（`cache`） | 普通 URL 返回目标版本，可变入口不被长期缓存，旧页面仍能取得所需不可变资源 | 两者 |
+| Supabase（`supabase`） | 浏览器可达真实 HTTPS API，所需 CORS、登录/退出/回调及获授权的用户隔离检查通过 | 视 `supabase_required` |
+| 更新/回退（`update_rollback`） | 按 `operation` 验收：`update` 确认新版可见、旧页面资源仍可用并保持新版上线；`rollback` 确认指定原版本恢复后入口、路由、资源与后端兼容性通过 | 视 `operation` |
+
+HTTP 入口下的 HTTPS 与 Supabase 登录项记未验证：非安全上下文缺少 `crypto.subtle` 等能力，Supabase JS 的 PKCE 登录可能不可用（按 Web 平台限制判断，未在真实设备复验）。补齐证书后重新探测并复验这两项。
+
+普通更新不包含回退演练；仅在明确请求回退或回退演练时切换旧版本，发布失败则按已有恢复授权处理。稳定入口是目标用户持续访问的地址，协议、域名及实际访问链路均属验收对象。
 
 写入测试仅使用获授权测试对象。没有账号、访问权限或安全入口时，受影响项标为未验证；只接入任务无新建云资源时“环境已准备”指所需现有环境已核实，不暗示新建。用户要求的测试未完成时不能报告整体线上验收通过。
 
@@ -59,7 +54,7 @@ curl --silent --show-error --location --max-redirs 5 --max-time 30 \
 PowerShell 使用 `curl.exe`，避免 `curl` 别名；先设置 `$CheckDir` 和 `$FrontendCheckUrl`：
 
 ```powershell
-curl.exe --silent --show-error --location --max-redirs 5 --max-time 30 --dump-header "$CheckDir/headers.txt" --output "$CheckDir/body.bin" --write-out 'method=GET status=%{http_code} final_url=%{url_effective}\n' "$FrontendCheckUrl"
+curl.exe --silent --show-error --location --max-redirs 5 --max-time 30 --dump-header "$CheckDir/headers.txt" --output "$CheckDir/body.bin" --write-out 'method=GET status=%{http_code} final_url=%{url_effective}' "$FrontendCheckUrl"
 ```
 
 先检查 curl 退出码，再核对响应头文件的**最后一个响应块**与正文；命令退出 0、HTTP 200 或缺少 attachment 均不足以通过。HTML 应为预期版本页面而非 XML/错误模板；JS/CSS/图片应匹配清单类型及实际文件，不能接受首页伪装成资源。完整响应可能含 cookie、认证跳转参数或用户数据，仅在受限临时目录检查，脱敏后记录必要响应头、最终 URL（去除秘密参数）与正文摘要，不归档完整认证响应。最后用目标用户网络的正常解析地址做浏览器加载、路由及适用的 HTTPS/Auth 验证。
