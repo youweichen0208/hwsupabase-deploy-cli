@@ -33,7 +33,7 @@
 ## 桶与公开读
 
 1. 优先复用本项目专用前端桶；新桶明确 region、名称、存储类别、企业项目和保留策略。不混用 Supabase 用户上传文件桶。
-2. 桶策略允许匿名读对象。写权限、`PutObject`、列举权限不开放给匿名身份。
+2. 本项目专用公开前端桶的策略以 `bucket/*` 通配允许匿名 `GetObject`，不按版本逐项列白名单。共享或含非公开内容的桶不得自动扩大范围；先明确授权与隔离。写权限、`PutObject`、列举权限不开放给匿名身份。
 3. 开启匿名读后，桶内不得存放秘密、备份、配置快照或用户数据；这些文件放在 web root 之外的私有位置。
 4. 查询失败不作为创建理由；分页查询完成才判定资源不存在。
 
@@ -69,3 +69,11 @@
 Supabase 实例、存储、公网带宽及其他后端费用独立列出。已有授权且产品支持时设置费用预算告警与流量告警，记录无法配置的告警及人工路径。预算与告警不是账单硬上限。
 
 依据：[OBS 静态网站托管](https://support.huaweicloud.com/usermanual-obs/obs_03_0352.html)、[CDN 配置入口](https://support.huaweicloud.com/usermanual-cdn/cdn_01_0001.html)。
+
+### 专用公开桶策略模板
+
+按当前 OBS 帮助核对 schema 后替换桶名，保留已有必要策略；模板只授对象读取，不授 ListBucket。部署不重复做 `anonymous_list_closed` 验收；策略变更时审查完整策略及 ACL，不能靠此模板推断其他授权不存在。
+
+```json
+{"Statement":[{"Effect":"Allow","Principal":{"ID":["*"]},"Action":["GetObject"],"Resource":["example-frontend/*"]}]}
+```

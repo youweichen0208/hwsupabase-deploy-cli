@@ -149,7 +149,7 @@ def validate_environment(data, label):
     }
     require(required <= data.keys(), f'{label}: missing environment fields')
     require_documented(required)
-    require(type(data['schema_version']) is int and data['schema_version'] == 2, f'{label}: wrong schema version')
+    require(type(data['schema_version']) is int and data['schema_version'] in (2, 3), f'{label}: wrong schema version')
     require(data['hosting_kind'] in HOSTING_ROUTES, f'{label}: unsupported hosting route')
     require(data['provider'] == 'huawei-cloud', f'{label}: unsupported provider')
     require(data['service'] == HOSTING_ROUTES[data['hosting_kind']],
@@ -209,7 +209,7 @@ def validate_manifest(data, label):
     }
     require(required <= data.keys(), 'manifest: missing fields')
     require_documented(required)
-    require(type(data['schema_version']) is int and data['schema_version'] == 2 and data['files'], 'manifest: invalid version or files')
+    require(type(data['schema_version']) is int and data['schema_version'] in (2, 3) and data['files'], 'manifest: invalid version or files')
     require(data['lockfile_sha256'] is None or (isinstance(data['lockfile_sha256'], str)
             and SHA256_RE.fullmatch(data['lockfile_sha256'])), 'manifest: invalid lockfile SHA-256')
     validate_build(data['build'], label)
@@ -230,7 +230,12 @@ def validate_manifest(data, label):
 
 
 def required_check_names(data):
-    required = set(BASE_REQUIRED_CHECKS)
+    required = set(BASE_REQUIRED_CHECKS) if data['schema_version'] == 2 else {'entry', 'assets'}
+    if data['schema_version'] == 3:
+        for flag, check in [('routes_required', 'routes'), ('cache_required', 'cache')]:
+            require(type(data.get(flag)) is bool, f'Missing boolean {flag}')
+            if data[flag]:
+                required.add(check)
     if data['hosting_kind'] == 'obs-cdn':
         required.add('negative_paths')
     if data['supabase_required']:
@@ -247,7 +252,7 @@ def validate_checks(data, label):
     }
     require(required <= data.keys(), f'{label}: missing fields')
     require_documented(required)
-    require(type(data['schema_version']) is int and data['schema_version'] == 2, f'{label}: wrong schema version')
+    require(type(data['schema_version']) is int and data['schema_version'] in (2, 3), f'{label}: wrong schema version')
     require(CHECK_ID_RE.fullmatch(data['check_id']), f'{label}: invalid check_id')
     require(data['operation'] in {'initial_release', 'update', 'rollback', 'recheck'}, label)
     require(data['hosting_kind'] in HOSTING_ROUTES, f'{label}: unsupported hosting route')
@@ -303,7 +308,7 @@ def validate_checks(data, label):
         negative = by_name.get('negative_paths')
         require(negative is None or negative['status'] == 'not_applicable',
                 f'{label}: obs-domain error document cannot prove negative paths')
-        require(by_name['domain_probe']['status'] != 'not_applicable',
+        require(by_name.get('domain_probe', by_name.get('entry', {})).get('status') != 'not_applicable',
                 f'{label}: obs-domain still requires the entry probe')
     any_failed = any(item['status'] == 'failed' for item in data['checks'])
     unverified = [item for item in data['checks'] if item['status'] == 'unverified']
@@ -596,6 +601,13 @@ def main():
     print('PASS manifest example, file hashes, routes, and required fields')
     valid_checks = check_checks(EXAMPLES / 'checks.example.json')
     check_acceptance_examples(valid_checks)
+    check_checks(EXAMPLES / 'checks.v3.json')
+    v3 = copy.deepcopy(valid_checks)
+    v3.update(schema_version=3, hosting_kind='obs-domain', operation='initial_release', supabase_required=False, routes_required=False, cache_required=False)
+    v3['checks'] = [item for item in v3['checks'] if item['name'] in {'entry', 'assets'}]
+    validate_checks(v3, 'v3 minimal')
+    v3['routes_required'] = True
+    expect_invalid(v3, validate_checks, 'v3 missing conditional routes')
     print('PASS required coverage and passed/failed/partial/N/A/diagnostic/update cases')
 
 
