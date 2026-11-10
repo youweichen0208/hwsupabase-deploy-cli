@@ -25,12 +25,11 @@
 
 | 检查 | 通过条件 | 适用路线 |
 | --- | --- | --- |
-| 入口探测（`domain_probe`） | `GET /` 最终 2xx、HTML Content-Type、非附件、正文含本版本标记；失败按 [失败原因枚举](domain-provisioning.md#失败原因枚举) 归类 | 两者 |
-| 入口（`entry`） | GET 最终响应状态、Content-Type、Content-Disposition 和正文均正确，根路径为预期 HTML；XML、错误页或附件均失败；HTTPS 入口证书有效、无混合内容；明确选择的 HTTP 入口单列为 HTTP 验证 | 两者 |
+| 入口（`entry`） | GET 最终响应状态、Content-Type、Content-Disposition 和正文均正确，记录实际所测 URL，根路径为含本版本标记的预期 HTML，缓存头并入证据；XML、错误页或附件均失败；HTTPS 入口证书有效、无混合内容；明确选择的 HTTP 入口单列为 HTTP 验证 | 两者 |
 | JS/CSS/图片（`assets`） | 对实际 HTML 引用及懒加载资源逐项 GET，核对最终状态、Content-Type、Content-Disposition 与正文，MIME/内容正确且无附件，无浏览器加载错误 | 两者 |
-| 页面路由（`routes`） | `obs-cdn`：深层直接打开/刷新、带查询和片段的回调返回预期页面；`obs-domain`：只验证回落行为符合预期，不据此宣称深层路由独立可用 | 两者（强度不同） |
+| 页面路由（`routes`） | `obs-cdn`：深层直接打开/刷新、带查询和片段的回调返回预期页面；`obs-domain`：只验证回落行为符合预期，不据此宣称深层路由独立可用 | 仅真实入口深链或 `obs-cdn` 改写 |
 | 负面路径（`negative_paths`） | 缺失静态资源、未知 API 和非页面路径返回 4xx，正文不是首页 | 仅 `obs-cdn`；`obs-domain` 记不适用 |
-| 缓存（`cache`） | 普通 URL 返回目标版本，可变入口不被长期缓存，旧页面仍能取得所需不可变资源 | 两者 |
+| 缓存（`cache`，仅配置变更或 CDN 刷新单列） | 普通 URL 返回目标版本，可变入口不被长期缓存，旧页面仍能取得所需不可变资源 | 两者 |
 | Supabase（`supabase`） | 浏览器可达真实 HTTPS API，所需 CORS、登录/退出/回调及获授权的用户隔离检查通过 | 视 `supabase_required` |
 | 更新/回退（`update_rollback`） | 按 `operation` 验收：`update` 确认新版可见、旧页面资源仍可用并保持新版上线；`rollback` 确认指定原版本恢复后入口、路由、资源与后端兼容性通过 | 视 `operation` |
 
@@ -39,6 +38,8 @@ HTTP 入口下的 HTTPS 与 Supabase 登录项记未验证：非安全上下文�
 普通更新不包含回退演练；仅在明确请求回退或回退演练时切换旧版本，发布失败则按已有恢复授权处理。稳定入口是目标用户持续访问的地址，协议、域名及实际访问链路均属验收对象。
 
 写入测试仅使用获授权测试对象。没有账号、访问权限或安全入口时，受影响项标为未验证；只接入任务无新建云资源时“环境已准备”指所需现有环境已核实，不暗示新建。用户要求的测试未完成时不能报告整体线上验收通过。
+
+基础必检为 entry/assets，按需增加 supabase；其余按记录契约的条件触发，不强行压缩到三项。使用 `bash scripts/probe-suite.sh 私有输出目录 URL...` 一轮并行 GET 留证（脚本路径相对 skill 目录），再核对内容与浏览器结果。失败修复后仅补验受影响项并写新事件。
 
 ### GET 留证示例
 
@@ -58,3 +59,5 @@ curl.exe --silent --show-error --location --max-redirs 5 --max-time 30 --dump-he
 ```
 
 先检查 curl 退出码，再核对响应头文件的**最后一个响应块**与正文；命令退出 0、HTTP 200 或缺少 attachment 均不足以通过。HTML 应为预期版本页面而非 XML/错误模板；JS/CSS/图片应匹配清单类型及实际文件，不能接受首页伪装成资源。完整响应可能含 cookie、认证跳转参数或用户数据，仅在受限临时目录检查，脱敏后记录必要响应头、最终 URL（去除秘密参数）与正文摘要，不归档完整认证响应。最后用目标用户网络的正常解析地址做浏览器加载、路由及适用的 HTTPS/Auth 验证。
+
+失败按 [失败原因枚举](domain-provisioning.md#失败原因枚举) 记录，不能把 HTTP 成功直接记成内容验收通过。
