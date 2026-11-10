@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import threading
 
-SCRIPT = pathlib.Path(__file__).resolve().parents[1] / 'skills/huawei-supabase-frontend/scripts/probe-suite.sh'
+SCRIPT = pathlib.Path(__file__).resolve().parents[1] / 'skills/rds-supabase-frontend/scripts/probe-suite.sh'
 class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/redirect':

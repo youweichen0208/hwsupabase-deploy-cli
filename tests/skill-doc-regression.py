@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / 'skills' / 'huawei-supabase-frontend'
+SKILL = ROOT / 'skills' / 'rds-supabase-frontend'
 REFERENCES = SKILL / 'references'
 EXAMPLES = REFERENCES / 'examples'
 CONTRACT = (REFERENCES / 'record-contract.md').read_text()
@@ -530,7 +530,7 @@ def main():
     skill_text = (SKILL / 'SKILL.md').read_text()
     require(skill_text.startswith('---\n'), 'SKILL.md: missing frontmatter')
     frontmatter = skill_text.split('---', 2)[1]
-    require(re.search(r'^name:\s+huawei-supabase-frontend$', frontmatter, re.MULTILINE),
+    require(re.search(r'^name:\s+rds-supabase-frontend$', frontmatter, re.MULTILINE),
             'SKILL.md: wrong name')
     description = re.search(r'^description:\s*(.+)$', frontmatter, re.MULTILINE)
     require(description, 'SKILL.md: missing description')

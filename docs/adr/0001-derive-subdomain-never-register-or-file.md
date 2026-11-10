@@ -5,7 +5,7 @@
 ## Considered Options
 
 - **自动注册新域名并代办备案**：注册、实名认证与备案都是异步的、要求主体本人声明身份，以天或周计，会让"一键部署"变成一个多日流程，并让 agent 替用户作出身份声明。
-- **退化到存储服务默认域名**：默认域名可能强制下载页面文件，不能充当稳定入口，见 `skills/huawei-supabase-frontend/references/hosting.md`。
+- **退化到存储服务默认域名**：默认域名可能强制下载页面文件，不能充当稳定入口，见 `skills/rds-supabase-frontend/references/hosting.md`。
 
 ## Consequences
 

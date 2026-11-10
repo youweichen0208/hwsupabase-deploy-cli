@@ -18,47 +18,47 @@
 
 ## 2. 认证与只读预检
 
-按 [认证指引](../skills/huawei-supabase-frontend/references/authentication.md) 复用已有认证，或在适用条件下完成首次初始化。仅为已有 OBS 前端接入后端且无需管理云资源时，可先核实源码与 Supabase 公开连接参数，不额外初始化云认证。
+按 [认证指引](../skills/rds-supabase-frontend/references/authentication.md) 复用已有认证，或在适用条件下完成首次初始化。仅为已有 OBS 前端接入后端且无需管理云资源时，可先核实源码与 Supabase 公开连接参数，不额外初始化云认证。
 
 ```text
-$huawei-supabase-frontend 检查当前项目的 OBS 云端测试条件。使用我已配置的 profile <名称>，目标区域 <Region ID>，复用已有 Supabase <应用标识>。先只读核实认证、权限、资源、构建环境、域名与备案、入口和费用，列出缺项，不购买、不安装、不发布。
+$rds-supabase-frontend 检查当前项目的 OBS 云端测试条件。使用我已配置的 profile <名称>，目标区域 <Region ID>，复用已有 Supabase <应用标识>。先只读核实认证、权限、资源、构建环境、域名与备案、入口和费用，列出缺项，不购买、不安装、不发布。
 ```
 
 预检完成时，目标账号、资源、路线和区域明确，本次所需只读查询成功，工具、发布权限及入口缺项已列明。分别记录本地配置、云 API 和适用 OBS 权限的结果；仅保存配置不算认证通过。备案与实名状态若无法查询，只记录用户声明，并注明该输入不来自 agent 验证。
 
 ## 3. 准备环境并发布候选
 
-按 [域名与托管](../skills/huawei-supabase-frontend/references/hosting.md) 确认路线与公开读策略，按 [入口域名、证书与入口探测](../skills/huawei-supabase-frontend/references/domain-provisioning.md) 派生入口域名、写 DNS 并发起探测，再按 [OBS 发布](../skills/huawei-supabase-frontend/references/obs-release.md) 准备候选。缺域名或备案未完成时先交付构建产物、预览和上线缺项。
+按 [域名与托管](../skills/rds-supabase-frontend/references/hosting.md) 确认路线与公开读策略，按 [入口域名、证书与入口探测](../skills/rds-supabase-frontend/references/domain-provisioning.md) 派生入口域名、写 DNS 并发起探测，再按 [OBS 发布](../skills/rds-supabase-frontend/references/obs-release.md) 准备候选。缺域名或备案未完成时先交付构建产物、预览和上线缺项。
 
 完成预检并确定操作范围后，可使用：
 
 ```text
-$huawei-supabase-frontend 按刚才核实的目标准备 OBS 测试环境并发布候选版本。托管路线 <obs-domain / obs-cdn>，入口域名 <完整域名>，构建位置为 <已有 CI / 本地原生 / 容器>；允许在 <指定目标> 准备 <明确列出的构建工具；无需安装则填“复用现有工具”>，复用 <指定 OBS 资源>。新增付费资源仅限 <明确清单；没有则填“不新增”>，预算按 <已确认的任务或项目预算>。按项目版本和锁文件构建，接入已选定 Supabase，创建入口域名并探测，保留原产物与恢复点并记录实际入口与检查结果。
+$rds-supabase-frontend 按刚才核实的目标准备 OBS 测试环境并发布候选版本。托管路线 <obs-domain / obs-cdn>，入口域名 <完整域名>，构建位置为 <已有 CI / 本地原生 / 容器>；允许在 <指定目标> 准备 <明确列出的构建工具；无需安装则填“复用现有工具”>，复用 <指定 OBS 资源>。新增付费资源仅限 <明确清单；没有则填“不新增”>，预算按 <已确认的任务或项目预算>。按项目版本和锁文件构建，接入已选定 Supabase，创建入口域名并探测，保留原产物与恢复点并记录实际入口与检查结果。
 ```
 
-构建位置与工具准备按 [构建环境](../skills/huawei-supabase-frontend/references/build-environment.md) 确定；已有 CI 仅负责构建，产物发布到 OBS。上传前按 [前端构建](../skills/huawei-supabase-frontend/references/frameworks.md) 验证产物和公开配置。预览与生产变量分别核实，构建变量改变后重新构建。
+构建位置与工具准备按 [构建环境](../skills/rds-supabase-frontend/references/build-environment.md) 确定；已有 CI 仅负责构建，产物发布到 OBS。上传前按 [前端构建](../skills/rds-supabase-frontend/references/frameworks.md) 验证产物和公开配置。预览与生产变量分别核实，构建变量改变后重新构建。
 
 ## 4. 用真实入口验收
 
-以 [通用发布记录与验收](../skills/huawei-supabase-frontend/references/deployment.md) 为唯一验收标准，覆盖入口探测、入口、资源、页面及错误路由、缓存、适用 Supabase 接入和数据隔离。使用目标用户网络的正常 URL 完成 GET 与浏览器检查，命令见 [GET 留证示例](../skills/huawei-supabase-frontend/references/deployment.md#get-留证示例)。
+以 [通用发布记录与验收](../skills/rds-supabase-frontend/references/deployment.md) 为唯一验收标准，覆盖入口探测、入口、资源、页面及错误路由、缓存、适用 Supabase 接入和数据隔离。使用目标用户网络的正常 URL 完成 GET 与浏览器检查，命令见 [GET 留证示例](../skills/rds-supabase-frontend/references/deployment.md#get-留证示例)。
 
 `obs-domain` 不配置负向路径 4xx，该检查项记不适用；仍未命中对象的路径返回入口 HTML 属预期。HTTP 入口下 HTTPS 与 Supabase 登录记未验证。
 
-每项记录“通过 / 失败 / 未验证 / 不适用”及理由；失败或未确定时记录 [失败原因](../skills/huawei-supabase-frontend/references/domain-provisioning.md#失败原因枚举)。缺少测试账号、写入授权或安全入口时，将受影响项记为未验证，不报告整体线上通过。测试账号与数据限于已授权范围。
+每项记录“通过 / 失败 / 未验证 / 不适用”及理由；失败或未确定时记录 [失败原因](../skills/rds-supabase-frontend/references/domain-provisioning.md#失败原因枚举)。缺少测试账号、写入授权或安全入口时，将受影响项记为未验证，不报告整体线上通过。测试账号与数据限于已授权范围。
 
 ## 5. 验证更新、回退与失败恢复
 
 仅在明确请求更新/回退演练时执行本节；普通更新完成后保持新版上线。第一版通过后，发布有可见差异的第二版，记录版本和入口响应，核实旧版已打开页面仍可加载所需资源。然后调用：
 
 ```text
-$huawei-supabase-frontend 回退测试环境到 <第一版的已验证版本标识>，恢复归档产物与入口，按本次托管路线刷新适用缓存或覆盖入口对象，检查普通入口、深层路由、新旧静态资源与后端兼容性，记录实际服务版本和恢复结果。
+$rds-supabase-frontend 回退测试环境到 <第一版的已验证版本标识>，恢复归档产物与入口，按本次托管路线刷新适用缓存或覆盖入口对象，检查普通入口、深层路由、新旧静态资源与后端兼容性，记录实际服务版本和恢复结果。
 ```
 
 回退使用原产物及入口快照，并等待适用缓存刷新完成。首次发布没有旧成功版本时，验证恢复部署前状态；数据库变更独立处理。故障演练限于已授权的隔离候选，请求超时或发布中断后先核实实际服务版本，再决定恢复。失败不撤销已建资源，报告已创建但未生效的资源、可能费用与续跑标识。
 
 ## 6. 留证与收尾
 
-沿用项目既有记录；默认放在实际应用项目的 `.hwsupabase/frontend/<环境>/`，核实该应用的 Git 忽略规则。准确字段、状态转换和脱敏要求见 [发布记录契约](../skills/huawei-supabase-frontend/references/record-contract.md)，验收规则见 [通用记录](../skills/huawei-supabase-frontend/references/deployment.md)，测试摘要可用：
+沿用项目既有记录；默认放在实际应用项目的 `.hwsupabase/frontend/<环境>/`，核实该应用的 Git 忽略规则。准确字段、状态转换和脱敏要求见 [发布记录契约](../skills/rds-supabase-frontend/references/record-contract.md)，验收规则见 [通用记录](../skills/rds-supabase-frontend/references/deployment.md)，测试摘要可用：
 
 ```text
 测试时间与操作者 / 源码提交 / 构建工具版本：
