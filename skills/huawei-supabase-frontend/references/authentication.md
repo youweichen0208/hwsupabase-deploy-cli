@@ -13,7 +13,7 @@
 
 ## 首次永久 AK/SK：一次终端初始化
 
-默认使用官方 Huawei Cloud DevKit 的统一入口，不另做配置助手。已核对 npm 发布包 **1.1.13**（包声明 Node.js ≥22，隔离实测 Node 22.23.3）；执行时沿用该固定版本及核对帮助，不使用浮动 latest。DevKit 负责初始化，KooCLI 负责云操作，skill 负责部署流程；不要求安装整套 DevKit 插件或其他 skills。
+默认使用官方 Huawei Cloud DevKit 的统一入口，不另做配置助手。使用已核对的 npm 发布包 **1.1.13**（要求 Node.js ≥22）；执行时沿用该固定版本及核对帮助，不使用浮动 latest。DevKit 负责初始化，KooCLI 负责云操作，skill 负责部署流程；不要求安装整套 DevKit 插件或其他 skills。
 
 1. **检查复用条件。** 已有 KooCLI 与 OBS 认证可用时直接使用。只检查必要元数据：当前/目标 profile、认证模式、区域、工具路径，以及 DevKit 凭证库和默认 OBS 配置是否存在；秘密不得回显。首次永久 AK/SK 且无冲突时才走下面的统一入口。
 2. **检查工具。** 在初始化所在机器检查 Node 与 npm；Node 不足或缺失时报告缺项，不自动安装、升级或切换，亦不改变前端项目版本。KooCLI 缺失且任务允许准备工具时执行 `npx --yes huaweicloud-devkit@1.1.13 install-hcloud`，再验证 `hcloud version` 和 `hcloud obs help`。首次 KooCLI 隐私声明由客户阅读并接受，不静默代为同意。此命令可能下载安装，不能用于只读预检。下载失败保持现状，不直接采用输出中的 latest 一键安装命令。
@@ -33,9 +33,9 @@ HW_REGION=cn-north-4 npx --yes huaweicloud-devkit@1.1.13 auth init
 - **不是无损导入工具。** 1.1.13 的永久凭证初始化会删除并重建当前 KooCLI profile，覆写默认 `~/.obsutilconfig`，并写入 `~/.config/huaweicloud/credentials.json`。多账号、自定义 OBS 配置或共享机器不能直接套用首次初始化命令。先保留受限备份、列出受影响配置及默认身份变更；只有已有授权覆盖迁移才执行，否则复用原配置。中断后核对部分写入状态，按快照恢复，不能连续重跑覆盖其他身份。
 - **存储边界。** DevKit 凭证库与 OBS 配置含可读取的秘密，不能宣称全部加密。文件留在用户目录、限制为本人访问（macOS/Linux 0600，Windows 检查 ACL）；备份同样保护，不放项目内、不上传。工具内部可能将密钥传给 KooCLI 子进程参数，不宣称进程列表完全不可见；共享主机优先保留组织已有认证方式。
 - **已有加密配置。** 不自行解密 KooCLI、不关闭加密。需要统一迁移时，客户在终端重新输入一次凭证；不承诺从任意 profile 自动导出秘密。
-- **临时凭证。** 本次核对发现 1.1.13 的 `auth init` 会将 SecurityToken 写入 OBS/凭证库，却未把它传入 KooCLI 配置命令，因此临时 AK/SK 不走此简化入口。沿用官方专用流程并同时验证令牌完整性、有效期及两端身份；不删除令牌来消除错误。
+- **临时凭证。** 1.1.13 的 `auth init` 会将 SecurityToken 写入 OBS/凭证库，却未把它传入 KooCLI 配置命令，因此临时 AK/SK 不走此简化入口。沿用官方专用流程并同时验证令牌完整性、有效期及两端身份；不删除令牌来消除错误。
 - **SSO / AssumeRole。** 保留既有认证流程，不转换为永久 AK/SK。
-- **自动同步。** `auth sync` 也会改写配置，不作为每次部署的默认步骤。只有已明确使用 DevKit 管理的永久凭证环境且需要修复时才使用，之后重新验收。当前会话未连接官方同步 MCP 工具，不能把工具名称写成必然可调用的能力。
+- **自动同步。** `auth sync` 也会改写配置，不作为每次部署的默认步骤。只有已明确使用 DevKit 管理的永久凭证环境且需要修复时才使用，之后重新验收。若使用官方连接器，先发现当前会话实际可用的工具及其能力，不假定某个同步工具必然存在。
 
 ## SSO
 
@@ -52,7 +52,7 @@ hcloud configure sso --cli-profile="$FRONTEND_PROFILE"
 
 ## 只读预检与错误诊断
 
-复用选定 profile。先按路线查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help` 或 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
+复用选定 profile。先按所需服务查看本地 `hcloud RDS ListAiApplications --help`、`hcloud CDN --help` 或 OBS 工具帮助，再选择本次任务所需的只读查询；分页按对应命令规则读完。
 
 只有目标 API 需要 project ID 时，才优先让 KooCLI 自动解析；保留用户指定项目。全局服务、桶访问与 RDS 区域项目不能混用同一 ID。自动解析受限且认证有效时，再查询官方 IAM 项目接口或使用已知目标 ID。
 
@@ -67,10 +67,20 @@ OBS 默认使用 `hcloud obs`，先运行 `hcloud obs help` / `hcloud obs help l
 
 ## 官方依据
 
-核实日期：2026-11-06；SSO 参数沿用此前 KooCLI 7.3.12 帮助核对记录，执行时复核；本次未实测云端认证。
+SSO 参数按当前 KooCLI 帮助复核；KooCLI 7.3.12 曾完成本地帮助核对；执行时仍核实实际版本、参数及服务能力，不将历史版本当作永久推荐。
 
 - [访问凭证最佳实践](https://support.huaweicloud.com/bestpractice-iam/iam_0516.html)
 - [SSO 登录](https://support.huaweicloud.com/usermanual-hcli/hcli_03_009.html)
 - [认证模式](https://support.huaweicloud.com/usermanual-hcli/hcli_05_10.html)
 
-统一入口来源：[DevKit 1.1.13 发布包](https://www.npmjs.com/package/huaweicloud-devkit/v/1.1.13)、[官方仓库](https://github.com/huaweicloud/huaweicloud-devkit)、[KooCLI 内置 OBS](https://support.huaweicloud.com/usermanual-hcli/hcli_04_009.html)。发布包行为和隔离测试见仓库 `docs/auth-validation.md`；没有真实云认证实测。
+统一入口来源：[DevKit 1.1.13 发布包](https://www.npmjs.com/package/huaweicloud-devkit/v/1.1.13)、[官方仓库](https://github.com/huaweicloud/huaweicloud-devkit)、[KooCLI 内置 OBS](https://support.huaweicloud.com/usermanual-hcli/hcli_04_009.html)。
+
+官方参考：[KooCLI 概述](https://support.huaweicloud.com/intl/en-us/productdesc-hcli/hcli_01.html)。
+
+官方参考：[JSON 参数输入](https://support.huaweicloud.com/usermanual-hcli/hcli_05_12.html)。
+
+官方参考：[中国站 API Explorer](https://console.huaweicloud.com/apiexplorer/)。
+
+官方参考：[国际站 API Explorer](https://console-intl.huaweicloud.com/apiexplorer/)。
+
+官方参考：[KooCLI 配置参数](https://support.huaweicloud.com/usermanual-hcli/hcli_03_003_01.html)。
